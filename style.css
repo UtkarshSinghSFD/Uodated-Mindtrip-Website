@@ -17,6 +17,11 @@
     --glass-bg: rgba(255, 255, 255, 0.02);
     --glass-border: rgba(234, 179, 8, 0.2); /* Subtle Gold Border */
     --glass-highlight: rgba(234, 179, 8, 0.4);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Playfair Display', serif;
+    --font-mono: 'JetBrains Mono', monospace;
 }
 
 /* Education Section Poster Theme Override */
@@ -30,12 +35,6 @@
     --accent-pink: #5c3d2e;
     --glass-border: rgba(250, 205, 71, 0.2);
     --glass-highlight: rgba(250, 205, 71, 0.4);
-
-    
-    /* Typography */
-    --font-heading: 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
     
     /* Spacing & Layout */
     --container-width: 1200px;
