@@ -415,7 +415,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .stat-item { padding: 4rem 2rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.05); }
 .stat-item:last-child { border-right: none; }
 .stat-item h4 { font-size: 3.5rem; color: white; text-shadow: 0 0 20px rgba(255,255,255,0.3); margin-bottom: 0.5rem; line-height: 1; }
-.stat-item span { color: var(--text-muted); font-weight: 500; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.05em; }
+.stat-item > span { color: var(--text-muted); font-weight: 500; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.05em; }
 
 /* Features Grid */
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
