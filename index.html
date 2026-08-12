@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindTripE | Events, Entertainment, Education & Software</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Google Fonts: Inter and JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Advanced Animated Starfield Background -->
+    <div class="animated-background">
+        <div class="stars stars-1"></div>
+        <div class="stars stars-2"></div>
+        <div class="stars stars-3"></div>
+        <div class="glow-orb top-orb"></div>
+        <div class="glow-orb bottom-orb"></div>
+    </div>
+    
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow"></div>
+
+    <div class="app-container">
+        
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo" onclick="switchPage('home')" style="cursor: pointer;" title="Go to Home">
+                <img src="images/logo.png" alt="MindTripE Logo" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><button class="nav-btn active" data-target="home">Home</button></li>
+                <li><button class="nav-btn" data-target="education">Education</button></li>
+                <li><button class="nav-btn" data-target="software">Software</button></li>
+                <li><button class="nav-btn" data-target="events">Events</button></li>
+                <li><button class="nav-btn" data-target="contact">Contact Us</button></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- HOME PAGE -->
+            <section id="home" class="page-section active">
+                <div class="hero hero-centered" id="home-hero">
+                    <div class="parallax-icons">
+                        <i class="ph-fill ph-music-note floating-icon icon-1"></i>
+                        <i class="ph-fill ph-vinyl-record floating-icon icon-2"></i>
+                        <i class="ph-fill ph-graduation-cap floating-icon icon-3"></i>
+                        <i class="ph-fill ph-microphone-stage floating-icon icon-4"></i>
+                        <i class="ph-fill ph-sparkle floating-icon icon-5"></i>
+                    </div>
+                    
+                    <div class="hero-content text-center reveal">
+                        <p class="hero-top-tag font-mono text-gold"><span class="line-bar"></span> EVENTS ✦ ENTERTAINMENT ✦ EDUCATION <span class="line-bar"></span></p>
+                        <h1 class="hero-title new-hero-title">
+                            <span class="outline-text">Engage. Inspire.</span><br>
+                            <span class="solid-text glow-pulse-text">Empower.</span>
+                        </h1>
+                        <p class="hero-subtitle mx-auto mt-4">MindTripE curates performances, manages artists and builds structured education programs — turning schools and colleges into hubs of creativity, confidence and career readiness.</p>
+                        <div class="hero-actions justify-center mt-6">
+                            <button class="btn btn-gold-solid" onclick="switchPage('education')">Explore our programs</button>
+                            <button class="btn btn-dark-outline" onclick="switchPage('contact')">Partner with us</button>
+                        </div>
+                    </div>
+
+                    <!-- Scrolling Marquee -->
+                    <div class="marquee-container">
+                        <div class="marquee-track">
+                            <div class="marquee-content">
+                                <span>SKILL DEVELOPMENT</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>LIVE EVENTS</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>ARTIST MANAGEMENT</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>WORKSHOPS</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>CERTIFICATIONS</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>MUSICVERSE</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                            </div>
+                            <!-- Duplicated content for seamless scroll -->
+                            <div class="marquee-content" aria-hidden="true">
+                                <span>SKILL DEVELOPMENT</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>LIVE EVENTS</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>ARTIST MANAGEMENT</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>WORKSHOPS</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>CERTIFICATIONS</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                                <span>MUSICVERSE</span> <i class="ph-fill ph-sparkle text-gold"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-padding">
+                    <div class="section-header reveal">
+                        <h2>What we do</h2>
+                        <p>Four pillars, one mission — making every student stage-ready and industry-ready, and every business system-ready.</p>
+                    </div>
+
+                    <div class="pillars-grid reveal staggered-drop-grid">
+                        <div class="pillar-card tilt-card">
+                            <div class="pillar-number font-mono">01</div>
+                            <h3>MusicVerse</h3>
+                            <p>A complete music ecosystem inside your school — curriculum, instruments, performances and certification pathways, at zero cost to the school.</p>
+                            <button class="text-link" onclick="switchPage('education')">Explore <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                        <div class="pillar-card tilt-card">
+                            <div class="pillar-number font-mono">02</div>
+                            <h3>Skill Development</h3>
+                            <p>A 2-year, 16-module program for diploma & degree students — communication, confidence, financial literacy and corporate readiness.</p>
+                            <button class="text-link" onclick="switchPage('education')">Explore <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                        <div class="pillar-card tilt-card">
+                            <div class="pillar-number font-mono">03</div>
+                            <h3>Software Solutions</h3>
+                            <p>Enterprise automation, industrial IoT and custom B2B platforms through Star Nexus Technologies — connecting your business systems into one network.</p>
+                            <button class="text-link" onclick="switchPage('software')">Explore <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                        <div class="pillar-card tilt-card">
+                            <div class="pillar-number font-mono">04</div>
+                            <h3>Events & Entertainment</h3>
+                            <p>Live shows, competitions and celebrity/industry-expert sessions that bring real-world exposure to campus.</p>
+                            <button class="text-link" onclick="switchPage('events')">Explore <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-banner reveal staggered-drop-grid">
+                    <div class="stat-item">
+                        <h4 class="counter font-mono" data-target="4">0</h4>
+                        <span>Pillars, one vision</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4 class="counter font-mono" data-target="16">0</h4>
+                        <span>Skill modules</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4 class="counter font-mono" data-target="10">0</h4>
+                        <span>Music curriculum levels</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4><span class="counter font-mono" data-target="10">0</span><span class="font-mono text-gold">+</span></h4>
+                        <span>Years of expert faculty</span>
+                    </div>
+                </div>
+
+                <div class="section-padding dark-surface">
+                    <div class="section-header reveal">
+                        <h2>Why MindTripE</h2>
+                        <p>More than classes. A complete ecosystem.</p>
+                    </div>
+                    <div class="features-grid reveal staggered-drop-grid">
+                        <div class="feature-item">
+                            <i class="ph-fill ph-users-three"></i>
+                            <h4>Industry-backed team</h4>
+                            <p>Expert faculty and industry professionals mentoring students for stage, studio and workplace.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-guitar"></i>
+                            <h4>Everything provided</h4>
+                            <p>Instruments, books, lab setup, classroom decoration and learning materials — handled by us.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-microphone-stage"></i>
+                            <h4>Real exposure</h4>
+                            <p>Celebrity & industry expert sessions, recording studios, live shows and competitions.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-certificate"></i>
+                            <h4>Certified progress</h4>
+                            <p>Annual assessments, progress reports and certificates issued at every level of the journey.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-plant"></i>
+                            <h4>Holistic development</h4>
+                            <p>Medical camps, traffic awareness programs, and agriculture & nature education beyond the classroom.</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph-fill ph-buildings"></i>
+                            <h4>Institution-first model</h4>
+                            <p>Aligned with your academic calendar, boosting your placement record, brand and student engagement.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EDUCATION PAGE -->
+            <section id="education" class="page-section">
+                <!-- Flying Rockets -->
+                <i class="ph-fill ph-rocket rocket-left"></i>
+                <i class="ph-fill ph-rocket rocket-right"></i>
+
+                <!-- Spaceship Animation -->
+                <div class="spaceship-container">
+                    <div class="css-spaceship">
+                        <div class="dome"></div>
+                        <div class="saucer"></div>
+                    </div>
+                    <i class="ph-fill ph-graduation-cap passenger skill-icon"></i>
+                    <i class="ph-fill ph-music-note passenger music-icon"></i>
+                </div>
+                
+                <div class="page-header reveal">
+                    <h1 class="page-title">Education Programs</h1>
+                    <p class="page-subtitle">Curriculums designed to make students stage-ready and industry-ready.</p>
+                    
+                    <div class="toggle-container glow-pulse">
+                        <div class="toggle-bg"></div>
+                        <button class="toggle-btn active font-mono" data-target="skillverse">SkillVerse</button>
+                        <button class="toggle-btn font-mono" data-target="musicverse">MusicVerse</button>
+                    </div>
+                </div>
+
+                <!-- SkillVerse Content -->
+                <div id="skillverse" class="sub-section active">
+                    <div class="content-split">
+                        <div class="split-text reveal">
+                            <h2>Skill Development Curriculum</h2>
+                            <p class="lead">A 2-year, 16-module program for diploma & degree students — building communication, confidence, financial literacy and true corporate readiness.</p>
+                            
+                            <h3 class="margin-top font-mono text-gold">>> How the program works</h3>
+                            <div class="process-steps">
+                                <div class="step">
+                                    <div class="step-num font-mono">01</div>
+                                    <div class="step-info">
+                                        <h4>Onboarding</h4>
+                                        <p>Your institution partners with us and students are enrolled into the 2-year, 16-module program alongside their regular academic calendar.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-num font-mono">02</div>
+                                    <div class="step-info">
+                                        <h4>Structured Delivery</h4>
+                                        <p>16 core modules delivered in 4-hour sessions — covering communication, aptitude, financial literacy, entrepreneurship and leadership.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-num font-mono">03</div>
+                                    <div class="step-info">
+                                        <h4>Practice & Certification</h4>
+                                        <p>Students go through mock GDs, interviews and tests, mental health & wellness sessions, and receive certification on completion.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-visual reveal reveal-delay-1">
+                            <div class="glass-panel tilt-card interactive-border">
+                                <h3 class="font-mono text-gold">At a glance</h3>
+                                <ul class="check-list">
+                                    <li><i class="ph-bold ph-check"></i> 16 core modules, 4-hour sessions</li>
+                                    <li><i class="ph-bold ph-check"></i> Communication & public speaking</li>
+                                    <li><i class="ph-bold ph-check"></i> Aptitude & logical thinking</li>
+                                    <li><i class="ph-bold ph-check"></i> Financial literacy & investments</li>
+                                    <li><i class="ph-bold ph-check"></i> Entrepreneurship & leadership</li>
+                                    <li><i class="ph-bold ph-check"></i> Mock GDs, interviews & tests</li>
+                                    <li><i class="ph-bold ph-check"></i> Mental health & wellness</li>
+                                    <li><i class="ph-bold ph-check"></i> Certification on completion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MusicVerse Content -->
+                <div id="musicverse" class="sub-section">
+                    <div class="content-split">
+                        <div class="split-text reveal">
+                            <h2>MindTripE MusicVerse</h2>
+                            <p class="lead">A complete music ecosystem inside your school — structured curriculum, instruments, performances and internationally recognized certification pathways.</p>
+                            
+                            <h3 class="margin-top font-mono text-gold">>> How the program works</h3>
+                            <div class="process-steps">
+                                <div class="step">
+                                    <div class="step-num font-mono">01</div>
+                                    <div class="step-info">
+                                        <h4>Setup at Your School</h4>
+                                        <p>We set up the music lab and acoustics, and provide instruments & books — at zero cost to the school.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-num font-mono">02</div>
+                                    <div class="step-info">
+                                        <h4>10-Level Curriculum</h4>
+                                        <p>Students progress through a 10-level curriculum starting from the nursery & primary program, preparing for Trinity, Yamaha and other grade exams.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-num font-mono">03</div>
+                                    <div class="step-info">
+                                        <h4>Performance & Exposure</h4>
+                                        <p>Students get recording studio exposure and take part in band competitions and live shows.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="split-visual reveal reveal-delay-1">
+                            <div class="glass-panel tilt-card interactive-border">
+                                <h3 class="font-mono text-gold">At a glance</h3>
+                                <ul class="check-list">
+                                    <li><i class="ph-bold ph-check"></i> 10-level progressive curriculum</li>
+                                    <li><i class="ph-bold ph-check"></i> Instruments & books provided</li>
+                                    <li><i class="ph-bold ph-check"></i> Music lab setup & acoustics</li>
+                                    <li><i class="ph-bold ph-check"></i> Trinity, Yamaha & other grade prep</li>
+                                    <li><i class="ph-bold ph-check"></i> Recording studio exposure</li>
+                                    <li><i class="ph-bold ph-check"></i> Band competitions & live shows</li>
+                                    <li><i class="ph-bold ph-check"></i> Nursery & primary program</li>
+                                    <li><i class="ph-bold ph-check"></i> Zero cost to school</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SOFTWARE SOLUTIONS PAGE -->
+            <section id="software" class="page-section">
+                <!-- Tech Background Animation -->
+                <div class="tech-bg-container">
+                    <canvas id="coding-shower"></canvas>
+                </div>
+
+                <div class="hero tech-hero">
+                    <div class="hero-content text-center reveal">
+                        <div class="badge tech-badge glow-pulse font-mono">Enterprise Automation</div>
+                        <h1 class="hero-title">Star Nexus <span class="text-gradient tech">Technologies</span></h1>
+                        <p class="hero-subtitle mx-auto">The nexus point for every system your business runs on, aligned. Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
+                    </div>
+                </div>
+
+                <div class="section-padding" style="margin-top: 25vh;">
+                    <div class="section-header reveal">
+                        <h2>How We Work</h2>
+                        <p class="font-mono text-gold">A fixed sequence, from signal to system</p>
+                    </div>
+                    <div class="timeline-grid reveal staggered-drop-grid">
+                        <div class="timeline-card tilt-card interactive-border">
+                            <div class="timeline-header">
+                                <span class="code font-mono text-cyan">SN-01</span>
+                                <h4>Discovery</h4>
+                            </div>
+                            <h5>Chart the system</h5>
+                            <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
+                        </div>
+                        <div class="timeline-card tilt-card interactive-border">
+                            <div class="timeline-header">
+                                <span class="code font-mono text-cyan">SN-02</span>
+                                <h4>Prototype</h4>
+                            </div>
+                            <h5>Build the proof</h5>
+                            <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
+                        </div>
+                        <div class="timeline-card tilt-card interactive-border">
+                            <div class="timeline-header">
+                                <span class="code font-mono text-cyan">SN-03</span>
+                                <h4>Scale</h4>
+                            </div>
+                            <h5>Launch & support</h5>
+                            <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-padding dark-surface">
+                    <div class="section-header reveal">
+                        <h2>Our Services</h2>
+                        <p class="font-mono text-gold">Systems built around how your business actually operates</p>
+                    </div>
+                    <div class="services-grid services-grid-container reveal staggered-drop-grid">
+                        <div class="service-item tilt-card">
+                            <div class="service-icon"><i class="ph-fill ph-desktop"></i></div>
+                            <h4><span class="font-mono text-cyan mr-2">01.</span> Enterprise Software</h4>
+                            <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
+                        </div>
+                        <div class="service-item tilt-card">
+                            <div class="service-icon"><i class="ph-fill ph-cpu"></i></div>
+                            <h4><span class="font-mono text-cyan mr-2">02.</span> Industrial IoT</h4>
+                            <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
+                        </div>
+                        <div class="service-item tilt-card">
+                            <div class="service-icon"><i class="ph-fill ph-share-network"></i></div>
+                            <h4><span class="font-mono text-cyan mr-2">03.</span> Workflow Orchestration</h4>
+                            <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
+                        </div>
+                        <div class="service-item tilt-card">
+                            <div class="service-icon"><i class="ph-fill ph-cloud-check"></i></div>
+                            <h4><span class="font-mono text-cyan mr-2">04.</span> B2B Cloud Solutions</h4>
+                            <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-padding">
+                    <div class="section-header reveal">
+                        <h2>Integrations</h2>
+                        <p class="font-mono text-gold">Connect the tools you already run</p>
+                    </div>
+                    <div class="integrations-grid reveal staggered-drop-grid">
+                        <div class="integration-card tilt-card interactive-border">
+                            <span class="tag font-mono">Operations</span>
+                            <h4>ERP Systems</h4>
+                            <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
+                        </div>
+                        <div class="integration-card tilt-card interactive-border">
+                            <span class="tag font-mono">Customer Data</span>
+                            <h4>CRM Platforms</h4>
+                            <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
+                        </div>
+                        <div class="integration-card tilt-card interactive-border">
+                            <span class="tag font-mono">Alerts</span>
+                            <h4>Collaboration Hubs</h4>
+                            <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
+                        </div>
+                        <div class="integration-card tilt-card interactive-border">
+                            <span class="tag font-mono">Analytics</span>
+                            <h4>Cloud Data Warehouses</h4>
+                            <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
+                        </div>
+                        <div class="integration-card tilt-card interactive-border">
+                            <span class="tag font-mono">Financials</span>
+                            <h4>Payment Gateways</h4>
+                            <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
+                        </div>
+                        <div class="integration-card tilt-card interactive-border">
+                            <span class="tag font-mono">Developer Tools</span>
+                            <h4>REST & GraphQL APIs</h4>
+                            <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-padding dark-surface">
+                    <div class="section-header reveal">
+                        <h2>Our Products</h2>
+                        <p class="font-mono text-gold">Five fixed points, one product line</p>
+                    </div>
+                    <div class="products-list reveal staggered-drop-grid">
+                        <!-- Polaris -->
+                        <div class="product-card interactive-border">
+                            <div class="product-info">
+                                <div class="product-badge font-mono glow-text-cyan">Fortified VDI</div>
+                                <h3>Polaris</h3>
+                                <h4>Fixed-Point Secure Desktop Infrastructure</h4>
+                                <p>A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
+                                <ul class="check-list">
+                                    <li><i class="ph-bold ph-check text-cyan"></i> On-premise secure server node deployment</li>
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Low-latency remote desktop streaming (60 FPS)</li>
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Hardware-level encryption and zero-trust client access</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Vega -->
+                        <div class="product-card interactive-border">
+                            <div class="product-info">
+                                <div class="product-badge font-mono glow-text-cyan">Assistive AI</div>
+                                <h3>Vega</h3>
+                                <h4>AI Companion for the Visually Impaired</h4>
+                                <p>A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
+                                <ul class="check-list">
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Real-time object and currency identification</li>
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Natural text-to-speech audio feedback via Bluetooth</li>
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Ultrasonic obstacle detection and hazard guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Lyra Scan -->
+                        <div class="product-card interactive-border">
+                            <div class="product-info">
+                                <div class="product-badge font-mono glow-text-cyan">Batch OCR</div>
+                                <h3>Lyra Scan</h3>
+                                <h4>High-Speed Batch Digitization</h4>
+                                <p>An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
+                                <ul class="check-list">
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Ultra-fast batch document processing (120 ppm)</li>
+                                    <li><i class="ph-bold ph-check text-cyan"></i> On-premise OCR with instant PDF/Excel export</li>
+                                    <li><i class="ph-bold ph-check text-cyan"></i> Automatic metadata classification and sorting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EVENTS PAGE -->
+            <section id="events" class="page-section">
+                <!-- Fireworks Background -->
+                <div class="events-bg-container">
+                    <canvas id="fireworks-canvas"></canvas>
+                </div>
+
+                <div class="hero events-hero">
+                    <div class="hero-content reveal">
+                        <div class="badge glow glow-pulse font-mono">Live Experiences</div>
+                        <h1 class="hero-title">Events & <br><span class="text-gradient events">Entertainment</span></h1>
+                        <p class="hero-subtitle">Live shows, competitions and celebrity/industry-expert sessions that bring real-world exposure to campus — turning every institution into a stage.</p>
+                    </div>
+                </div>
+
+                <div class="section-padding" style="margin-top: 25vh;">
+                    <div class="content-split reverse">
+                        <div class="split-text reveal">
+                            <h2>What we offer</h2>
+                            <ul class="offerings-list reveal staggered-drop-grid">
+                                <li><i class="ph-fill ph-star"></i> Live band & solo performances</li>
+                                <li><i class="ph-fill ph-trophy"></i> Inter-college & inter-school competitions</li>
+                                <li><i class="ph-fill ph-microphone-stage"></i> Celebrity & industry-expert sessions</li>
+                                <li><i class="ph-fill ph-confetti"></i> Cultural fests & annual day shows</li>
+                                <li><i class="ph-fill ph-sparkle"></i> Talent hunts & open-mic nights</li>
+                                <li><i class="ph-fill ph-calendar-check"></i> Corporate & campus event management</li>
+                                <li><i class="ph-fill ph-speaker-hifi"></i> Sound, stage & production support</li>
+                                <li><i class="ph-fill ph-certificate"></i> Certificates & recognition for participants</li>
+                            </ul>
+                        </div>
+                        <div class="split-visual reveal staggered-drop-grid">
+                            <div class="benefit-card tilt-card interactive-border">
+                                <div class="benefit-icon"><i class="ph-bold ph-sliders"></i></div>
+                                <h4>End-to-end production</h4>
+                                <p>From stage design to sound and lighting, we handle the full production so your campus can focus on the experience.</p>
+                            </div>
+                            <div class="benefit-card tilt-card interactive-border">
+                                <div class="benefit-icon"><i class="ph-bold ph-globe-hemisphere-west"></i></div>
+                                <h4>Real industry exposure</h4>
+                                <p>Sessions with celebrities and industry experts give students exposure that goes beyond the classroom.</p>
+                            </div>
+                            <div class="benefit-card tilt-card interactive-border">
+                                <div class="benefit-icon"><i class="ph-bold ph-calendar"></i></div>
+                                <h4>Built around your calendar</h4>
+                                <p>Events are scheduled around your academic calendar, so they add to campus life rather than disrupt it.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT PAGE -->
+            <section id="contact" class="page-section">
+                <div class="section-padding contact-container">
+                    <div class="contact-header reveal">
+                        <h1 class="hero-title">Make your campus a hub of <span class="text-gradient">creativity.</span></h1>
+                        <p class="hero-subtitle mx-auto">Empower your students for global careers and future-proof your institution's reputation. Collaborate with MindTripE today.</p>
+                    </div>
+
+                    <div class="contact-cards reveal staggered-drop-grid">
+                        <div class="contact-card tilt-card interactive-border">
+                            <div class="contact-icon"><i class="ph-fill ph-envelope-simple"></i></div>
+                            <h3 class="font-mono">Email Us</h3>
+                            <a href="mailto:mindtripentertainments@gmail.com" class="contact-link">mindtripentertainments@gmail.com</a><br>
+                            <a href="mailto:skillverse@mindtripe.in" class="contact-link">skillverse@mindtripe.in</a><br>
+                            <a href="mailto:musicverse@mindtripe.in" class="contact-link">musicverse@mindtripe.in</a>
+                        </div>
+                        <div class="contact-card tilt-card interactive-border">
+                            <div class="contact-icon"><i class="ph-fill ph-phone-call"></i></div>
+                            <h3 class="font-mono">Call Us</h3>
+                            <a href="tel:+919404997971" class="contact-link">+91 94049 97971</a><br>
+                            <a href="tel:+918983147057" class="contact-link">+91 89831 47057</a>
+                        </div>
+                        <div class="contact-card tilt-card interactive-border">
+                            <div class="contact-icon"><i class="ph-fill ph-map-pin"></i></div>
+                            <h3 class="font-mono">Visit Us</h3>
+                            <p class="contact-link">16, Uroovela Colony,<br>Nagpur, Maharashtra</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container glass-panel interactive-border reveal">
+                        <h3>Send us a message</h3>
+                        <form class="contact-form" onsubmit="sendEmail(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="font-mono">Name</label>
+                                    <input type="text" id="contact-name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="font-mono">Institution/Company</label>
+                                    <input type="text" id="contact-org" placeholder="Your Organization">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-mono">Email</label>
+                                <input type="email" id="contact-user-email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-mono">Message</label>
+                                <textarea id="contact-message" rows="4" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary full-width font-mono">SEND_MESSAGE <i class="ph-bold ph-paper-plane-tilt"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer reveal">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="MindTripE Logo" class="logo-img">
+                    </div>
+                    <p class="font-mono text-gold mt-2">Events ✦ Entertainment ✦ Education</p>
+                </div>
+                <div class="footer-info">
+                    <p>Nagpur, Maharashtra</p>
+                    <p class="font-mono mt-2">© 2026 MindTripE.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
