@@ -581,7 +581,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 @media (max-width: 768px) {
-    .nav-links { display: none; }
+    .nav-links { 
+        display: none; 
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(5, 5, 5, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 999;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-btn {
+        font-size: 1.5rem;
+    }
     .mobile-menu-btn { display: block; }
     .hero { flex-direction: column; text-align: center; padding-top: 6rem; }
     .hero-actions { justify-content: center; }
@@ -697,7 +718,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .icon-3 { right: 5%; }
 }
 @media (max-width: 768px) {
-    .new-hero-title { font-size: 4rem; }
+    .new-hero-title { font-size: 3rem; }
+    .hero-subtitle { font-size: 1rem; padding: 0 1rem; }
     .icon-2, .icon-5 { display: none; }
 }
 

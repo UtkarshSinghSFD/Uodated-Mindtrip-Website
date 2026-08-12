@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Main Navigation Logic ---
     const navButtons = document.querySelectorAll('.nav-btn');
     const pageSections = document.querySelectorAll('.page-section');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinksContainer = document.querySelector('.nav-links');
 
     function setActivePage(targetId) {
         navButtons.forEach(btn => {
@@ -44,6 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Close mobile menu if it's open
+        if (navLinksContainer && navLinksContainer.classList.contains('active')) {
+            navLinksContainer.classList.remove('active');
+            if (mobileMenuBtn) {
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                }
+            }
+        }
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -56,6 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.switchPage = function(targetId) {
         setActivePage(targetId);
     };
+
+    // --- Mobile Menu Toggle ---
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksContainer.classList.toggle('active');
+            
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                if (icon.classList.contains('ph-list')) {
+                    icon.classList.remove('ph-list');
+                    icon.classList.add('ph-x');
+                } else {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                }
+            }
+        });
+    }
 
     // --- 2. Education Sub-navigation (Toggle) Logic ---
     const toggleButtons = document.querySelectorAll('.toggle-btn');
