@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Initialize counters for the new page
                 setTimeout(() => {
                     initCounters();
+                    if (targetId === 'education' && window.moveSpaceship) {
+                        // Force an immediate movement when the tab opens
+                        window.moveSpaceship();
+                    }
                 }, 100);
             } else {
                 section.classList.remove('active');
@@ -431,6 +435,8 @@ document.addEventListener('DOMContentLoaded', () => {
             spaceship.style.top = randomY + 'px';
             spaceship.style.transform = `rotate(${rotate}deg) scale(${scale})`;
         }
+        
+        window.moveSpaceship = moveSpaceship; // Expose globally to trigger on tab switch
         
         // Initial move slightly delayed to ensure layout is complete
         setTimeout(moveSpaceship, 500);
