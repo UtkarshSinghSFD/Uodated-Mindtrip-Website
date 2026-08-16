@@ -1034,3 +1034,238 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     50%, 95% { opacity: 1; transform: translateX(-50%) scale(1); }
     100% { opacity: 0; transform: translateX(-50%) scale(0.5); }
 }
+
+/* --- CARTOON SOFTWARE PAGE THEME --- */
+.cartoon-page {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    background-color: #f8f9fa; 
+    color: #333;
+}
+.cartoon-page .tech-bg-container {
+    opacity: 0.05; 
+}
+.cartoon-hero {
+    padding-top: 15vh;
+}
+.cartoon-badge {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 3px solid #333;
+    border-radius: 50px;
+    background: #ffeb3b;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #333;
+    box-shadow: 4px 4px 0px #333;
+    margin-bottom: 2rem;
+    transform: rotate(-3deg);
+}
+.cartoon-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #333;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 0px #fff, -2px -2px 0px #fff, 2px -2px 0px #fff, -2px 2px 0px #fff, 4px 4px 0px #aaa;
+}
+.cartoon-highlight {
+    color: #ef4444; 
+    -webkit-text-stroke: 2px #333;
+}
+.cartoon-subtitle {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    max-width: 800px;
+    color: #444;
+}
+
+/* Doodle Elements */
+.doodle-elements {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.doodle-icon {
+    position: absolute;
+    color: #333;
+    font-size: 3rem;
+    opacity: 0.15;
+}
+.doodle-1 { top: 10%; left: 10%; font-size: 4rem; transform: rotate(-15deg); }
+.doodle-2 { top: 20%; right: 15%; font-size: 3.5rem; transform: rotate(15deg); }
+.doodle-3 { top: 60%; left: 5%; font-size: 5rem; transform: rotate(45deg); color: #ef4444; opacity: 0.2; }
+.doodle-4 { top: 70%; right: 10%; font-size: 4rem; transform: rotate(-10deg); }
+.doodle-5 { top: 40%; left: 80%; font-size: 4.5rem; }
+.doodle-6 { top: 30%; left: 20%; font-size: 3.5rem; color: #fbbf24; opacity: 0.2; }
+
+/* Sections */
+.cartoon-section-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+.cartoon-tagline {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+/* Cards */
+.cartoon-crew-grid, .cartoon-timeline, .cartoon-services-grid, .cartoon-integrations-grid, .cartoon-products-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    position: relative;
+    z-index: 2;
+}
+
+.crew-card, .cartoon-step, .cartoon-service-card, .cartoon-integration-card, .cartoon-product-card {
+    background: #fff;
+    border: 4px solid #333;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 8px 8px 0px #333;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.crew-card:hover, .cartoon-step:hover, .cartoon-service-card:hover, .cartoon-integration-card:hover, .cartoon-product-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px #333;
+}
+
+.crew-avatar {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #333;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+.crew-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.crew-card h4, .cartoon-step h4, .cartoon-service-card h4, .cartoon-integration-card h4, .cartoon-product-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+.crew-card p, .cartoon-step p, .cartoon-service-card p, .cartoon-integration-card p, .cartoon-product-card p {
+    font-family: 'Comic Neue', cursive;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 700;
+}
+
+.step-bubble {
+    width: 50px;
+    height: 50px;
+    background: #3b82f6;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 1rem;
+    box-shadow: 3px 3px 0px #333;
+}
+
+.cartoon-service-icon {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.cartoon-tag, .cartoon-product-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #10b981;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px 0px #333;
+}
+.cartoon-product-badge {
+    background: #8b5cf6;
+}
+
+.cartoon-check-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    padding: 0;
+}
+.cartoon-check-list li {
+    font-family: 'Comic Neue', cursive;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.cartoon-dark-section {
+    background: #e2e8f0;
+    border-top: 4px dashed #94a3b8;
+    border-bottom: 4px dashed #94a3b8;
+}
+
+/* Floating Cartoon Faces */
+.floating-face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+    filter: drop-shadow(4px 4px 0px rgba(51, 51, 51, 0.5));
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+.face-how-we-work {
+    top: -60px;
+    right: 15%;
+    transform: rotate(10deg);
+}
+.face-services {
+    top: -50px;
+    left: 10%;
+    transform: rotate(-15deg);
+}
+.face-integrations {
+    top: -70px;
+    right: 10%;
+    transform: rotate(5deg);
+}
+.face-products {
+    top: -40px;
+    left: 15%;
+    transform: rotate(-10deg);
+}
+
+@media (max-width: 768px) {
+    .floating-face {
+        width: 100px;
+        height: 100px;
+    }
+    .face-how-we-work { top: -40px; right: 5%; }
+    .face-services { top: -40px; left: 5%; }
+    .face-integrations { top: -50px; right: 5%; }
+    .face-products { top: -30px; left: 5%; }
+}

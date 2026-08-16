@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindTripE | Events, Entertainment, Education & Software</title>
-    <link rel="icon" type="image/png" href="images/logo.PNG">
+    <link rel="icon" type="image/jpeg" href="images/logo_light.jpg">
     
     <!-- Google Fonts: Inter and JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Fredoka:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -41,7 +41,7 @@
                 <li><button class="nav-btn active" data-target="home">Home</button></li>
                 <li><button class="nav-btn" data-target="education">Education</button></li>
                 <li><button class="nav-btn" data-target="software">Software</button></li>
-                <li><button class="nav-btn" data-target="events">Events</button></li>
+                <li><button class="nav-btn" data-target="events">Events &amp; Entertainment</button></li>
                 <li><button class="nav-btn" data-target="contact">Contact Us</button></li>
             </ul>
             <div class="mobile-menu-btn">
@@ -321,175 +321,179 @@
                 </div>
             </section>
 
-            <!-- SOFTWARE SOLUTIONS PAGE -->
-            <section id="software" class="page-section">
+            <!-- SOFTWARE SOLUTIONS PAGE - CARTOONISH THEME -->
+            <section id="software" class="page-section cartoon-page">
                 <!-- Tech Background Animation -->
                 <div class="tech-bg-container">
                     <canvas id="coding-shower"></canvas>
                 </div>
 
-                <div class="hero tech-hero">
+                <!-- Cartoon Doodle Elements -->
+                <div class="doodle-elements">
+                    <i class="ph-fill ph-gear doodle-icon doodle-1"></i>
+                    <i class="ph-fill ph-lightning doodle-icon doodle-2"></i>
+                    <i class="ph-fill ph-rocket-launch doodle-icon doodle-3"></i>
+                    <i class="ph-fill ph-code doodle-icon doodle-4"></i>
+                    <i class="ph-fill ph-cloud doodle-icon doodle-5"></i>
+                    <i class="ph-fill ph-lightbulb doodle-icon doodle-6"></i>
+                </div>
+
+                <div class="hero tech-hero cartoon-hero">
                     <div class="hero-content text-center reveal">
-                        <div class="badge tech-badge glow-pulse font-mono">Enterprise Automation</div>
-                        <h1 class="hero-title">Star Nexus <span class="text-gradient tech">Technologies</span></h1>
-                        <p class="hero-subtitle mx-auto">The nexus point for every system your business runs on, aligned. Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
+                        <div class="cartoon-badge">🚀 Enterprise Automation</div>
+                        <h1 class="cartoon-title">Star Nexus<br><span class="cartoon-highlight">Technologies</span></h1>
+                        <p class="cartoon-subtitle mx-auto">The nexus point for every system your business runs on, aligned. Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
                     </div>
                 </div>
 
-                <div class="section-padding" style="margin-top: 25vh;">
+                <div class="section-padding cartoon-section" style="margin-top: 8rem; position: relative;">
+                    <!-- Face 1 hovering over How We Work -->
+                    <img src="images/team/face1.png" alt="Face 1" class="floating-face face-how-we-work">
+                    
                     <div class="section-header reveal">
-                        <h2>How We Work</h2>
-                        <p class="font-mono text-gold">A fixed sequence, from signal to system</p>
+                        <h2 class="cartoon-section-title">How We Work ⚙️</h2>
+                        <p class="cartoon-tagline">A fixed sequence, from signal to system</p>
                     </div>
-                    <div class="timeline-grid reveal staggered-drop-grid">
-                        <div class="timeline-card tilt-card interactive-border">
-                            <div class="timeline-header">
-                                <span class="code font-mono text-cyan">SN-01</span>
-                                <h4>Discovery</h4>
-                            </div>
+                    <div class="cartoon-timeline reveal staggered-drop-grid">
+                        <div class="cartoon-step tilt-card">
+                            <div class="step-bubble">1</div>
+                            <h4>Discovery 🔍</h4>
                             <h5>Chart the system</h5>
                             <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
                         </div>
-                        <div class="timeline-card tilt-card interactive-border">
-                            <div class="timeline-header">
-                                <span class="code font-mono text-cyan">SN-02</span>
-                                <h4>Prototype</h4>
-                            </div>
+                        <div class="cartoon-step tilt-card">
+                            <div class="step-bubble">2</div>
+                            <h4>Prototype 🛠️</h4>
                             <h5>Build the proof</h5>
                             <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
                         </div>
-                        <div class="timeline-card tilt-card interactive-border">
-                            <div class="timeline-header">
-                                <span class="code font-mono text-cyan">SN-03</span>
-                                <h4>Scale</h4>
-                            </div>
-                            <h5>Launch & support</h5>
+                        <div class="cartoon-step tilt-card">
+                            <div class="step-bubble">3</div>
+                            <h4>Scale 🚀</h4>
+                            <h5>Launch &amp; support</h5>
                             <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="section-padding dark-surface">
+                <div class="section-padding cartoon-section cartoon-dark-section" style="position: relative;">
+                    <!-- Face 2 hovering over Our Services -->
+                    <img src="images/team/face2.png" alt="Face 2" class="floating-face face-services">
                     <div class="section-header reveal">
-                        <h2>Our Services</h2>
-                        <p class="font-mono text-gold">Systems built around how your business actually operates</p>
+                        <h2 class="cartoon-section-title">Our Services 💡</h2>
+                        <p class="cartoon-tagline">Systems built around how your business actually operates</p>
                     </div>
-                    <div class="services-grid services-grid-container reveal staggered-drop-grid">
-                        <div class="service-item tilt-card">
-                            <div class="service-icon"><i class="ph-fill ph-desktop"></i></div>
-                            <h4><span class="font-mono text-cyan mr-2">01.</span> Enterprise Software</h4>
+                    <div class="cartoon-services-grid reveal staggered-drop-grid">
+                        <div class="cartoon-service-card tilt-card">
+                            <div class="cartoon-service-icon"><i class="ph-fill ph-desktop"></i></div>
+                            <h4>Enterprise Software</h4>
                             <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
                         </div>
-                        <div class="service-item tilt-card">
-                            <div class="service-icon"><i class="ph-fill ph-cpu"></i></div>
-                            <h4><span class="font-mono text-cyan mr-2">02.</span> Industrial IoT</h4>
+                        <div class="cartoon-service-card tilt-card">
+                            <div class="cartoon-service-icon"><i class="ph-fill ph-cpu"></i></div>
+                            <h4>Industrial IoT</h4>
                             <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
                         </div>
-                        <div class="service-item tilt-card">
-                            <div class="service-icon"><i class="ph-fill ph-share-network"></i></div>
-                            <h4><span class="font-mono text-cyan mr-2">03.</span> Workflow Orchestration</h4>
+                        <div class="cartoon-service-card tilt-card">
+                            <div class="cartoon-service-icon"><i class="ph-fill ph-share-network"></i></div>
+                            <h4>Workflow Orchestration</h4>
                             <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
                         </div>
-                        <div class="service-item tilt-card">
-                            <div class="service-icon"><i class="ph-fill ph-cloud-check"></i></div>
-                            <h4><span class="font-mono text-cyan mr-2">04.</span> B2B Cloud Solutions</h4>
+                        <div class="cartoon-service-card tilt-card">
+                            <div class="cartoon-service-icon"><i class="ph-fill ph-cloud-check"></i></div>
+                            <h4>B2B Cloud Solutions</h4>
                             <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="section-padding">
+                <div class="section-padding cartoon-section" style="position: relative;">
+                    <!-- Face 3 hovering over Integrations -->
+                    <img src="images/team/face3.png" alt="Face 3" class="floating-face face-integrations">
                     <div class="section-header reveal">
-                        <h2>Integrations</h2>
-                        <p class="font-mono text-gold">Connect the tools you already run</p>
+                        <h2 class="cartoon-section-title">Integrations 🔗</h2>
+                        <p class="cartoon-tagline">Connect the tools you already run</p>
                     </div>
-                    <div class="integrations-grid reveal staggered-drop-grid">
-                        <div class="integration-card tilt-card interactive-border">
-                            <span class="tag font-mono">Operations</span>
+                    <div class="cartoon-integrations-grid reveal staggered-drop-grid">
+                        <div class="cartoon-integration-card tilt-card">
+                            <span class="cartoon-tag">Operations</span>
                             <h4>ERP Systems</h4>
                             <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
                         </div>
-                        <div class="integration-card tilt-card interactive-border">
-                            <span class="tag font-mono">Customer Data</span>
+                        <div class="cartoon-integration-card tilt-card">
+                            <span class="cartoon-tag">Customer Data</span>
                             <h4>CRM Platforms</h4>
                             <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
                         </div>
-                        <div class="integration-card tilt-card interactive-border">
-                            <span class="tag font-mono">Alerts</span>
+                        <div class="cartoon-integration-card tilt-card">
+                            <span class="cartoon-tag">Alerts</span>
                             <h4>Collaboration Hubs</h4>
                             <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
                         </div>
-                        <div class="integration-card tilt-card interactive-border">
-                            <span class="tag font-mono">Analytics</span>
+                        <div class="cartoon-integration-card tilt-card">
+                            <span class="cartoon-tag">Analytics</span>
                             <h4>Cloud Data Warehouses</h4>
                             <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
                         </div>
-                        <div class="integration-card tilt-card interactive-border">
-                            <span class="tag font-mono">Financials</span>
+                        <div class="cartoon-integration-card tilt-card">
+                            <span class="cartoon-tag">Financials</span>
                             <h4>Payment Gateways</h4>
                             <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
                         </div>
-                        <div class="integration-card tilt-card interactive-border">
-                            <span class="tag font-mono">Developer Tools</span>
-                            <h4>REST & GraphQL APIs</h4>
+                        <div class="cartoon-integration-card tilt-card">
+                            <span class="cartoon-tag">Developer Tools</span>
+                            <h4>REST &amp; GraphQL APIs</h4>
                             <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="section-padding dark-surface">
+                <div class="section-padding cartoon-section cartoon-dark-section" style="position: relative;">
+                    <!-- Face 4 hovering over Products -->
+                    <img src="images/team/face4.png" alt="Face 4" class="floating-face face-products">
                     <div class="section-header reveal">
-                        <h2>Our Products</h2>
-                        <p class="font-mono text-gold">Five fixed points, one product line</p>
+                        <h2 class="cartoon-section-title">Our Products 🎯</h2>
+                        <p class="cartoon-tagline">Five fixed points, one product line</p>
                     </div>
-                    <div class="products-list reveal staggered-drop-grid">
-                        <!-- Polaris -->
-                        <div class="product-card interactive-border">
-                            <div class="product-info">
-                                <div class="product-badge font-mono glow-text-cyan">Fortified VDI</div>
-                                <h3>Polaris</h3>
-                                <h4>Fixed-Point Secure Desktop Infrastructure</h4>
-                                <p>A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
-                                <ul class="check-list">
-                                    <li><i class="ph-bold ph-check text-cyan"></i> On-premise secure server node deployment</li>
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Low-latency remote desktop streaming (60 FPS)</li>
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Hardware-level encryption and zero-trust client access</li>
-                                </ul>
-                            </div>
+                    <div class="cartoon-products-list reveal staggered-drop-grid">
+                        <div class="cartoon-product-card tilt-card">
+                            <div class="cartoon-product-badge">Fortified VDI</div>
+                            <h3>Polaris</h3>
+                            <h4>Fixed-Point Secure Desktop Infrastructure</h4>
+                            <p>A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
+                            <ul class="cartoon-check-list">
+                                <li>✅ On-premise secure server node deployment</li>
+                                <li>✅ Low-latency remote desktop streaming (60 FPS)</li>
+                                <li>✅ Hardware-level encryption and zero-trust client access</li>
+                            </ul>
                         </div>
-                        
-                        <!-- Vega -->
-                        <div class="product-card interactive-border">
-                            <div class="product-info">
-                                <div class="product-badge font-mono glow-text-cyan">Assistive AI</div>
-                                <h3>Vega</h3>
-                                <h4>AI Companion for the Visually Impaired</h4>
-                                <p>A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
-                                <ul class="check-list">
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Real-time object and currency identification</li>
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Natural text-to-speech audio feedback via Bluetooth</li>
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Ultrasonic obstacle detection and hazard guidance</li>
-                                </ul>
-                            </div>
+                        <div class="cartoon-product-card tilt-card">
+                            <div class="cartoon-product-badge">Assistive AI</div>
+                            <h3>Vega</h3>
+                            <h4>AI Companion for the Visually Impaired</h4>
+                            <p>A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
+                            <ul class="cartoon-check-list">
+                                <li>✅ Real-time object and currency identification</li>
+                                <li>✅ Natural text-to-speech audio feedback via Bluetooth</li>
+                                <li>✅ Ultrasonic obstacle detection and hazard guidance</li>
+                            </ul>
                         </div>
-
-                        <!-- Lyra Scan -->
-                        <div class="product-card interactive-border">
-                            <div class="product-info">
-                                <div class="product-badge font-mono glow-text-cyan">Batch OCR</div>
-                                <h3>Lyra Scan</h3>
-                                <h4>High-Speed Batch Digitization</h4>
-                                <p>An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
-                                <ul class="check-list">
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Ultra-fast batch document processing (120 ppm)</li>
-                                    <li><i class="ph-bold ph-check text-cyan"></i> On-premise OCR with instant PDF/Excel export</li>
-                                    <li><i class="ph-bold ph-check text-cyan"></i> Automatic metadata classification and sorting</li>
-                                </ul>
-                            </div>
+                        <div class="cartoon-product-card tilt-card">
+                            <div class="cartoon-product-badge">Batch OCR</div>
+                            <h3>Lyra Scan</h3>
+                            <h4>High-Speed Batch Digitization</h4>
+                            <p>An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
+                            <ul class="cartoon-check-list">
+                                <li>✅ Ultra-fast batch document processing (120 ppm)</li>
+                                <li>✅ On-premise OCR with instant PDF/Excel export</li>
+                                <li>✅ Automatic metadata classification and sorting</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
+
+
 
             <!-- EVENTS PAGE -->
             <section id="events" class="page-section">
@@ -554,6 +558,7 @@
                         <div class="contact-card tilt-card interactive-border">
                             <div class="contact-icon"><i class="ph-fill ph-envelope-simple"></i></div>
                             <h3 class="font-mono">Email Us</h3>
+                            <a href="mailto:contact@mindtripe.in" class="contact-link">contact@mindtripe.in</a><br>
                             <a href="mailto:mindtripentertainments@gmail.com" class="contact-link">mindtripentertainments@gmail.com</a><br>
                             <a href="mailto:skillverse@mindtripe.in" class="contact-link">skillverse@mindtripe.in</a><br>
                             <a href="mailto:musicverse@mindtripe.in" class="contact-link">musicverse@mindtripe.in</a>
