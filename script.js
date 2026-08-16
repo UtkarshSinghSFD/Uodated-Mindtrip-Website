@@ -264,8 +264,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 ctx.globalCompositeOperation = 'source-over';
                 
-                ctx.fillStyle = '#06b6d4'; // Cyan color
-                ctx.font = fontSize + 'px monospace';
+                ctx.fillStyle = '#0ea5e9'; // Cartoonish blue
+                ctx.font = 'bold ' + fontSize + 'px "Comic Neue", cursive';
                 
                 for (let i = 0; i < drops.length; i++) {
                     const text = chars[Math.floor(Math.random() * chars.length)];

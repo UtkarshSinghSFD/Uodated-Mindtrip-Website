@@ -1042,7 +1042,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     color: #333;
 }
 .cartoon-page .tech-bg-container {
-    opacity: 0.05; 
+    opacity: 0.2; 
 }
 .cartoon-hero {
     padding-top: 15vh;
