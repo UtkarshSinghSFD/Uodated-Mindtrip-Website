@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (section.id === targetId) {
                 section.classList.add('active');
                 
+                if (targetId === 'software') {
+                    document.body.classList.add('software-active');
+                } else {
+                    document.body.classList.remove('software-active');
+                }
+
                 // Reset all reveal animations on the new page so they play again
                 const reveals = section.querySelectorAll('.reveal');
                 reveals.forEach(el => {
