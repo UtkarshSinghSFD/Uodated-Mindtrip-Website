@@ -52,10 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (section.id === targetId) {
                 section.classList.add('active');
                 
+                const mainLogo = document.querySelector('.navbar .logo-img');
                 if (targetId === 'software') {
                     document.body.classList.add('software-active');
+                    if (mainLogo) mainLogo.src = 'images/logo 2.png';
                 } else {
                     document.body.classList.remove('software-active');
+                    if (mainLogo) mainLogo.src = 'images/logo.jpeg';
                 }
 
                 // Reset all reveal animations on the new page so they play again
