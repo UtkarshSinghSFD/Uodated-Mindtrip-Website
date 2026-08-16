@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mainLogo = document.querySelector('.navbar .logo-img');
                 if (targetId === 'software') {
                     document.body.classList.add('software-active');
-                    if (mainLogo) mainLogo.src = 'images/logo 2.png';
+                    if (mainLogo) mainLogo.src = 'images/logo2.png';
                 } else {
                     document.body.classList.remove('software-active');
                     if (mainLogo) mainLogo.src = 'images/logo.jpeg';
