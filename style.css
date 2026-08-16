@@ -937,6 +937,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     justify-content: center;
 }
 
+.floating-shifter-container {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 60px;
+    height: 60px;
+    z-index: -1;
+    transition: top 4s ease-in-out, left 4s ease-in-out, transform 1s ease-in-out;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shifter-icon {
+    font-size: 3.5rem;
+    color: #eab308;
+    transition: opacity 0.5s ease;
+    filter: drop-shadow(0 0 10px rgba(234, 179, 8, 0.6));
+}
+
 .css-spaceship {
     position: absolute;
     width: 100px;

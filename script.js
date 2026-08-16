@@ -441,40 +441,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 10. Random Spaceship Movement ---
+    // --- 10. Random Spaceship and Shifter Movement ---
     const spaceship = document.querySelector('.spaceship-container');
-    if (spaceship) {
+    const shifter = document.querySelector('.floating-shifter-container');
+    
+    if (spaceship || shifter) {
         function moveSpaceship() {
             const educationSection = document.getElementById('education');
             if (!educationSection || !educationSection.classList.contains('active')) return;
 
             const sectionWidth = educationSection.offsetWidth;
-            // Limit height so it doesn't go completely off-screen at the very bottom
-            // Using a slightly smaller height than full to keep it visible
             const sectionHeight = educationSection.offsetHeight;
             
-            const shipWidth = 120;
-            const shipHeight = 70;
-            
-            const randomX = Math.max(0, Math.random() * (sectionWidth - shipWidth));
-            const randomY = Math.max(0, Math.random() * (sectionHeight - shipHeight));
-            
-            // Add a little dynamic tilt and scale
-            const rotate = (Math.random() - 0.5) * 40; // -20 to 20 degrees
-            const scale = Math.random() * 0.4 + 0.8; // 0.8 to 1.2 scale
-            
-            spaceship.style.left = randomX + 'px';
-            spaceship.style.top = randomY + 'px';
-            spaceship.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+            if (spaceship) {
+                const randomX = Math.max(0, Math.random() * (sectionWidth - 120));
+                const randomY = Math.max(0, Math.random() * (sectionHeight - 70));
+                const rotate = (Math.random() - 0.5) * 40;
+                const scale = Math.random() * 0.4 + 0.8;
+                spaceship.style.left = randomX + 'px';
+                spaceship.style.top = randomY + 'px';
+                spaceship.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+            }
+
+            if (shifter) {
+                const randomX = Math.max(0, Math.random() * (sectionWidth - 60));
+                const randomY = Math.max(0, Math.random() * (sectionHeight - 60));
+                const rotate = (Math.random() - 0.5) * 60;
+                const scale = Math.random() * 0.5 + 0.7;
+                shifter.style.left = randomX + 'px';
+                shifter.style.top = randomY + 'px';
+                shifter.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+            }
         }
         
-        window.moveSpaceship = moveSpaceship; // Expose globally to trigger on tab switch
-        
-        // Initial move slightly delayed to ensure layout is complete
+        window.moveSpaceship = moveSpaceship;
         setTimeout(moveSpaceship, 500);
-        
-        // Move every 4 seconds
         setInterval(moveSpaceship, 4000);
+    }
+
+    // --- 11. Icon Shifter Cycle ---
+    const shifterIcon = document.getElementById('shifter-icon');
+    if (shifterIcon) {
+        const icons = [
+            'ph-guitar',
+            'ph-music-notes', // fallback for saxophone
+            'ph-music-note',
+            'ph-speaker-hifi', // fallback for drum
+            'ph-brain',        // skill
+            'ph-currency-dollar', // money
+            'ph-graduation-cap', // education
+            'ph-briefcase'     // business
+        ];
+        let currentIconIndex = 0;
+        setInterval(() => {
+            // Fade out
+            shifterIcon.style.opacity = 0;
+            setTimeout(() => {
+                // Remove all possible classes
+                icons.forEach(i => shifterIcon.classList.remove(i));
+                // Move to next
+                currentIconIndex = (currentIconIndex + 1) % icons.length;
+                shifterIcon.classList.add(icons[currentIconIndex]);
+                // Fade in
+                shifterIcon.style.opacity = 1;
+            }, 500); // Wait for fade out transition (0.5s)
+        }, 3000); // Change every 3 seconds
     }
 
 });
