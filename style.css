@@ -342,7 +342,7 @@ body.software-active .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 body.software-active .logo-img {
-    /* No filter needed for logo 2.png as it is designed for a light background */
+    mix-blend-mode: normal; /* Override the default 'screen' which washes it out on white background */
 }
 body.software-active .nav-btn {
     color: #555;
