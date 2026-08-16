@@ -342,7 +342,8 @@ body.software-active .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 body.software-active .logo-img {
-    mix-blend-mode: multiply; /* Make sure black logo background is removed */
+    filter: invert(1) hue-rotate(180deg) brightness(1.5) contrast(1.2);
+    mix-blend-mode: multiply;
 }
 body.software-active .nav-btn {
     color: #555;
@@ -351,9 +352,9 @@ body.software-active .nav-btn:hover {
     color: #000;
 }
 body.software-active .nav-btn.active {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.2);
-    color: #000;
+    color: var(--accent-gold);
+    background: rgba(234, 179, 8, 0.1);
+    border-color: rgba(234, 179, 8, 0.3);
     text-shadow: none;
 }
 body.software-active .mobile-menu-btn {
