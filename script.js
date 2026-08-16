@@ -11,6 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinksContainer = document.querySelector('.nav-links');
 
+    function updateFooterEmail() {
+        const contactEmail = document.getElementById('footer-email-contact');
+        const skillverseEmail = document.getElementById('footer-email-skillverse');
+        const musicverseEmail = document.getElementById('footer-email-musicverse');
+        
+        if (!contactEmail || !skillverseEmail || !musicverseEmail) return;
+
+        // Hide all initially
+        contactEmail.style.display = 'none';
+        skillverseEmail.style.display = 'none';
+        musicverseEmail.style.display = 'none';
+
+        // Check active page
+        const activePage = document.querySelector('.page-section.active');
+        if (activePage && activePage.id === 'education') {
+            const activeSubSection = document.querySelector('.sub-section.active');
+            if (activeSubSection && activeSubSection.id === 'skillverse') {
+                skillverseEmail.style.display = 'block';
+            } else if (activeSubSection && activeSubSection.id === 'musicverse') {
+                musicverseEmail.style.display = 'block';
+            } else {
+                contactEmail.style.display = 'block'; // fallback
+            }
+        } else {
+            contactEmail.style.display = 'block';
+        }
+    }
+
     function setActivePage(targetId) {
         navButtons.forEach(btn => {
             if (btn.getAttribute('data-target') === targetId) {
@@ -59,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        updateFooterEmail();
     }
 
     navButtons.forEach(btn => {
@@ -115,6 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     section.classList.remove('active');
                 }
             });
+            
+            updateFooterEmail();
 
             // Re-trigger the rocket animations
             const rockets = document.querySelectorAll('.rocket-left, .rocket-right');
