@@ -1042,7 +1042,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     color: #333;
 }
 .cartoon-page .tech-bg-container {
-    opacity: 0.2; 
+    opacity: 1 !important;
+    background: transparent !important;
 }
 .cartoon-hero {
     padding-top: 15vh;
