@@ -721,9 +721,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .new-hero-title { font-size: 3rem; }
     .hero-subtitle { font-size: 1rem; padding: 0 1rem; }
     .icon-2, .icon-5 { display: none; }
-    .icon-1 { top: 12%; left: 5%; font-size: 2rem; }
-    .icon-3 { top: 15%; right: 5%; font-size: 2.5rem; }
-    .icon-4 { top: 80%; right: 10%; font-size: 2.5rem; }
+    .icon-1 { top: 10%; left: 5%; font-size: 2rem; }
+    .icon-3 { top: 12%; right: 5%; font-size: 2.5rem; }
+    .icon-4 { top: 82%; right: 8%; font-size: 2.5rem; }
 }
 
 /* Scrolling Marquee */
