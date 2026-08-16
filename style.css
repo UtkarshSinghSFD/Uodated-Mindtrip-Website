@@ -565,7 +565,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Footer */
 .footer { background: rgba(5,5,5,0.9); border-top: 1px solid rgba(255,255,255,0.05); padding: 4rem 5% 2rem; margin-top: 4rem; }
-.footer-content { max-width: var(--container-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; }
+.footer-content { max-width: var(--container-width); margin: 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; gap: 1rem; }
 .footer-brand p { font-size: 0.9rem; }
 .footer-info { text-align: right; color: var(--text-muted); font-size: 0.85rem; }
 
@@ -610,7 +610,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     .hero-visual { margin-top: 6rem; }
     .timeline-grid, .services-grid, .integrations-grid, .contact-cards, .pillars-grid { grid-template-columns: 1fr; }
     .form-row { flex-direction: column; gap: 0; }
-    .footer-content { flex-direction: column; align-items: flex-start; gap: 2rem; }
+    .footer-content { display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; }
     .footer-info { text-align: left; }
     .stats-banner { grid-template-columns: 1fr; }
     .stat-item { border-right: none; padding: 2rem; }
