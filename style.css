@@ -593,7 +593,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         justify-content: flex-start;
-        padding-top: 4rem;
+        padding-top: 2rem;
         align-items: center;
         gap: 2rem;
         z-index: 999;
