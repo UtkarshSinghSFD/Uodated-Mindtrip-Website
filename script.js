@@ -110,6 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
         setActivePage(targetId);
     };
 
+    window.switchPageAndTab = function(targetId, tabId) {
+        setActivePage(targetId);
+        if (tabId) {
+            // Give a small delay to ensure the page is active before clicking the tab
+            setTimeout(() => {
+                const tabBtn = document.querySelector(`.toggle-btn[data-target="${tabId}"]`);
+                if (tabBtn) tabBtn.click();
+            }, 10);
+        }
+    };
+
     // --- Mobile Menu Toggle ---
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
