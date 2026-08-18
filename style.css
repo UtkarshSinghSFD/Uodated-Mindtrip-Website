@@ -1740,3 +1740,370 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
         left: 0;
     }
 }
+
+
+
+/* --- GODADDY SOFTWARE THEME ISOLATION --- */
+#software.godaddy-theme {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
+    text-align: left;
+    background-color: #FFFFFF;
+}
+
+        #software.godaddy-theme {
+            /* GoDaddy-inspired Palette */
+            --gd-teal: #00838C;
+            --gd-teal-dark: #006066;
+            --gd-black: #111111;
+            --gd-white: #FFFFFF;
+            --gd-gray-light: #F5F5F5;
+            --gd-gray-med: #E8E8E8;
+            --gd-text-gray: #444444;
+            --gd-blue: #00A4A6; /* Accents */
+            
+            --max-width: 1200px;
+        } #software.godaddy-theme * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #software.godaddy-theme {
+            font-family: 'Inter', sans-serif;
+            color: var(--gd-black);
+            background-color: var(--gd-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        } #software.godaddy-theme a {
+            text-decoration: none;
+            color: inherit;
+        } #software.godaddy-theme ul {
+            list-style: none;
+        } #software.godaddy-theme .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Typography */
+ #software.godaddy-theme h1, #software.godaddy-theme h2, #software.godaddy-theme h3, #software.godaddy-theme h4, #software.godaddy-theme h5 {
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        } #software.godaddy-theme h1 { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; } #software.godaddy-theme h2 { font-size: clamp(2rem, 4vw, 3rem); } #software.godaddy-theme h3 { font-size: 1.5rem; } #software.godaddy-theme p { margin-bottom: 16px; font-size: 1.125rem; color: var(--gd-text-gray); }
+
+        /* Buttons */
+ #software.godaddy-theme .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 16px 32px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        } #software.godaddy-theme .btn-primary {
+            background-color: var(--gd-black);
+            color: var(--gd-white);
+        } #software.godaddy-theme .btn-primary:hover {
+            background-color: #333333;
+        } #software.godaddy-theme .btn-teal {
+            background-color: var(--gd-teal);
+            color: var(--gd-white);
+        } #software.godaddy-theme .btn-teal:hover {
+            background-color: var(--gd-teal-dark);
+        } #software.godaddy-theme .btn-outline {
+            background-color: transparent;
+            color: var(--gd-black);
+            border-color: var(--gd-black);
+        } #software.godaddy-theme .btn-outline:hover {
+            background-color: var(--gd-black);
+            color: var(--gd-white);
+        }
+
+        /* Header */
+ #software.godaddy-theme header {
+            background-color: var(--gd-white);
+            border-bottom: 1px solid var(--gd-gray-med);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        } #software.godaddy-theme .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        } #software.godaddy-theme .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        } #software.godaddy-theme .logo img { height: 32px; } #software.godaddy-theme .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        } #software.godaddy-theme .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--gd-black);
+        } #software.godaddy-theme .nav-links a:hover {
+            color: var(--gd-teal);
+        }
+        
+        @media (max-width: 768px) {
+ #software.godaddy-theme .nav-links { display: none; }
+        }
+
+        /* Hero Section */
+ #software.godaddy-theme .hero {
+            background-color: var(--gd-teal);
+            color: var(--gd-white);
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        } #software.godaddy-theme .hero p {
+            color: var(--gd-white);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        } #software.godaddy-theme .hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        
+        /* GoDaddy style decorative shape in Hero */
+ #software.godaddy-theme .hero::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background-color: var(--gd-teal-dark);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Sections */
+ #software.godaddy-theme .section-padding {
+            padding: 96px 0;
+        } #software.godaddy-theme .bg-light {
+            background-color: var(--gd-gray-light);
+        } #software.godaddy-theme .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        /* Staggered Drop Grid Animation */
+ #software.godaddy-theme .staggered-drop-grid.reveal {
+            transform: none !important;
+            opacity: 1 !important;
+            transition: none !important;
+        } #software.godaddy-theme .staggered-drop-grid > * {
+            opacity: 0;
+            transform: translateY(-60px);
+        } #software.godaddy-theme .staggered-drop-grid.active > * {
+            animation: dropArrange 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        } #software.godaddy-theme .staggered-drop-grid.active > *:nth-child(1) { animation-delay: 0.1s; } #software.godaddy-theme .staggered-drop-grid.active > *:nth-child(2) { animation-delay: 0.2s; } #software.godaddy-theme .staggered-drop-grid.active > *:nth-child(3) { animation-delay: 0.3s; } #software.godaddy-theme .staggered-drop-grid.active > *:nth-child(4) { animation-delay: 0.4s; } #software.godaddy-theme .staggered-drop-grid.active > *:nth-child(5) { animation-delay: 0.5s; } #software.godaddy-theme .staggered-drop-grid.active > *:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes dropArrange {
+            0% { opacity: 0; transform: translateY(-60px) scale(0.98); }
+            60% { transform: translateY(5px) scale(1); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Cards Grid */
+ #software.godaddy-theme .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        /* Services Cards */
+ #software.godaddy-theme .card {
+            background: var(--gd-white);
+            border: 1px solid var(--gd-gray-med);
+            border-radius: 8px;
+            padding: 40px 32px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        } #software.godaddy-theme .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--gd-teal);
+        }
+        
+        /* Top accent line for GoDaddy style */
+ #software.godaddy-theme .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: transparent;
+            transition: background-color 0.3s;
+        } #software.godaddy-theme .card:hover::before {
+            background-color: var(--gd-teal);
+        } #software.godaddy-theme .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--gd-gray-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            color: var(--gd-teal);
+        }
+
+        /* Integration Logos */
+ #software.godaddy-theme .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        } #software.godaddy-theme .logo-card {
+            background: var(--gd-white);
+            border: 1px solid var(--gd-gray-med);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--gd-black);
+            transition: all 0.2s;
+        } #software.godaddy-theme .logo-card:hover {
+            border-color: var(--gd-teal);
+            color: var(--gd-teal);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Product Showcase */
+ #software.godaddy-theme .product-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            margin-bottom: 96px;
+        } #software.godaddy-theme .product-row:last-child {
+            margin-bottom: 0;
+        } #software.godaddy-theme .product-row.reverse {
+            direction: rtl;
+        } #software.godaddy-theme .product-row.reverse > * {
+            direction: ltr;
+        } #software.godaddy-theme .product-visual {
+            background-color: var(--gd-gray-light);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--gd-teal);
+            border: 1px solid var(--gd-gray-med);
+        } #software.godaddy-theme .product-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        } #software.godaddy-theme .product-content ul {
+            margin-top: 24px;
+        } #software.godaddy-theme .product-content li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        } #software.godaddy-theme .product-content li::before {
+            content: 'Γ£ô';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--gd-teal);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 900px) {
+ #software.godaddy-theme .product-row { grid-template-columns: 1fr; gap: 40px; } #software.godaddy-theme .product-visual { height: 300px; }
+        }
+
+        /* Contact Section */
+ #software.godaddy-theme .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            background: var(--gd-white);
+            border: 1px solid var(--gd-gray-med);
+            border-radius: 12px;
+            padding: 64px;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+        } #software.godaddy-theme .contact-form {
+            display: grid;
+            gap: 20px;
+        } #software.godaddy-theme .form-group {
+            display: grid;
+            gap: 8px;
+        } #software.godaddy-theme label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        } #software.godaddy-theme input, #software.godaddy-theme textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        } #software.godaddy-theme input:focus, #software.godaddy-theme textarea:focus {
+            outline: none;
+            border-color: var(--gd-teal);
+            box-shadow: 0 0 0 3px rgba(0, 131, 140, 0.1);
+        }
+
+        @media (max-width: 900px) {
+ #software.godaddy-theme .contact-grid { grid-template-columns: 1fr; padding: 32px; }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--gd-black);
+            color: var(--gd-white);
+            padding: 80px 0 40px;
+        } #software.godaddy-theme .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        } #software.godaddy-theme .footer-grid h5 {
+            color: var(--gd-white);
+            margin-bottom: 24px;
+        } #software.godaddy-theme .footer-grid li {
+            margin-bottom: 16px;
+            color: #AAAAAA;
+        } #software.godaddy-theme .footer-grid a:hover {
+            color: var(--gd-white);
+        } #software.godaddy-theme .footer-bottom {
+            border-top: 1px solid #333333;
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+ #software.godaddy-theme .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
