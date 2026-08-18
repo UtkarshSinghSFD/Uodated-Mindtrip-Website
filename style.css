@@ -1626,3 +1626,144 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     left: -6px;
     box-shadow: 14px 15px 0 var(--ink);
 }
+
+/* ============================================
+   SOFTWARE PAGE — MOBILE RESPONSIVE OVERRIDES
+   ============================================ */
+@media (max-width: 768px) {
+    /* Hero section */
+    #software .s3-hero {
+        min-height: auto;
+        padding: 100px 0 40px;
+    }
+    #software h1.headline {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+        max-width: 100%;
+    }
+    #software .s3-hero p.lede {
+        font-size: 1rem;
+    }
+    #software .hero-ctas {
+        flex-direction: column;
+        gap: 12px;
+    }
+    #software .hero-ctas a {
+        text-align: center;
+        width: 100%;
+    }
+    #software .speed-lines {
+        display: none;
+    }
+
+    /* Section padding */
+    #software section {
+        padding: 50px 0;
+    }
+    #software .section-head {
+        margin-bottom: 30px;
+    }
+    #software .section-head h2 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+    }
+
+    /* Process cards — stack to 1 column */
+    #software .process-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    #software .process-card {
+        padding: 24px 20px;
+        transform: none !important;
+    }
+    #software .process-card h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Service cards — stack to 1 column */
+    #software .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    #software .service-card {
+        padding: 24px 20px;
+        transform: none !important;
+    }
+    #software .service-card h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Integration cards — stack to 1 column */
+    #software .integ-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    #software .integ-card {
+        padding: 20px;
+    }
+    #software .integ-card h4 {
+        font-size: 1.3rem;
+    }
+
+    /* Product sections — stack visual above text */
+    #software .s3-product {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+        padding: 36px 0;
+    }
+    #software .product-visual {
+        aspect-ratio: 16 / 9;
+        min-height: 180px;
+        transform: none;
+        border-radius: 18px;
+    }
+    #software .s3-product h3 {
+        font-size: 2rem;
+    }
+    #software .product-ctas {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #software .product-ctas a {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Contact section — stack form below info */
+    #software .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+    #software .form-row {
+        grid-template-columns: 1fr !important;
+    }
+    #software form {
+        padding: 20px;
+        box-shadow: 5px 6px 0 var(--ink);
+    }
+    #software .contact-info h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer grid — 2 columns on mobile */
+    #software .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    /* Reduce card box shadows for mobile */
+    #software .process-card,
+    #software .service-card,
+    #software .integ-card {
+        box-shadow: 4px 5px 0 var(--ink);
+    }
+
+    /* Disable hover lift on touch devices */
+    #software .process-card:hover,
+    #software .service-card:hover,
+    #software .integ-card:hover,
+    #software .product-visual:hover,
+    #software form:hover {
+        top: 0;
+        left: 0;
+    }
+}
