@@ -1466,7 +1466,7 @@ nav.s3-wrap{height:78px;display:flex;align-items:center;justify-content:space-be
 @media(max-width:900px){
  #software .s3-hero{min-height:760px} #software .speed-lines{right:-120px;opacity:.45}
 }
-@media(max-width:600px){.hero-inner{padding-bottom:210px}} #software section{padding:92px 0;border-bottom:3px solid var(--ink);position:relative;} #software .section-head{max-width:700px;margin-bottom:48px} #software .section-head .mono{display:inline-block;color:white;background:var(--blue);padding:4px 12px;border:2px solid var(--ink);transform:rotate(-2deg);margin-bottom:15px} #software .section-head h2{font-size:clamp(2.7rem,5vw,4.6rem);text-shadow:2px 2px 0 var(--yellow);margin-bottom:14px} #software .section-head p{color:var(--muted);font-family:"Patrick Hand";font-size:1.2rem} #software .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} #software .process-card, #software .service-card, #software .integ-card{
+@media(max-width:600px){.hero-inner{padding-bottom:210px}} #software section{padding:92px 0;border-bottom:3px solid var(--ink);position:relative;} #software .section-head{max-width:700px;margin-bottom:48px} #software .section-head .mono{display:inline-block;color:white;background:var(--blue);padding:4px 12px;border:2px solid var(--ink);--r: -2deg;transform:rotate(var(--r));margin-bottom:15px;animation: floatBadge 4s ease-in-out infinite;} #software .section-head h2{font-size:clamp(2.7rem,5vw,4.6rem);text-shadow:2px 2px 0 var(--yellow);margin-bottom:14px} #software .section-head p{color:var(--muted);font-family:"Patrick Hand";font-size:1.2rem} #software .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} #software .process-card, #software .service-card, #software .integ-card{
   background:white;border:3px solid var(--ink);border-radius:18px;
   box-shadow:7px 8px 0 var(--ink);position:relative;overflow:hidden;
 } #software .process-card{padding:35px 30px} #software .process-card:nth-child(2){transform:rotate(1.2deg);background:#fff5bf} #software .process-card:nth-child(3){transform:rotate(-1deg);background:#e9f4ff} #software .process-card .id{color:var(--red);font-weight:bold;margin-bottom:18px} #software .process-card h3, #software .service-card h3{font-size:2rem;margin-bottom:10px} #software .process-card p, #software .service-card p, #software .integ-card p{color:var(--muted);font-family:"Patrick Hand";font-size:1.08rem}
@@ -1531,4 +1531,9 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
         width: 100px;
         height: 100px;
     } #software .face-how-we-work { top: -10px; right: 5%; } #software .face-services { top: -50px; left: 5%; } #software .face-integrations { top: 20px; right: 10%; } #software .face-products { top: -50px; left: 55%; }
+}
+
+@keyframes floatBadge {
+    0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+    50% { transform: translateY(-8px) rotate(var(--r, 0deg)); }
 }
