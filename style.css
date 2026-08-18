@@ -1511,7 +1511,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     right: 15%;
     transform: rotate(5deg);
 } #software .face-products {
-    top: -25px;
+    top: 2px;
     left: 45%;
     transform: rotate(-10deg);
 }
