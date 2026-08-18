@@ -1514,38 +1514,37 @@ body.software-active .mobile-menu-btn {
 }
 
 
+
+
+
+
 /* --- SOFTWARE SAMPLE 3 STYLES --- */
 
-/* --- S3 Resets --- */
-#software {
+/* --- S3 FULL PAGE OVERRIDES --- */
+#software.page-section {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100%;
     text-align: left;
-    display: block;
-    margin: 0;
-    padding: 0;
 }
 #software .s3-hero {
-    display: block; /* Reset from global .hero flex */
-    justify-content: initial;
+    display: block;
     align-items: initial;
-    text-align: left;
     max-width: none;
-    padding: 75px 0 65px;
     margin: 0;
 }
-#software a:hover {
+#software h1, #software h2, #software h3, #software h4, #software p {
+    margin-bottom: initial;
     color: inherit;
-    text-shadow: none;
-}
-#software h1, #software h2, #software h3, #software h4 {
-    margin-bottom: initial;
-}
-#software p {
-    margin-bottom: initial;
 }
 #software ul {
-    list-style: none;
     padding: 0;
     margin: 0;
+    list-style: none;
+}
+#software a {
+    text-decoration: none;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&display=swap');
@@ -1566,8 +1565,8 @@ body.software-active .mobile-menu-btn {
 
 #software {
   background:
-    radial-gradient(circle at 15% 10%,rgba(255,212,71, #software .22),transparent 20%),
-    radial-gradient(circle at 85% 25%,rgba(23,105,210, #software .10),transparent 24%),
+    radial-gradient(circle at 15% 10%,rgba(255,212,71,.22),transparent 20%),
+    radial-gradient(circle at 85% 25%,rgba(23,105,210,.10),transparent 24%),
     var(--paper);
   color:var(--ink);
   font-family:"Inter",sans-serif;
@@ -1583,11 +1582,11 @@ body.software-active .mobile-menu-btn {
 
 header{
   position:sticky;top:0;z-index:50;
-  background:rgba(255,250,240, #software .92);
+  background:rgba(255,250,240,.92);
   backdrop-filter:blur(10px);
   border-bottom:3px solid var(--ink);
 }
-nav.wrap{height:78px;display:flex;align-items:center;justify-content:space-between} #software .brand{
+nav.s3-wrap{height:78px;display:flex;align-items:center;justify-content:space-between} #software .brand{
   display:flex;align-items:center;gap:9px;
   font-family:"Bangers",cursive;font-size:1.65rem;letter-spacing:.04em;
 } #software .brand .dot{
@@ -1603,9 +1602,9 @@ nav.wrap{height:78px;display:flex;align-items:center;justify-content:space-betwe
   position:relative;min-height:650px;padding:75px 0 65px;overflow:hidden;
   border-bottom:4px solid var(--ink);
   background:
-    linear-gradient(transparent 96%,rgba(23,23,23, #software .06) 96%),
+    linear-gradient(transparent 96%,rgba(23,23,23,.06) 96%),
     var(--paper);
-} #software .s3-hero-inner{position:relative;z-index:2;max-width:720px} #software .eyebrow{
+} #software .hero-inner{position:relative;z-index:2;max-width:720px} #software .eyebrow{
   display:inline-block;color:var(--ink);background:var(--yellow);
   border:3px solid var(--ink);padding:6px 14px;border-radius:50%;
   transform:rotate(-3deg);margin-bottom:25px;font-family:"Patrick Hand";font-size:1.15rem;
@@ -1616,10 +1615,10 @@ nav.wrap{height:78px;display:flex;align-items:center;justify-content:space-betwe
 } #software h1.headline em{font-style:normal;color:var(--red);display:inline-block;transform:rotate(-2deg)} #software .s3-hero p.lede{
   max-width:620px;color:var(--muted);font-size:1.15rem;
   font-family:"Patrick Hand";line-height:1.45;margin-bottom:32px;
-} #software .s3-hero-ctas{display:flex;gap:18px;flex-wrap:wrap} #software .s3-btn-secondary{
+} #software .hero-ctas{display:flex;gap:18px;flex-wrap:wrap} #software .s3-btn-secondary{
   border:3px solid var(--ink);padding:11px 20px;border-radius:12px;
   background:white;font-family:"Bangers";font-size:1.05rem;box-shadow:4px 4px 0 var(--ink);
-} #software .s3-btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)} #software .s3-hero-doodles{position:absolute;inset:0;pointer-events:none} #software .doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite} #software .s1{right:47%;top:12%} #software .s2{right:8%;top:28%;font-size:2.2rem} #software .s3{right:32%;bottom:15%;font-size:2.5rem} #software .speed-lines{position:absolute;right:2%;top:16%;width:47%;height:75%} #software .speed-lines:before, #software .speed-lines:after{
+} #software .s3-btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)} #software .hero-doodles{position:absolute;inset:0;pointer-events:none} #software .doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite} #software .s1{right:47%;top:12%} #software .s2{right:8%;top:28%;font-size:2.2rem} #software .s3{right:32%;bottom:15%;font-size:2.5rem} #software .speed-lines{position:absolute;right:2%;top:16%;width:47%;height:75%} #software .speed-lines:before, #software .speed-lines:after{
   content:"";position:absolute;right:0;top:18%;
   width:260px;height:12px;background:var(--red);transform:rotate(-14deg);
   box-shadow:-40px 55px 0 var(--blue),-85px 110px 0 var(--orange),-20px 165px 0 var(--ink);
@@ -1639,15 +1638,15 @@ nav.wrap{height:78px;display:flex;align-items:center;justify-content:space-betwe
 } #software .service-card .num{display:inline-block;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);padding:2px 9px;border-radius:50%;margin-bottom:18px} #software .service-card .link{display:inline-block;margin-top:20px;color:var(--blue);font-family:"Bangers";font-size:1.05rem}
 @media(max-width:760px){.services-grid{grid-template-columns:1fr}} #software .integ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} #software .integ-card{padding:26px} #software .integ-card .tag{color:var(--red);font-family:"Bangers";font-size:1.1rem} #software .integ-card h4{font-size:1.6rem;margin:7px 0}
 @media(max-width:860px){.integ-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.integ-grid{grid-template-columns:1fr}} #software .product{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding:52px 0;border-top:3px dashed var(--ink);align-items:center} #software .product:first-of-type{border-top:none} #software .product-visual{
+@media(max-width:560px){.integ-grid{grid-template-columns:1fr}} #software .s3-product{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding:52px 0;border-top:3px dashed var(--ink);align-items:center} #software .s3-product:first-of-type{border-top:none} #software .product-visual{
   min-height:320px;border:4px solid var(--ink);border-radius:25px;background:var(--yellow);
   display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
   box-shadow:9px 10px 0 var(--ink);transform:rotate(-1.5deg)
-} #software .product:nth-child(3n) .product-visual{background:#dff1ff} #software .product:nth-child(4n) .product-visual{background:#ffe2dd} #software .product-visual .glyph{font-family:"Bangers";font-size:5rem;color:var(--blue);text-shadow:4px 4px 0 white,-3px -3px 0 var(--ink);z-index:2} #software .product-visual:before{
+} #software .s3-product:nth-child(3n) .product-visual{background:#dff1ff} #software .s3-product:nth-child(4n) .product-visual{background:#ffe2dd} #software .product-visual .glyph{font-family:"Bangers";font-size:5rem;color:var(--blue);text-shadow:4px 4px 0 white,-3px -3px 0 var(--ink);z-index:2} #software .product-visual:before{
   content:"";position:absolute;width:170px;height:170px;border:7px solid var(--ink);
   border-radius:50%;transform:rotate(-20deg);opacity:.18
-} #software .product-visual .starpoint{width:13px;height:13px;background:var(--red);border:3px solid var(--ink);border-radius:50%;box-shadow:0 0 0 5px white} #software .product-kicker{color:var(--red);font-family:"Bangers";font-size:1.15rem} #software .product h3{font-size:3rem;margin-bottom:5px} #software .product .role{display:block;color:var(--blue);font-family:"Patrick Hand";font-size:1.2rem;margin-bottom:15px} #software .product p.desc{color:var(--muted);font-family:"Patrick Hand";font-size:1.12rem;margin-bottom:20px} #software .feat-list{list-style:none;margin-bottom:24px} #software .feat-list li{font-family:"Patrick Hand";font-size:1.05rem;margin:9px 0} #software .feat-list li:before{content:"✦";color:var(--red);margin-right:10px} #software .product-ctas{display:flex;gap:12px} #software .product-ctas a{font-family:"Bangers";padding:10px 16px;border:3px solid var(--ink);border-radius:10px;box-shadow:3px 3px 0 var(--ink)} #software .product-ctas .primary{background:var(--red);color:white} #software .product-ctas .secondary{background:white}
-@media(max-width:860px){.product{grid-template-columns:1fr;gap:30px}} #software .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px} #software .contact-info h3{font-size:2.5rem;margin-bottom:15px} #software .contact-info p{font-family:"Patrick Hand";font-size:1.15rem;color:var(--muted);margin-bottom:28px} #software .info-row{margin-bottom:20px} #software .info-row .mono{color:var(--red);font-weight:bold} #software .info-row div.val{font-family:"Patrick Hand";font-size:1.08rem} #software form{display:grid;gap:18px;background:#fff;border:3px solid var(--ink);padding:30px;border-radius:18px;box-shadow:8px 9px 0 var(--ink)} #software .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px} #software label{font-family:"Patrick Hand";font-size:1.05rem;font-weight:bold} #software input, #software textarea{width:100%;background:#fffaf0;border:3px solid var(--ink);border-radius:9px;padding:13px;color:var(--ink);font:1rem "Patrick Hand"} #software input:focus, #software textarea:focus{outline:none;border-color:var(--blue)} #software textarea{min-height:120px} #software .placeholder-note{margin-top:12px;background:var(--yellow);border:3px solid var(--ink);padding:10px 14px;border-radius:10px;font-family:"Patrick Hand"}
+} #software .product-visual .starpoint{width:13px;height:13px;background:var(--red);border:3px solid var(--ink);border-radius:50%;box-shadow:0 0 0 5px white} #software .product-kicker{color:var(--red);font-family:"Bangers";font-size:1.15rem} #software .s3-product h3{font-size:3rem;margin-bottom:5px} #software .s3-product .role{display:block;color:var(--blue);font-family:"Patrick Hand";font-size:1.2rem;margin-bottom:15px} #software .s3-product p.desc{color:var(--muted);font-family:"Patrick Hand";font-size:1.12rem;margin-bottom:20px} #software .feat-list{list-style:none;margin-bottom:24px} #software .feat-list li{font-family:"Patrick Hand";font-size:1.05rem;margin:9px 0} #software .feat-list li:before{content:"✦";color:var(--red);margin-right:10px} #software .product-ctas{display:flex;gap:12px} #software .product-ctas a{font-family:"Bangers";padding:10px 16px;border:3px solid var(--ink);border-radius:10px;box-shadow:3px 3px 0 var(--ink)} #software .product-ctas .primary{background:var(--red);color:white} #software .product-ctas .secondary{background:white}
+@media(max-width:860px){.s3-product{grid-template-columns:1fr;gap:30px}} #software .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px} #software .contact-info h3{font-size:2.5rem;margin-bottom:15px} #software .contact-info p{font-family:"Patrick Hand";font-size:1.15rem;color:var(--muted);margin-bottom:28px} #software .info-row{margin-bottom:20px} #software .info-row .mono{color:var(--red);font-weight:bold} #software .info-row div.val{font-family:"Patrick Hand";font-size:1.08rem} #software form{display:grid;gap:18px;background:#fff;border:3px solid var(--ink);padding:30px;border-radius:18px;box-shadow:8px 9px 0 var(--ink)} #software .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px} #software label{font-family:"Patrick Hand";font-size:1.05rem;font-weight:bold} #software input, #software textarea{width:100%;background:#fffaf0;border:3px solid var(--ink);border-radius:9px;padding:13px;color:var(--ink);font:1rem "Patrick Hand"} #software input:focus, #software textarea:focus{outline:none;border-color:var(--blue)} #software textarea{min-height:120px} #software .placeholder-note{margin-top:12px;background:var(--yellow);border:3px solid var(--ink);padding:10px 14px;border-radius:10px;font-family:"Patrick Hand"}
 @media(max-width:860px){.contact-grid{grid-template-columns:1fr} #software .form-row{grid-template-columns:1fr}}
 
 footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px;margin-bottom:45px} #software .footer-grid h5{font-family:"Bangers";font-size:1.35rem;color:var(--yellow);margin-bottom:14px} #software .footer-grid ul{list-style:none} #software .footer-grid li{margin-bottom:9px;font-family:"Patrick Hand";font-size:1.02rem;color:#ddd} #software .footer-brand p{font-family:"Patrick Hand";font-size:1.05rem;color:#ccc;margin-top:14px;max-width:290px} #software .footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:2px solid #555;padding-top:25px;color:#bbb;font-family:"Patrick Hand"} #software .footer-bottom .links{display:flex;gap:20px}
@@ -1686,4 +1685,3 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
         height: 100px;
     } #software .face-how-we-work { top: -10px; right: 5%; } #software .face-services { top: -10px; right: 15%; } #software .face-integrations { top: -10px; right: 10%; } #software .face-products { top: -10px; right: 5%; }
 }
-
