@@ -1503,16 +1503,16 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     right: 15%;
     transform: rotate(10deg);
 } #software .face-services {
-    top: -75px;
-    left: 5%;
+    top: -5px;
+    left: 3%;
     transform: rotate(-15deg);
 } #software .face-integrations {
     top: 20px;
     right: 15%;
     transform: rotate(5deg);
 } #software .face-products {
-    top: 2px;
-    left: 45%;
+    top: 0.5px;
+    left: 3%;
     transform: rotate(-10deg);
 }
 
