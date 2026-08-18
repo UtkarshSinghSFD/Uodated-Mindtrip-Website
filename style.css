@@ -1495,25 +1495,35 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     width: 150px;
     height: 150px;
     z-index: 10;
-    transition: transform 0.3s ease;
     pointer-events: none;
     mix-blend-mode: multiply;
-} #software .face-how-we-work {
+    animation: floatFace 4s ease-in-out infinite;
+}
+@keyframes floatFace {
+    0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+    50% { transform: translateY(-20px) rotate(var(--r, 0deg)); }
+}
+
+#software .face-how-we-work {
     top: -10px;
     right: 15%;
-    transform: rotate(10deg);
+    --r: 10deg;
+    animation-delay: 0s;
 } #software .face-services {
     top: -5px;
     left: 3%;
-    transform: rotate(-15deg);
+    --r: -15deg;
+    animation-delay: -1s;
 } #software .face-integrations {
     top: 20px;
     right: 15%;
-    transform: rotate(5deg);
+    --r: 5deg;
+    animation-delay: -2s;
 } #software .face-products {
     top: 0.5px;
     left: 3%;
-    transform: rotate(-10deg);
+    --r: -10deg;
+    animation-delay: -3s;
 }
 
 @media (max-width: 768px) {
