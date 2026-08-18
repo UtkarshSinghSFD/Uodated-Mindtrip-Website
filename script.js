@@ -575,7 +575,9 @@ async function sendEmail(event) {
     }
 
     const name = document.getElementById('contact-name').value;
-    const org = document.getElementById('contact-org').value;
+    const orgEl = document.getElementById('contact-org');
+      const subjectEl = document.getElementById('contact-subject');
+      const org = orgEl ? orgEl.value : (subjectEl ? subjectEl.value : '');
     const email = document.getElementById('contact-user-email').value;
     const message = document.getElementById('contact-message').value;
 

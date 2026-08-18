@@ -584,24 +584,24 @@
         
         
       </div>
-      <form onsubmit="return false;">
+      <form onsubmit="sendEmail(event)">
         <div class="form-row">
           <div>
             <label>Full Name</label>
-            <input type="text" placeholder="e.g. Rahul Sharma">
+            <input type="text" id="contact-name" placeholder="e.g. Rahul Sharma" required>
           </div>
           <div>
             <label>Email Address</label>
-            <input type="email" placeholder="e.g. rahul@company.com">
+            <input type="email" id="contact-user-email" placeholder="e.g. rahul@company.com" required>
           </div>
         </div>
         <div>
           <label>Subject</label>
-          <input type="text" placeholder="How can we help your business?">
+          <input type="text" id="contact-subject" placeholder="How can we help your business?" required>
         </div>
         <div>
           <label>Message</label>
-          <textarea placeholder="Outline your application specifications, automation ideas, or hardware quote inquiries..."></textarea>
+          <textarea id="contact-message" placeholder="Outline your application specifications, automation ideas, or hardware quote inquiries..." required></textarea>
         </div>
         <button class="submit-btn" type="submit">Send Message</button>
       </form>
