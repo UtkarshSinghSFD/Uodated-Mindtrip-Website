@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StarNexusTech — Software Solutions (The Ultimate Cut)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+<style>
+:root{
+  --ink: #171717;
+  --paper: #fefcf7;
+  --red: #f84033;
+  --orange: #ff9100;
+  --yellow: #ffde59;
+  --blue: #1769d2;
+  --cyan: #00d2ff;
+  --green: #2b9a62;
+  --purple: #aa00ff;
+  --muted: #555555;
+  --maxw: 1180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>'), auto;}
+body{
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    linear-gradient(transparent 96%,rgba(23,23,23,.04) 96%), /* Sample 2 lines */
+    radial-gradient(circle at 15% 10%,rgba(255,212,71,.22),transparent 20%), /* Sample 2 glowing orbs */
+    radial-gradient(circle at 85% 25%,rgba(23,105,210,.10),transparent 24%);
+}
+
+/* Paper Texture Overlay (Sample 4) */
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+h1,h2,h3,h4{font-family:"Bangers", cursive; letter-spacing: 0.05em; line-height: 1.1;}
+a{color:inherit;text-decoration:none; cursor: inherit;}
+.wrap{max-width:var(--maxw);margin:auto;padding:0 30px}
+
+/* Sample 4: Imperfect Borders + Sample 1: Drop Shadow */
+.sketch-box {
+  background: white;
+  border: 3px solid var(--ink);
+  border-radius: 12px 255px 15px 225px/255px 15px 225px 15px;
+  box-shadow: 6px 6px 0px var(--ink);
+  transition: all 0.2s ease;
+}
+.sketch-box:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 10px 10px 0px var(--ink);
+}
+
+/* Sample 1: Staggered Grid structure */
+.staggered-drop-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.staggered-drop-grid > div:nth-child(2) { transform: translateY(20px); }
+.staggered-drop-grid > div:nth-child(3) { transform: translateY(40px); }
+.staggered-drop-grid > div:nth-child(5) { transform: translateY(20px); }
+.staggered-drop-grid > div:nth-child(6) { transform: translateY(40px); }
+
+/* Sample 4: Comic Halftone */
+.halftone-accent {
+  background-image: radial-gradient(var(--ink) 15%, transparent 16%), radial-gradient(var(--ink) 15%, transparent 16%);
+  background-color: var(--yellow);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background: rgba(254, 252, 247, 0.95);
+  border-bottom: 3px solid var(--ink);
+  border-radius: 0 0 255px 15px/15px 255px;
+  backdrop-filter: blur(10px);
+}
+nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-between}
+.brand{
+  font-family:"Bangers",cursive;font-size:2rem;
+  display:flex; align-items:center; gap: 8px;
+}
+.brand .dot {
+  width:18px;height:18px;background:var(--red);border:3px solid var(--ink);
+  border-radius:50%;box-shadow:2px 2px 0 var(--ink);
+}
+.navlinks{display:flex;gap:35px;font-family:"Patrick Hand";font-size:1.2rem;font-weight:bold;}
+.navlinks a:hover{color:var(--blue); transform: rotate(2deg) scale(1.1); display: inline-block;}
+
+.btn-primary {
+  display:inline-block;background:var(--red);color:white;
+  border:3px solid var(--ink);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding:12px 25px;font-family:"Bangers";font-size:1.2rem;
+  box-shadow:4px 4px 0 var(--ink);transition:all 0.1s;
+}
+.btn-primary:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(4px, 4px); }
+.btn-primary:hover { animation: wiggle 0.3s infinite; background: var(--orange); }
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hero{
+  position:relative; padding: 100px 0 80px;
+  border-bottom:4px solid var(--ink);
+  overflow: hidden;
+}
+/* Sample 4 Hero Burst merged with Sample 2 Hero */
+.hero-burst {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 150vw; height: 150vw;
+  background: repeating-conic-gradient(rgba(255,255,255,0) 0 15deg, rgba(255,222,89,0.15) 15deg 30deg);
+  z-index: -1; animation: spin 90s linear infinite;
+}
+@keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+/* Sample 2 Speed Lines */
+.speed-lines{position:absolute;right:2%;top:16%;width:47%;height:75%; pointer-events: none;}
+.speed-lines:before,.speed-lines:after{
+  content:"";position:absolute;right:0;top:18%;
+  width:260px;height:12px;background:var(--red);transform:rotate(-14deg);
+  box-shadow:-40px 55px 0 var(--blue),-85px 110px 0 var(--orange),-20px 165px 0 var(--ink);
+  border-radius:100%;
+}
+
+.eyebrow{
+  display:inline-block;color:var(--ink);background:var(--cyan);
+  border:3px solid var(--ink);padding:6px 14px;border-radius:50%;
+  transform:rotate(-3deg);margin-bottom:25px;font-family:"Patrick Hand";font-size:1.15rem;
+}
+h1.headline{
+  font-size:clamp(4rem, 8vw, 7.5rem);
+  color:var(--ink);
+  text-shadow: 4px 4px 0 var(--yellow), 8px 8px 0 rgba(0,0,0,0.05);
+  margin-bottom:24px; line-height: 0.95;
+}
+h1.headline em{font-style:normal;color:var(--red); display:inline-block; transform:rotate(-2deg);}
+.lede{
+  max-width: 620px; font-size: 1.25rem; font-family:"Patrick Hand"; color:var(--muted);
+  margin-bottom: 35px;
+}
+
+/* Sample 4 Marquee */
+.marquee-tape {
+  background: var(--yellow); border-bottom: 3px solid var(--ink);
+  padding: 10px 0; overflow: hidden; display: flex; white-space: nowrap;
+  font-family: "Bangers"; font-size: 1.5rem; letter-spacing: 0.05em;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.05);
+}
+.marquee-content { animation: slide 20s linear infinite; display: flex; gap: 40px; }
+@keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+section{padding:90px 0; position:relative;}
+.section-head{max-width:700px; margin-bottom: 60px; position: relative;}
+.section-head h2{
+  font-size: clamp(2.8rem, 5vw, 4.5rem); color: var(--ink);
+  text-shadow: 3px 3px 0 var(--cyan); display: inline-block; position: relative;
+}
+.section-head p{font-family:"Patrick Hand"; font-size: 1.2rem; color:var(--muted);}
+
+/* Sample 3 Floating Faces */
+.floating-face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+.face-how-we-work { top: -10px; right: 15%; transform: rotate(10deg); }
+.face-services { top: -10px; right: 10%; transform: rotate(-15deg); }
+.face-integrations { top: -20px; right: 20%; transform: rotate(5deg); }
+.face-products { top: -10px; right: 15%; transform: rotate(-10deg); }
+
+/* Sample 1 Phosphor Icons */
+.ph-icon { font-size: 2.5rem; color: var(--blue); margin-bottom: 15px; display: block; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+
+.process-card { padding: 35px 30px; }
+.process-card .id { font-family: "Patrick Hand"; color: var(--red); font-weight: bold; margin-bottom: 10px; display: block; }
+.process-card h3 { font-size: 2rem; margin-bottom: 10px; }
+
+.service-card { padding: 35px; }
+.service-card .num { 
+  display:inline-block;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);
+  padding:2px 10px;border-radius:50%;margin-bottom:15px; font-family:"Bangers"; font-size:1.5rem;
+}
+
+/* Sample 4 Product Showcase */
+.product-showcase {
+  display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: center;
+  margin-bottom: 60px; padding: 30px; background: white; border: 4px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink); border-radius: 18px;
+}
+.product-showcase:nth-child(even) { direction: rtl; box-shadow: -10px 10px 0 var(--blue); }
+.product-showcase:nth-child(even) > * { direction: ltr; }
+
+.product-art {
+  height: 280px; border: 3px solid var(--ink); border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Bangers"; font-size: 6rem; color: white; -webkit-text-stroke: 2px var(--ink);
+  text-shadow: 4px 4px 0 var(--ink); position: relative; overflow: hidden;
+}
+.product-art::before {
+  content: "BOOM!"; position: absolute; top: 10px; left: 10px; font-size: 1.5rem; color: var(--ink); -webkit-text-stroke: 0; text-shadow: none; transform: rotate(-15deg);
+}
+.product-showcase h3 { font-size: 3rem; margin-bottom: 5px; }
+.product-showcase .role { display:block;color:var(--blue);font-family:"Patrick Hand";font-size:1.2rem;margin-bottom:15px; }
+
+footer{
+  background: var(--ink); color: white; padding: 60px 0 30px;
+  font-family: "Patrick Hand"; border-top: 5px solid var(--red);
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.footer-grid h2 { font-family: "Bangers"; color: var(--yellow); font-size: 2.5rem; margin-bottom: 15px; }
+.footer-grid ul { list-style: none; }
+.footer-grid a { color: #ccc; font-size: 1.1rem; display: block; margin-bottom: 8px; }
+
+@media(max-width: 900px) {
+  .staggered-drop-grid, .grid-2, .product-showcase { grid-template-columns: 1fr; }
+  .staggered-drop-grid > div { transform: none !important; }
+  .floating-face { width: 100px; height: 100px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="dot"></span>StarNexusTech</div>
+    <div class="navlinks">
+      <a href="#process">Process</a>
+      <a href="#services">Services</a>
+      <a href="#integrations">Integrations</a>
+    </div>
+    <a href="#contact" class="btn-primary">INITIATE!</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-burst"></div>
+  <div class="speed-lines"></div>
+  <div class="wrap hero-inner" style="position: relative; z-index: 2;">
+    <div class="eyebrow">Software Solutions • Automation • AI</div>
+    <h1 class="headline">Give your business <em>digital wings.</em></h1>
+    <p class="lede">We turn complex business problems into energetic, practical software — connecting people, data, automation and technology into systems that move your business forward.</p>
+    <a href="#products" class="btn-primary">See What We Build →</a>
+  </div>
+</section>
+
+<div class="marquee-tape">
+  <div class="marquee-content">
+    <span>★ ENTERPRISE SOFTWARE ★</span>
+    <span>★ INDUSTRIAL IOT ★</span>
+    <span>★ CLOUD SOLUTIONS ★</span>
+    <span>★ AUTOMATION ★</span>
+    <span>★ ENTERPRISE SOFTWARE ★</span>
+    <span>★ INDUSTRIAL IOT ★</span>
+    <span>★ CLOUD SOLUTIONS ★</span>
+    <span>★ AUTOMATION ★</span>
+  </div>
+</div>
+
+<section id="process">
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face1.png" alt="Face 1" class="floating-face face-how-we-work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A fixed sequence, from signal to system</h2>
+      <p>Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
+    </div>
+    <div class="staggered-drop-grid">
+      <div class="sketch-box process-card" style="background:#fffaf0;">
+        <span class="id">SN-01 · Discovery</span>
+        <h3>Chart the system</h3>
+        <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
+      </div>
+      <div class="sketch-box process-card" style="background:#fff5bf;">
+        <span class="id">SN-02 · Prototype</span>
+        <h3>Build the proof</h3>
+        <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
+      </div>
+      <div class="sketch-box process-card" style="background:#e9f4ff;">
+        <span class="id">SN-03 · Scale</span>
+        <h3>Launch &amp; support</h3>
+        <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background: rgba(255,255,255,0.5); border-top: 3px dashed var(--ink); border-bottom: 3px dashed var(--ink);">
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face2.png" alt="Face 2" class="floating-face face-services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Systems built around how your business operates</h2>
+    </div>
+    <div class="grid-2">
+      <div class="sketch-box service-card">
+        <span class="num">01</span>
+        <h3>Enterprise Software</h3>
+        <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
+      </div>
+      <div class="sketch-box service-card" style="transform: rotate(1deg);">
+        <span class="num" style="background: var(--cyan);">02</span>
+        <h3>Industrial IoT</h3>
+        <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
+      </div>
+      <div class="sketch-box service-card" style="transform: rotate(-1deg);">
+        <span class="num" style="background: var(--green);">03</span>
+        <h3>Workflow Orchestration</h3>
+        <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
+      </div>
+      <div class="sketch-box service-card">
+        <span class="num" style="background: var(--red); color: white;">04</span>
+        <h3>B2B Cloud Solutions</h3>
+        <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="integrations">
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face3.png" alt="Face 3" class="floating-face face-integrations">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Connect the tools you already run</h2>
+      <p>StarNexusTech links your ERP, CRM, and cloud stack so data moves automatically instead of being re-entered by hand.</p>
+    </div>
+    <div class="staggered-drop-grid">
+      <div class="sketch-box process-card">
+        <i class="ph ph-hard-drives ph-icon"></i>
+        <h3>ERP Systems</h3>
+        <p>Two-way sync with SAP and Oracle for logistics tracking and reporting.</p>
+      </div>
+      <div class="sketch-box process-card">
+        <i class="ph ph-users ph-icon"></i>
+        <h3>CRM Platforms</h3>
+        <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot.</p>
+      </div>
+      <div class="sketch-box process-card">
+        <i class="ph ph-bell-ringing ph-icon"></i>
+        <h3>Collaboration Hubs</h3>
+        <p>Route custom alerts, event reports, and threshold warnings straight to Slack.</p>
+      </div>
+      <div class="sketch-box process-card">
+        <i class="ph ph-chart-bar ph-icon"></i>
+        <h3>Data Warehouses</h3>
+        <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake.</p>
+      </div>
+      <div class="sketch-box process-card">
+        <i class="ph ph-credit-card ph-icon"></i>
+        <h3>Payment Gateways</h3>
+        <p>Automate ledger syncs, invoice matching, and refund processing via Stripe.</p>
+      </div>
+      <div class="sketch-box process-card">
+        <i class="ph ph-code ph-icon"></i>
+        <h3>REST &amp; GraphQL</h3>
+        <p>Connect proprietary databases and internal tools using custom-built connectors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face4.png" alt="Face 4" class="floating-face face-products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Five fixed points, one product line</h2>
+    </div>
+
+    <div class="product-showcase">
+      <div class="product-art halftone-accent">PLR</div>
+      <div>
+        <h3>Polaris</h3>
+        <span class="role">Fixed-Point Secure Desktop Infrastructure</span>
+        <p>A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware.</p>
+        <br>
+        <a href="#" class="btn-primary">Tech Specs</a>
+      </div>
+    </div>
+
+    <div class="product-showcase">
+      <div class="product-art halftone-accent" style="background-color: var(--cyan);">VGA</div>
+      <div>
+        <h3>Vega</h3>
+        <span class="role">AI Companion for the Visually Impaired</span>
+        <p>A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
+        <br>
+        <a href="#" class="btn-primary">Discover Vega</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <div class="brand" style="margin-bottom: 10px;"><span class="dot"></span>StarNexusTech</div>
+      <p style="font-size: 1.1rem; max-width: 400px; color: #ccc;">We design, build, and deploy custom enterprise software, telemetry systems, and automation hardware.</p>
+    </div>
+    <div>
+      <h3 style="color: var(--cyan); margin-bottom: 15px;">Products</h3>
+      <ul>
+        <li><a href="#">Polaris</a></li>
+        <li><a href="#">Vega</a></li>
+        <li><a href="#">Lyra Scan</a></li>
+        <li><a href="#">Orion Suite</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: var(--red); margin-bottom: 15px;">Contact</h3>
+      <ul>
+        <li><a href="#">hello@starnexus.com</a></li>
+        <li><a href="#">+91 9876543210</a></li>
+        <li><a href="#">Bhopal, India</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

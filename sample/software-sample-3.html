@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StarNexusTech — Software Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&display=swap');
+
+:root{
+  --ink:#171717;
+  --paper:#fffaf0;
+  --paper2:#f4ead8;
+  --red:#e6392e;
+  --orange:#ff8a18;
+  --yellow:#ffd447;
+  --blue:#1769d2;
+  --green:#2b9a62;
+  --muted:#655f56;
+  --line:#171717;
+  --maxw:1180px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,212,71,.22),transparent 20%),
+    radial-gradient(circle at 85% 25%,rgba(23,105,210,.10),transparent 24%),
+    var(--paper);
+  color:var(--ink);
+  font-family:"Inter",sans-serif;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+body:before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:100;
+  opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+h1,h2,h3,h4{font-family:"Bangers","Patrick Hand",cursive;letter-spacing:.02em;line-height:1.05}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:auto;padding:0 28px}
+img,svg{display:block;max-width:100%}
+.mono{font-family:"Patrick Hand",cursive;text-transform:none;letter-spacing:.03em;font-size:1rem}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,250,240,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:3px solid var(--ink);
+}
+nav.wrap{height:78px;display:flex;align-items:center;justify-content:space-between}
+.brand{
+  display:flex;align-items:center;gap:9px;
+  font-family:"Bangers",cursive;font-size:1.65rem;letter-spacing:.04em;
+}
+.brand .dot{
+  width:18px;height:18px;background:var(--red);border:3px solid var(--ink);
+  border-radius:50%;box-shadow:3px 3px 0 var(--ink);
+}
+.navlinks{display:flex;gap:28px;font-family:"Patrick Hand";font-size:1.12rem;font-weight:600}
+.navlinks a:hover{color:var(--red);transform:rotate(-2deg)}
+.nav-cta,.btn-primary,.submit-btn{
+  display:inline-block;background:var(--red);color:white;
+  border:3px solid var(--ink);border-radius:12px;
+  padding:11px 20px;font-family:"Bangers";font-size:1.05rem;letter-spacing:.05em;
+  box-shadow:4px 4px 0 var(--ink);transition:.18s;
+}
+.nav-cta:hover,.btn-primary:hover,.submit-btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+@media(max-width:860px){.navlinks{display:none}}
+
+.hero{
+  position:relative;min-height:650px;padding:75px 0 65px;overflow:hidden;
+  border-bottom:4px solid var(--ink);
+  background:
+    linear-gradient(transparent 96%,rgba(23,23,23,.06) 96%),
+    var(--paper);
+}
+.hero-inner{position:relative;z-index:2;max-width:720px}
+.eyebrow{
+  display:inline-block;color:var(--ink);background:var(--yellow);
+  border:3px solid var(--ink);padding:6px 14px;border-radius:50%;
+  transform:rotate(-3deg);margin-bottom:25px;font-family:"Patrick Hand";font-size:1.15rem;
+}
+h1.headline{
+  font-size:clamp(3.7rem,8vw,7.4rem);
+  color:var(--ink);max-width:760px;margin-bottom:24px;
+  text-shadow:3px 3px 0 var(--yellow);
+}
+h1.headline em{font-style:normal;color:var(--red);display:inline-block;transform:rotate(-2deg)}
+.hero p.lede{
+  max-width:620px;color:var(--muted);font-size:1.15rem;
+  font-family:"Patrick Hand";line-height:1.45;margin-bottom:32px;
+}
+.hero-ctas{display:flex;gap:18px;flex-wrap:wrap}
+.btn-secondary{
+  border:3px solid var(--ink);padding:11px 20px;border-radius:12px;
+  background:white;font-family:"Bangers";font-size:1.05rem;box-shadow:4px 4px 0 var(--ink);
+}
+.btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)}
+
+.hero-doodles{position:absolute;inset:0;pointer-events:none}
+.doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite}
+.s1{right:47%;top:12%}.s2{right:8%;top:28%;font-size:2.2rem}.s3{right:32%;bottom:15%;font-size:2.5rem}
+.speed-lines{position:absolute;right:2%;top:16%;width:47%;height:75%}
+.speed-lines:before,.speed-lines:after{
+  content:"";position:absolute;right:0;top:18%;
+  width:260px;height:12px;background:var(--red);transform:rotate(-14deg);
+  box-shadow:-40px 55px 0 var(--blue),-85px 110px 0 var(--orange),-20px 165px 0 var(--ink);
+  border-radius:100%;
+}
+@keyframes float{50%{transform:translateY(-10px) rotate(5deg)}}
+
+@media(max-width:900px){
+  .hero{min-height:760px}
+  .speed-lines{right:-120px;opacity:.45}
+}
+@media(max-width:600px){.hero-inner{padding-bottom:210px}}
+
+section{padding:92px 0;border-bottom:3px solid var(--ink);position:relative;}
+.section-head{max-width:700px;margin-bottom:48px}
+.section-head .mono{display:inline-block;color:white;background:var(--blue);padding:4px 12px;border:2px solid var(--ink);transform:rotate(-2deg);margin-bottom:15px}
+.section-head h2{font-size:clamp(2.7rem,5vw,4.6rem);text-shadow:2px 2px 0 var(--yellow);margin-bottom:14px}
+.section-head p{color:var(--muted);font-family:"Patrick Hand";font-size:1.2rem}
+
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.process-card,.service-card,.integ-card{
+  background:white;border:3px solid var(--ink);border-radius:18px;
+  box-shadow:7px 8px 0 var(--ink);position:relative;overflow:hidden;
+}
+.process-card{padding:35px 30px}
+.process-card:nth-child(2){transform:rotate(1.2deg);background:#fff5bf}
+.process-card:nth-child(3){transform:rotate(-1deg);background:#e9f4ff}
+.process-card .id{color:var(--red);font-weight:bold;margin-bottom:18px}
+.process-card h3,.service-card h3{font-size:2rem;margin-bottom:10px}
+.process-card p,.service-card p,.integ-card p{color:var(--muted);font-family:"Patrick Hand";font-size:1.08rem}
+@media(max-width:860px){.process-grid{grid-template-columns:1fr}}
+
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service-card{padding:34px}
+.service-card:nth-child(1){transform:rotate(-1deg)}
+.service-card:nth-child(2){transform:rotate(1deg)}
+.service-card:nth-child(3){transform:rotate(.7deg)}
+.service-card:nth-child(4){transform:rotate(-.8deg)}
+.service-card:after{
+  content:"✦";position:absolute;right:18px;top:12px;color:var(--red);font-size:2rem
+}
+.service-card .num{display:inline-block;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);padding:2px 9px;border-radius:50%;margin-bottom:18px}
+.service-card .link{display:inline-block;margin-top:20px;color:var(--blue);font-family:"Bangers";font-size:1.05rem}
+@media(max-width:760px){.services-grid{grid-template-columns:1fr}}
+
+.integ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.integ-card{padding:26px}
+.integ-card .tag{color:var(--red);font-family:"Bangers";font-size:1.1rem}
+.integ-card h4{font-size:1.6rem;margin:7px 0}
+@media(max-width:860px){.integ-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.integ-grid{grid-template-columns:1fr}}
+
+.product{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding:52px 0;border-top:3px dashed var(--ink);align-items:center}
+.product:first-of-type{border-top:none}
+.product-visual{
+  min-height:320px;border:4px solid var(--ink);border-radius:25px;background:var(--yellow);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  box-shadow:9px 10px 0 var(--ink);transform:rotate(-1.5deg)
+}
+.product:nth-child(3n) .product-visual{background:#dff1ff}
+.product:nth-child(4n) .product-visual{background:#ffe2dd}
+.product-visual .glyph{font-family:"Bangers";font-size:5rem;color:var(--blue);text-shadow:4px 4px 0 white,-3px -3px 0 var(--ink);z-index:2}
+.product-visual:before{
+  content:"";position:absolute;width:170px;height:170px;border:7px solid var(--ink);
+  border-radius:50%;transform:rotate(-20deg);opacity:.18
+}
+.product-visual .starpoint{width:13px;height:13px;background:var(--red);border:3px solid var(--ink);border-radius:50%;box-shadow:0 0 0 5px white}
+.product-kicker{color:var(--red);font-family:"Bangers";font-size:1.15rem}
+.product h3{font-size:3rem;margin-bottom:5px}
+.product .role{display:block;color:var(--blue);font-family:"Patrick Hand";font-size:1.2rem;margin-bottom:15px}
+.product p.desc{color:var(--muted);font-family:"Patrick Hand";font-size:1.12rem;margin-bottom:20px}
+.feat-list{list-style:none;margin-bottom:24px}
+.feat-list li{font-family:"Patrick Hand";font-size:1.05rem;margin:9px 0}
+.feat-list li:before{content:"✦";color:var(--red);margin-right:10px}
+.product-ctas{display:flex;gap:12px}
+.product-ctas a{font-family:"Bangers";padding:10px 16px;border:3px solid var(--ink);border-radius:10px;box-shadow:3px 3px 0 var(--ink)}
+.product-ctas .primary{background:var(--red);color:white}
+.product-ctas .secondary{background:white}
+@media(max-width:860px){.product{grid-template-columns:1fr;gap:30px}}
+
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px}
+.contact-info h3{font-size:2.5rem;margin-bottom:15px}
+.contact-info p{font-family:"Patrick Hand";font-size:1.15rem;color:var(--muted);margin-bottom:28px}
+.info-row{margin-bottom:20px}
+.info-row .mono{color:var(--red);font-weight:bold}
+.info-row div.val{font-family:"Patrick Hand";font-size:1.08rem}
+form{display:grid;gap:18px;background:#fff;border:3px solid var(--ink);padding:30px;border-radius:18px;box-shadow:8px 9px 0 var(--ink)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{font-family:"Patrick Hand";font-size:1.05rem;font-weight:bold}
+input,textarea{width:100%;background:#fffaf0;border:3px solid var(--ink);border-radius:9px;padding:13px;color:var(--ink);font:1rem "Patrick Hand"}
+input:focus,textarea:focus{outline:none;border-color:var(--blue)}
+textarea{min-height:120px}
+.placeholder-note{margin-top:12px;background:var(--yellow);border:3px solid var(--ink);padding:10px 14px;border-radius:10px;font-family:"Patrick Hand"}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+
+footer{padding:60px 0 35px;background:#171717;color:white}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px;margin-bottom:45px}
+.footer-grid h5{font-family:"Bangers";font-size:1.35rem;color:var(--yellow);margin-bottom:14px}
+.footer-grid ul{list-style:none}
+.footer-grid li{margin-bottom:9px;font-family:"Patrick Hand";font-size:1.02rem;color:#ddd}
+.footer-brand p{font-family:"Patrick Hand";font-size:1.05rem;color:#ccc;margin-top:14px;max-width:290px}
+.footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;border-top:2px solid #555;padding-top:25px;color:#bbb;font-family:"Patrick Hand"}
+.footer-bottom .links{display:flex;gap:20px}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}}
+
+/* Floating Cartoon Faces */
+.floating-face {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+}
+.face-how-we-work {
+    top: -10px;
+    right: 15%;
+    transform: rotate(10deg);
+}
+.face-services {
+    top: -10px;
+    right: 10%; /* Moved to right */
+    transform: rotate(-15deg);
+}
+.face-integrations {
+    top: -20px;
+    right: 20%;
+    transform: rotate(5deg);
+}
+.face-products {
+    top: -10px;
+    right: 15%; /* Moved to right */
+    transform: rotate(-10deg);
+}
+
+@media (max-width: 768px) {
+    .floating-face {
+        width: 100px;
+        height: 100px;
+    }
+    .face-how-we-work { top: -10px; right: 5%; }
+    .face-services { top: -10px; right: 15%; }
+    .face-integrations { top: -10px; right: 10%; }
+    .face-products { top: -10px; right: 5%; }
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="dot"></span>StarNexusTech</div>
+    <div class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Start a Project</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-doodles">
+    <span class="doodle-star s1">★</span>
+    <span class="doodle-star s2">✦</span>
+    <span class="doodle-star s3">★</span>
+    <div class="speed-lines"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow mono">Software Solutions • Automation • AI</div>
+    <h1 class="headline">Give your business <em>digital wings.</em></h1>
+    <p class="lede">We turn complex business problems into energetic, practical software — connecting people, data, automation and technology into systems that move your business forward.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Start a Project →</a>
+      <a href="#products" class="btn-secondary">See What We Build</a>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <!-- Face 1 -->
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face1.png" alt="Face 1" class="floating-face face-how-we-work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">How We Work</span>
+      <h2>A fixed sequence, from signal to system</h2>
+      <p>Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <span class="id mono">SN-01 · Discovery</span>
+        <h3>Chart the system</h3>
+        <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
+      </div>
+      <div class="process-card">
+        <span class="id mono">SN-02 · Prototype</span>
+        <h3>Build the proof</h3>
+        <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
+      </div>
+      <div class="process-card">
+        <span class="id mono">SN-03 · Scale</span>
+        <h3>Launch &amp; support</h3>
+        <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <!-- Face 2 -->
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face2.png" alt="Face 2" class="floating-face face-services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Our Services</span>
+      <h2>Systems built around how your business actually operates</h2>
+      <p>We architect and deploy the infrastructure that connects your operations, hardware, and data into a single working network.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="num mono">01</span>
+        <h3>Enterprise Software</h3>
+        <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
+        <a href="#contact" class="link">Explore Service →</a>
+      </div>
+      <div class="service-card">
+        <span class="num mono">02</span>
+        <h3>Industrial IoT</h3>
+        <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
+        <a href="#contact" class="link">Explore Service →</a>
+      </div>
+      <div class="service-card">
+        <span class="num mono">03</span>
+        <h3>Workflow Orchestration</h3>
+        <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
+        <a href="#contact" class="link">Explore Service →</a>
+      </div>
+      <div class="service-card">
+        <span class="num mono">04</span>
+        <h3>B2B Cloud Solutions</h3>
+        <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
+        <a href="#contact" class="link">Explore Service →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="integrations">
+  <!-- Face 3 -->
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face3.png" alt="Face 3" class="floating-face face-integrations">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Integrations</span>
+      <h2>Connect the tools you already run</h2>
+      <p>StarNexusTech links your ERP, CRM, and cloud stack so data moves automatically instead of being re-entered by hand.</p>
+    </div>
+    <div class="integ-grid">
+      <div class="integ-card">
+        <span class="tag mono">Operations</span>
+        <h4>ERP Systems</h4>
+        <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
+      </div>
+      <div class="integ-card">
+        <span class="tag mono">Customer Data</span>
+        <h4>CRM Platforms</h4>
+        <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
+      </div>
+      <div class="integ-card">
+        <span class="tag mono">Alerts</span>
+        <h4>Collaboration Hubs</h4>
+        <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
+      </div>
+      <div class="integ-card">
+        <span class="tag mono">Analytics</span>
+        <h4>Cloud Data Warehouses</h4>
+        <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
+      </div>
+      <div class="integ-card">
+        <span class="tag mono">Financials</span>
+        <h4>Payment Gateways</h4>
+        <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
+      </div>
+      <div class="integ-card">
+        <span class="tag mono">Developer Tools</span>
+        <h4>REST &amp; GraphQL APIs</h4>
+        <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <!-- Face 4 -->
+  <img src="https://raw.githubusercontent.com/UtkarshSinghSFD/Uodated-Mindtrip-Website/main/images/team/face4.png" alt="Face 4" class="floating-face face-products">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Our Products</span>
+      <h2>Five fixed points, one product line</h2>
+      <p>Custom-configured hardware and software built to connect physical operations to your business systems.</p>
+    </div>
+
+    <div class="product">
+      <div class="product-visual"><span class="glyph">PLR</span><span class="starpoint" style="top:22%;left:30%;"></span><span class="starpoint" style="top:60%;left:70%;"></span></div>
+      <div>
+        <span class="product-kicker mono">Fortified VDI</span>
+        <h3>Polaris</h3>
+        <span class="role">Fixed-Point Secure Desktop Infrastructure</span>
+        <p class="desc">A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
+        <ul class="feat-list">
+          <li>On-premise secure server node deployment</li>
+          <li>Low-latency remote desktop streaming (60 FPS)</li>
+          <li>Hardware-level encryption and zero-trust client access</li>
+        </ul>
+        <div class="product-ctas">
+          <a href="#contact" class="primary">Request Quote</a>
+          <a href="#contact" class="secondary">Tech Specs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-visual"><span class="glyph">VGA</span><span class="starpoint" style="top:35%;left:55%;"></span><span class="starpoint" style="top:70%;left:25%;"></span></div>
+      <div>
+        <span class="product-kicker mono">Assistive AI</span>
+        <h3>Vega</h3>
+        <span class="role">AI Companion for the Visually Impaired</span>
+        <p class="desc">A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
+        <ul class="feat-list">
+          <li>Real-time object and currency identification</li>
+          <li>Natural text-to-speech audio feedback via Bluetooth</li>
+          <li>Ultrasonic obstacle detection and hazard guidance</li>
+        </ul>
+        <div class="product-ctas">
+          <a href="#contact" class="primary">Request Quote</a>
+          <a href="#contact" class="secondary">Tech Specs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-visual"><span class="glyph">LYR</span><span class="starpoint" style="top:25%;left:65%;"></span><span class="starpoint" style="top:65%;left:35%;"></span></div>
+      <div>
+        <span class="product-kicker mono">Batch OCR</span>
+        <h3>Lyra Scan</h3>
+        <span class="role">High-Speed Batch Digitization</span>
+        <p class="desc">An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
+        <ul class="feat-list">
+          <li>Ultra-fast batch document processing (120 ppm)</li>
+          <li>On-premise OCR with instant PDF/Excel export</li>
+          <li>Automatic metadata classification and sorting</li>
+        </ul>
+        <div class="product-ctas">
+          <a href="#contact" class="primary">Request Quote</a>
+          <a href="#contact" class="secondary">Tech Specs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-visual"><span class="glyph">ORN</span><span class="starpoint" style="top:40%;left:40%;"></span><span class="starpoint" style="top:70%;left:75%;"></span></div>
+      <div>
+        <span class="product-kicker mono">Local MSME SaaS</span>
+        <h3>Orion Suite</h3>
+        <span class="role">End-to-End MSME Automation</span>
+        <p class="desc">Real-time oversight of leads, inventory, and payroll on a secure local database — built for small and mid-sized operations that need control without complexity.</p>
+        <ul class="feat-list">
+          <li>Secure on-premise local database hosting</li>
+          <li>Unified pipeline tracking across payroll, inventory, and leads</li>
+          <li>Customizable role-based access logs for staff</li>
+        </ul>
+        <div class="product-ctas">
+          <a href="#contact" class="primary">Request Quote</a>
+          <a href="#contact" class="secondary">Tech Specs</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="product-visual"><span class="glyph">NVA</span><span class="starpoint" style="top:30%;left:30%;"></span><span class="starpoint" style="top:60%;left:60%;"></span></div>
+      <div>
+        <span class="product-kicker mono">Structural Telemetry</span>
+        <h3>Nova Watch</h3>
+        <span class="role">Road &amp; Structural Intelligence System</span>
+        <p class="desc">Live monitoring for civil infrastructure — calculating traffic load and structural vibration to flag maintenance needs before they become hazards.</p>
+        <ul class="feat-list">
+          <li>Real-time vibration and traffic-load sensors</li>
+          <li>Predictive AI analytics for early hazard detection</li>
+          <li>Rugged IP68, solar-powered outdoor edge hubs</li>
+        </ul>
+        <div class="product-ctas">
+          <a href="#contact" class="primary">Request Quote</a>
+          <a href="#contact" class="secondary">Tech Specs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Get In Touch</span>
+      <h2>Let's build something worth aligning around</h2>
+      <p>Tell us about your project, your team, or your hardware requirements — our engineering team will follow up directly.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>StarNexusTech HQ</h3>
+        <p>Our primary engineering hub coordinates delivery for clients across India and internationally.</p>
+        <div class="info-row">
+          <span class="mono">Office</span>
+          <div class="val">Bhopal, Madhya Pradesh, India</div>
+        </div>
+        <div class="info-row">
+          <span class="mono">Engineering &amp; Sales</span>
+          <div class="val">mindtripentertainments@gmail.com</div>
+        </div>
+        <div class="info-row">
+          <span class="mono">Business Line</span>
+          <div class="val">+91 [Your Number]</div>
+        </div>
+      </div>
+      <form onsubmit="return false;">
+        <div class="form-row">
+          <div>
+            <label>Full Name</label>
+            <input type="text" placeholder="e.g. Rahul Sharma">
+          </div>
+          <div>
+            <label>Email Address</label>
+            <input type="email" placeholder="e.g. rahul@company.com">
+          </div>
+        </div>
+        <div>
+          <label>Subject</label>
+          <input type="text" placeholder="How can we help your business?">
+        </div>
+        <div>
+          <label>Message</label>
+          <textarea placeholder="Outline your application specifications, automation ideas, or hardware quote inquiries..."></textarea>
+        </div>
+        <button class="submit-btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand"><span class="dot"></span>StarNexusTech</div>
+        <p>We design, build, and deploy custom enterprise software, telemetry systems, and automation hardware.</p>
+      </div>
+      <div>
+        <h5>Products</h5>
+        <ul>
+          <li>Polaris</li>
+          <li>Vega</li>
+          <li>Lyra Scan</li>
+          <li>Orion Suite</li>
+          <li>Nova Watch</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Capabilities</h5>
+        <ul>
+          <li>Enterprise Software</li>
+          <li>Industrial IoT</li>
+          <li>Workflow Orchestration</li>
+          <li>B2B Cloud Solutions</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#services">About StarNexusTech</a></li>
+          <li><a href="#products">Hardware Documentation</a></li>
+          <li><a href="#contact">Contact Engineering</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 StarNexusTech. All rights reserved.</span>
+      <div class="links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">SLA Agreement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

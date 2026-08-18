@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StarNexusTech — Software Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&family=Gochi+Hand&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink: #111111;
+  --paper: #f9f7f1;
+  --red: #f84033;
+  --orange: #ff9100;
+  --yellow: #ffde59;
+  --blue: #2374e1;
+  --cyan: #00d2ff;
+  --green: #00c853;
+  --purple: #aa00ff;
+  --muted: #555555;
+  --maxw: 1200px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth; cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23111111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>'), auto;}
+body{
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "Patrick Hand", cursive;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+}
+
+/* Paper Texture Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+h1,h2,h3,h4{font-family:"Bangers", cursive; letter-spacing: 0.05em; line-height: 1.1; text-transform: uppercase;}
+a{color:inherit;text-decoration:none; cursor: inherit;}
+.wrap{max-width:var(--maxw);margin:auto;padding:0 30px}
+
+/* Hand-drawn sketch border utility */
+.sketch-box {
+  background: white;
+  border: 4px solid var(--ink);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  box-shadow: 8px 8px 0px var(--ink);
+  transition: all 0.2s ease;
+}
+.sketch-box:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 12px 12px 0px var(--ink);
+}
+
+/* Comic Halftone */
+.halftone-yellow {
+  background-image: radial-gradient(var(--ink) 15%, transparent 16%), radial-gradient(var(--ink) 15%, transparent 16%);
+  background-color: var(--yellow);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+}
+.halftone-cyan {
+  background-image: radial-gradient(var(--ink) 15%, transparent 16%), radial-gradient(var(--ink) 15%, transparent 16%);
+  background-color: var(--cyan);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+}
+
+header{
+  position:sticky;top:0;z-index:50;
+  background: rgba(249, 247, 241, 0.95);
+  border-bottom: 4px solid var(--ink);
+  border-radius: 0 0 255px 15px/15px 255px;
+}
+nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-between}
+.brand{
+  font-family:"Bangers",cursive;font-size:2.2rem;
+  color: var(--red);
+  text-shadow: 2px 2px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+.navlinks{display:flex;gap:35px;font-size:1.3rem;font-weight:bold;}
+.navlinks a { position: relative; }
+.navlinks a:hover{color:var(--blue); transform: rotate(2deg) scale(1.1); display: inline-block;}
+.navlinks a::after {
+  content: ""; position: absolute; bottom: -2px; left: 0; width: 100%; height: 3px; 
+  background: var(--blue); transform: scaleX(0); transform-origin: left; transition: 0.2s;
+}
+.navlinks a:hover::after { transform: scaleX(1); }
+
+.btn-primary {
+  display:inline-block;background:var(--red);color:white;
+  border:4px solid var(--ink);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding:12px 25px;font-family:"Bangers";font-size:1.2rem;
+  box-shadow:5px 5px 0 var(--ink);transition:all 0.1s;
+}
+.btn-primary:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(4px, 4px); }
+.btn-primary:hover { animation: wiggle 0.3s infinite; background: var(--orange); }
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-3deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.hero{
+  position:relative; padding: 120px 0 80px;
+  border-bottom:5px dashed var(--ink);
+  overflow: hidden;
+}
+.hero-burst {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 150vw; height: 150vw;
+  background: repeating-conic-gradient(var(--paper) 0 15deg, #fff2cc 15deg 30deg);
+  z-index: -1; animation: spin 60s linear infinite;
+}
+@keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.eyebrow{
+  display:inline-block;color:white;background:var(--blue);
+  border:3px solid var(--ink);padding:8px 20px;
+  transform:rotate(-4deg);margin-bottom:30px;font-family:"Bangers";font-size:1.5rem;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+h1.headline{
+  font-size:clamp(4.5rem, 10vw, 8.5rem);
+  color:var(--yellow);
+  text-shadow: 5px 5px 0 var(--ink), 10px 10px 0 rgba(0,0,0,0.1);
+  margin-bottom:20px; line-height: 0.9;
+  -webkit-text-stroke: 3px var(--ink);
+}
+h1.headline em{font-style:normal;color:white; display:block; transform:rotate(-2deg); -webkit-text-stroke: 3px var(--ink);}
+.lede{
+  max-width: 600px; font-size: 1.4rem; font-weight: bold; background: white; 
+  padding: 20px; border: 4px solid var(--ink); box-shadow: 6px 6px 0 var(--cyan);
+  transform: rotate(1deg); margin-bottom: 40px;
+}
+
+.marquee-tape {
+  background: var(--yellow); border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink);
+  padding: 15px 0; overflow: hidden; display: flex; white-space: nowrap;
+  font-family: "Bangers"; font-size: 2rem; transform: rotate(-2deg) scale(1.05);
+  box-shadow: 0 10px 0 rgba(0,0,0,0.1); margin: 40px 0;
+}
+.marquee-content { animation: slide 15s linear infinite; display: flex; gap: 40px; }
+@keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+section{padding:100px 0; position:relative;}
+.section-head{text-align: center; margin-bottom: 60px; position: relative;}
+.section-head h2{
+  font-size: clamp(3rem, 6vw, 5rem); color: white; -webkit-text-stroke: 2px var(--ink);
+  text-shadow: 4px 4px 0 var(--ink); display: inline-block; position: relative; z-index: 2;
+}
+.section-head h2::after {
+  content: ""; position: absolute; bottom: 10px; left: -10px; width: calc(100% + 20px); height: 40%;
+  background: var(--cyan); z-index: -1; transform: rotate(-2deg); border: 3px solid var(--ink);
+}
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
+
+.process-card {
+  padding: 40px 30px; text-align: center;
+}
+.process-card:nth-child(1) { transform: rotate(-2deg); }
+.process-card:nth-child(2) { transform: rotate(1deg); background: var(--paper2); }
+.process-card:nth-child(3) { transform: rotate(-1deg); }
+.process-card .step { font-family: "Bangers"; font-size: 4rem; color: var(--cyan); -webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink); display: block; margin-bottom: 10px;}
+.process-card h3 { font-size: 2.2rem; margin-bottom: 15px; }
+
+.service-card { padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
+.service-card h3 { font-size: 2.5rem; color: var(--blue); margin-bottom: 15px; }
+.service-card .num { 
+  position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; 
+  background: var(--yellow); border: 4px solid var(--ink); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Bangers"; font-size: 2rem; box-shadow: 4px 4px 0 var(--ink);
+}
+
+.product-showcase {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
+  margin-bottom: 80px; padding: 40px; background: white; border: 5px solid var(--ink);
+  box-shadow: 15px 15px 0 var(--purple); border-radius: 20px;
+}
+.product-showcase:nth-child(even) { direction: rtl; box-shadow: -15px 15px 0 var(--green); }
+.product-showcase:nth-child(even) > * { direction: ltr; }
+
+.product-art {
+  height: 350px; border: 4px solid var(--ink); border-radius: 15px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Bangers"; font-size: 8rem; color: white; -webkit-text-stroke: 3px var(--ink);
+  text-shadow: 6px 6px 0 var(--ink); position: relative; overflow: hidden;
+}
+.product-art::before {
+  content: "BOOM!"; position: absolute; top: 10px; left: 10px; font-size: 2rem; color: var(--ink); -webkit-text-stroke: 0; text-shadow: none; transform: rotate(-15deg);
+}
+
+footer{
+  background: var(--ink); color: white; padding: 80px 0 40px;
+  border-top: 10px solid var(--red);
+  font-family: "Patrick Hand";
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.footer-grid h2 { color: var(--yellow); font-size: 3rem; margin-bottom: 20px; -webkit-text-stroke: 0; }
+.footer-grid ul { list-style: none; }
+.footer-grid a { color: #ccc; font-size: 1.3rem; display: block; margin-bottom: 10px; }
+.footer-grid a:hover { color: var(--cyan); padding-left: 10px; transition: 0.2s; }
+
+/* Sticky Note Element */
+.sticky-note {
+  position: absolute; width: 200px; height: 200px; background: #feff9c;
+  border: 1px solid #e8e988; box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+  padding: 20px; font-family: "Patrick Hand"; font-size: 1.4rem; color: #111;
+  transform: rotate(5deg); display: flex; align-items: center; justify-content: center; text-align: center;
+  z-index: 10;
+}
+.sticky-note::before {
+  content: ""; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 25px; background: rgba(255,255,255,0.4); border: 1px solid rgba(0,0,0,0.1);
+}
+
+@media(max-width: 900px) {
+  .grid-3, .grid-2, .product-showcase { grid-template-columns: 1fr; }
+  h1.headline { font-size: 4rem; }
+  .sticky-note { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">StarNexusTech!</div>
+    <div class="navlinks">
+      <a href="#process">Process</a>
+      <a href="#services">Services</a>
+      <a href="#products">Products</a>
+    </div>
+    <a href="#contact" class="btn-primary">INITIATE!</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-burst"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">SYSTEM OVERRIDE!</div>
+    <h1 class="headline">Digital <em>Wings!</em></h1>
+    <p class="lede">We turn complex business problems into energetic, practical software — moving your business forward at lightspeed!</p>
+    <a href="#products" class="btn-primary" style="font-size: 1.5rem; padding: 15px 40px;">LAUNCH PROJECT!</a>
+  </div>
+  
+  <div class="sticky-note" style="top: 20%; right: 10%; transform: rotate(12deg);">
+    100% Hand-Coded Awesomeness!
+  </div>
+</section>
+
+<div class="marquee-tape">
+  <div class="marquee-content">
+    <span>★ ENTERPRISE SOFTWARE ★</span>
+    <span>★ INDUSTRIAL IOT ★</span>
+    <span>★ CLOUD SOLUTIONS ★</span>
+    <span>★ AUTOMATION ★</span>
+    <span>★ ENTERPRISE SOFTWARE ★</span>
+    <span>★ INDUSTRIAL IOT ★</span>
+    <span>★ CLOUD SOLUTIONS ★</span>
+    <span>★ AUTOMATION ★</span>
+  </div>
+</div>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>HOW WE WORK</h2>
+    </div>
+    <div class="grid-3">
+      <div class="sketch-box process-card">
+        <span class="step">01</span>
+        <h3>Discovery</h3>
+        <p>Audit manual workflows and map where automation removes the most friction!</p>
+      </div>
+      <div class="sketch-box process-card" style="box-shadow: 8px 8px 0 var(--blue);">
+        <span class="step" style="color: var(--yellow);">02</span>
+        <h3>Prototype</h3>
+        <p>Working proof-of-concept against your real data to validate the approach!</p>
+      </div>
+      <div class="sketch-box process-card" style="box-shadow: 8px 8px 0 var(--red);">
+        <span class="step" style="color: var(--green);">03</span>
+        <h3>Scale</h3>
+        <p>Deploy to production and stay in orbit with monitoring and iteration!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background: var(--ink); color: white; border-top: 5px solid var(--cyan); border-bottom: 5px solid var(--cyan);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 style="color: var(--yellow); -webkit-text-stroke: 0; text-shadow: none;">CORE SERVICES</h2>
+    </div>
+    <div class="grid-2">
+      <div class="sketch-box service-card" style="color: var(--ink);">
+        <div class="num">1</div>
+        <h3>Enterprise Software</h3>
+        <p>Custom web platforms and analytics dashboards pulling data into one control center.</p>
+      </div>
+      <div class="sketch-box service-card" style="color: var(--ink); transform: rotate(1deg);">
+        <div class="num" style="background: var(--cyan);">2</div>
+        <h3>Industrial IoT</h3>
+        <p>Connecting hardware controllers and physical sensors to the cloud via low-latency pipelines.</p>
+      </div>
+      <div class="sketch-box service-card" style="color: var(--ink); transform: rotate(-1deg);">
+        <div class="num" style="background: var(--green);">3</div>
+        <h3>Orchestration</h3>
+        <p>Event-driven automation replacing manual handoffs with synced triggers and handlers.</p>
+      </div>
+      <div class="sketch-box service-card" style="color: var(--ink);">
+        <div class="num" style="background: var(--red); color: white;">4</div>
+        <h3>Cloud Solutions</h3>
+        <p>High-availability, compliance-ready cloud infrastructure with secure client portals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>OUR PRODUCTS</h2>
+    </div>
+
+    <div class="product-showcase">
+      <div class="product-art halftone-yellow">PLR</div>
+      <div>
+        <h3 style="font-size: 3.5rem; color: var(--red); margin-bottom: 10px;">POLARIS</h3>
+        <p style="font-size: 1.4rem; font-weight: bold; margin-bottom: 20px;">Fixed-Point Secure Desktop Infrastructure.</p>
+        <p>High-performance virtual desktop built for data sovereignty. Deployed on dedicated on-premise hardware.</p>
+        <br>
+        <a href="#" class="btn-primary">Tech Specs!</a>
+      </div>
+    </div>
+
+    <div class="product-showcase">
+      <div class="product-art halftone-cyan">VGA</div>
+      <div>
+        <h3 style="font-size: 3.5rem; color: var(--blue); margin-bottom: 10px;">VEGA</h3>
+        <p style="font-size: 1.4rem; font-weight: bold; margin-bottom: 20px;">AI Companion for the Visually Impaired.</p>
+        <p>Wearable-ready assistive companion giving real-time environmental awareness via object tracking.</p>
+        <br>
+        <a href="#" class="btn-primary" style="background: var(--blue);">Discover Vega!</a>
+      </div>
+    </div>
+
+    <div class="product-showcase">
+      <div class="product-art" style="background: var(--green);">LYR</div>
+      <div>
+        <h3 style="font-size: 3.5rem; color: var(--green); margin-bottom: 10px;">LYRA SCAN</h3>
+        <p style="font-size: 1.4rem; font-weight: bold; margin-bottom: 20px;">High-Speed Batch Digitization.</p>
+        <p>Industrial-grade scanning appliance for volume and speed. Turning archives into searchable records!</p>
+        <br>
+        <a href="#" class="btn-primary" style="background: var(--green);">Get a Quote!</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div>
+      <h2>STAR NEXUS TECH</h2>
+      <p style="font-size: 1.5rem; max-width: 400px;">We design, build, and deploy custom enterprise software, telemetry systems, and automation hardware.</p>
+    </div>
+    <div>
+      <h3 style="color: var(--cyan); margin-bottom: 15px; font-size: 2rem;">PRODUCTS</h3>
+      <ul>
+        <li><a href="#">Polaris</a></li>
+        <li><a href="#">Vega</a></li>
+        <li><a href="#">Lyra Scan</a></li>
+        <li><a href="#">Orion Suite</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="color: var(--red); margin-bottom: 15px; font-size: 2rem;">CONTACT</h3>
+      <ul>
+        <li><a href="#">hello@starnexus.com</a></li>
+        <li><a href="#">+91 9876543210</a></li>
+        <li><a href="#">Bhopal, India</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
