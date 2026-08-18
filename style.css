@@ -1455,12 +1455,7 @@ nav.s3-wrap{height:78px;display:flex;align-items:center;justify-content:space-be
 } #software .hero-ctas{display:flex;gap:18px;flex-wrap:wrap} #software .s3-btn-secondary{
   border:3px solid var(--ink);padding:11px 20px;border-radius:12px;
   background:white;font-family:"Bangers";font-size:1.05rem;box-shadow:4px 4px 0 var(--ink);
-} #software .s3-btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)} #software .hero-doodles{position:absolute;inset:0;pointer-events:none} #software .doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite} #software .s1{right:47%;top:12%} #software .s2{right:8%;top:28%;font-size:2.2rem} #software .s3{right:32%;bottom:15%;font-size:2.5rem} #software .speed-lines{position:absolute;right:-20%;top:5%;width:47%;height:75%;animation: shootingStars 5s linear infinite;} #software .speed-lines:before, #software .speed-lines:after{
-  content:"";position:absolute;right:0;top:18%;
-  width:260px;height:12px;background:var(--red);transform:rotate(-14deg);
-  box-shadow:-40px 55px 0 var(--blue),-85px 110px 0 var(--orange),-20px 165px 0 var(--ink);
-  border-radius:100%;
-}
+} #software .s3-btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)} #software .hero-doodles{position:absolute;inset:0;pointer-events:none} #software .doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite} #software .s1{right:47%;top:12%} #software .s2{right:8%;top:28%;font-size:2.2rem} #software .s3{right:32%;bottom:15%;font-size:2.5rem}  
 @keyframes float{50%{transform:translateY(-10px) rotate(5deg)}}
 
 @media(max-width:900px){
@@ -1543,3 +1538,53 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     5% { opacity: 1; }
     100% { transform: translateX(-150vw) translateY(37.5vw); opacity: 0; }
 }
+
+#software .shooting-stars-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+#software .s-star {
+    position: absolute;
+    right: -300px;
+    display: flex;
+    align-items: center;
+    transform: rotate(-14deg);
+    animation: shootStar linear infinite;
+    opacity: 0;
+}
+#software .s-head {
+    font-size: 2.2rem;
+    color: var(--yellow);
+    -webkit-text-stroke: 2px var(--ink);
+    margin-right: -8px;
+    z-index: 2;
+}
+#software .s-tail {
+    width: 250px;
+    height: 12px;
+    border-radius: 10px;
+    border: 2px solid var(--ink);
+}
+#software .s-tail.red { background: var(--red); }
+#software .s-tail.blue { background: var(--blue); }
+#software .s-tail.yellow { background: var(--yellow); }
+#software .s-tail.ink { background: var(--ink); border: none; height: 16px; }
+
+@keyframes shootStar {
+    0% { transform: rotate(-14deg) translateX(10vw); opacity: 0; }
+    5% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: rotate(-14deg) translateX(-150vw); opacity: 0; }
+}
+
+#software .ss-1 { top: 5%; animation-duration: 4.5s; animation-delay: 0s; }
+#software .ss-2 { top: 25%; animation-duration: 3.8s; animation-delay: 2s; }
+#software .ss-3 { top: 45%; animation-duration: 5.2s; animation-delay: 0.8s; }
+#software .ss-4 { top: 65%; animation-duration: 4.2s; animation-delay: 3.5s; }
+#software .ss-5 { top: 15%; animation-duration: 3.5s; animation-delay: 1.5s; }
+#software .ss-6 { top: 85%; animation-duration: 4.8s; animation-delay: 4.5s; }
+#software .ss-7 { top: 55%; animation-duration: 3.2s; animation-delay: 5.5s; }
+#software .ss-8 { top: 35%; animation-duration: 5.5s; animation-delay: 6.8s; }
