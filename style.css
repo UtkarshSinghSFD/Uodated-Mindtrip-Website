@@ -1480,7 +1480,7 @@ nav.s3-wrap{height:78px;display:flex;align-items:center;justify-content:space-be
 @media(max-width:760px){.services-grid{grid-template-columns:1fr}} #software .integ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px} #software .integ-card{padding:26px} #software .integ-card .tag{color:var(--red);font-family:"Bangers";font-size:1.1rem} #software .integ-card h4{font-size:1.6rem;margin:7px 0}
 @media(max-width:860px){.integ-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.integ-grid{grid-template-columns:1fr}} #software .s3-product{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;padding:52px 0;border-top:3px dashed var(--ink);align-items:center} #software .s3-product:first-of-type{border-top:none} #software .product-visual{
-  min-height:320px;border:4px solid var(--ink);border-radius:25px;background:var(--yellow);
+  aspect-ratio: 1 / 1; border:4px solid var(--ink);border-radius:25px;background:var(--yellow);
   display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
   box-shadow:9px 10px 0 var(--ink);transform:rotate(-1.5deg)
 } #software .s3-product:nth-child(3n) .product-visual{background:#dff1ff} #software .s3-product:nth-child(4n) .product-visual{background:#ffe2dd} #software .product-visual .glyph{font-family:"Bangers";font-size:5rem;color:var(--blue);text-shadow:4px 4px 0 white,-3px -3px 0 var(--ink);z-index:2} #software .product-visual:before{
