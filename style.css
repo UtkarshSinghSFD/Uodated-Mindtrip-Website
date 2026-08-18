@@ -340,7 +340,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* Software Page Active Navbar Overrides */
 body.software-active .navbar {
     background: rgba(255, 250, 240, 0.98); /* matches --paper #fffaf0 */
-    border-bottom: 3px solid #1a1a1a; /* matches --ink */
+    border-bottom: none;
 }
 body.software-active .logo-img {
     mix-blend-mode: normal; /* Override the default 'screen' which washes it out on white background */
