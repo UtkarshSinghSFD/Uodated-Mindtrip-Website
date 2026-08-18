@@ -1455,7 +1455,7 @@ nav.s3-wrap{height:78px;display:flex;align-items:center;justify-content:space-be
 } #software .hero-ctas{display:flex;gap:18px;flex-wrap:wrap} #software .s3-btn-secondary{
   border:3px solid var(--ink);padding:11px 20px;border-radius:12px;
   background:white;font-family:"Bangers";font-size:1.05rem;box-shadow:4px 4px 0 var(--ink);
-} #software .s3-btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)} #software .hero-doodles{position:absolute;inset:0;pointer-events:none} #software .doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite} #software .s1{right:47%;top:12%} #software .s2{right:8%;top:28%;font-size:2.2rem} #software .s3{right:32%;bottom:15%;font-size:2.5rem} #software .speed-lines{position:absolute;right:2%;top:16%;width:47%;height:75%} #software .speed-lines:before, #software .speed-lines:after{
+} #software .s3-btn-secondary:hover{transform:rotate(-2deg);background:var(--yellow)} #software .hero-doodles{position:absolute;inset:0;pointer-events:none} #software .doodle-star{position:absolute;font-size:3.5rem;color:var(--yellow);-webkit-text-stroke:3px var(--ink);animation:float 4s ease-in-out infinite} #software .s1{right:47%;top:12%} #software .s2{right:8%;top:28%;font-size:2.2rem} #software .s3{right:32%;bottom:15%;font-size:2.5rem} #software .speed-lines{position:absolute;right:-20%;top:5%;width:47%;height:75%;animation: shootingStars 5s linear infinite;} #software .speed-lines:before, #software .speed-lines:after{
   content:"";position:absolute;right:0;top:18%;
   width:260px;height:12px;background:var(--red);transform:rotate(-14deg);
   box-shadow:-40px 55px 0 var(--blue),-85px 110px 0 var(--orange),-20px 165px 0 var(--ink);
@@ -1536,4 +1536,10 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 @keyframes floatBadge {
     0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
     50% { transform: translateY(-8px) rotate(var(--r, 0deg)); }
+}
+
+@keyframes shootingStars {
+    0% { transform: translateX(50vw) translateY(-12.5vw); opacity: 0; }
+    5% { opacity: 1; }
+    100% { transform: translateX(-150vw) translateY(37.5vw); opacity: 0; }
 }
