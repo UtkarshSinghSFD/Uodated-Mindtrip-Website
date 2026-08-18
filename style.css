@@ -1556,22 +1556,23 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     opacity: 0;
 }
 #software .s-head {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     color: var(--yellow);
-    -webkit-text-stroke: 2px var(--ink);
-    margin-right: -8px;
+    -webkit-text-stroke: 1.5px var(--ink);
+    margin-right: -4px;
     z-index: 2;
 }
 #software .s-tail {
     width: 250px;
-    height: 12px;
-    border-radius: 10px;
-    border: 2px solid var(--ink);
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--star-color) 0%, transparent 100%);
+    border: none;
 }
-#software .s-tail.red { background: var(--red); }
-#software .s-tail.blue { background: var(--blue); }
-#software .s-tail.yellow { background: var(--yellow); }
-#software .s-tail.ink { background: var(--ink); border: none; height: 16px; }
+#software .s-tail.red { --star-color: var(--red); }
+#software .s-tail.blue { --star-color: var(--blue); }
+#software .s-tail.yellow { --star-color: var(--yellow); }
+#software .s-tail.ink { --star-color: var(--ink); }
 
 @keyframes shootStar {
     0% { transform: rotate(-14deg) translateX(10vw); opacity: 0; }
