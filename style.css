@@ -1589,3 +1589,31 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 #software .ss-6 { top: 85%; right: -50px; animation-duration: 4.8s; animation-delay: 4.5s; }
 #software .ss-7 { top: 55%; right: -200px; animation-duration: 3.2s; animation-delay: 5.5s; }
 #software .ss-8 { top: -10%; right: 0px; animation-duration: 5.5s; animation-delay: 6.8s; }
+
+/* Hover animations for cards and boxes */
+#software .process-card, #software .service-card, #software .integ-card, #software .product-visual, #software form {
+    transition: top 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), left 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    top: 0;
+    left: 0;
+    position: relative;
+}
+
+#software .process-card:hover, #software .service-card:hover, #software .integ-card:hover {
+    top: -6px;
+    left: -6px;
+    box-shadow: 13px 14px 0 var(--ink);
+    cursor: pointer;
+}
+
+#software .product-visual:hover {
+    top: -8px;
+    left: -8px;
+    box-shadow: 17px 18px 0 var(--ink);
+    cursor: pointer;
+}
+
+#software form:hover {
+    top: -6px;
+    left: -6px;
+    box-shadow: 14px 15px 0 var(--ink);
+}
