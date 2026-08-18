@@ -1673,7 +1673,6 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     }
     #software .process-card {
         padding: 24px 20px;
-        transform: none !important;
     }
     #software .process-card h3 {
         font-size: 1.5rem;
@@ -1686,7 +1685,6 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     }
     #software .service-card {
         padding: 24px 20px;
-        transform: none !important;
     }
     #software .service-card h3 {
         font-size: 1.5rem;
@@ -1713,7 +1711,6 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     #software .product-visual {
         aspect-ratio: 16 / 9;
         min-height: 180px;
-        transform: none;
         border-radius: 18px;
     }
     #software .s3-product h3 {
