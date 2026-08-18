@@ -1504,15 +1504,15 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     transform: rotate(10deg);
 } #software .face-services {
     top: -10px;
-    right: 10%; /* Moved to right */
+    left: 10%; /* Moved far to the left */
     transform: rotate(-15deg);
 } #software .face-integrations {
-    top: -20px;
+    top: 20px; /* Moved below the line */
     right: 20%;
     transform: rotate(5deg);
 } #software .face-products {
-    top: -10px;
-    right: 15%; /* Moved to right */
+    top: -80px; /* Moved above */
+    right: 15%; 
     transform: rotate(-10deg);
 }
 
@@ -1520,5 +1520,5 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
  #software .floating-face {
         width: 100px;
         height: 100px;
-    } #software .face-how-we-work { top: -10px; right: 5%; } #software .face-services { top: -10px; right: 15%; } #software .face-integrations { top: -10px; right: 10%; } #software .face-products { top: -10px; right: 5%; }
+    } #software .face-how-we-work { top: -10px; right: 5%; } #software .face-services { top: -10px; left: 5%; } #software .face-integrations { top: 20px; right: 10%; } #software .face-products { top: -50px; right: 5%; }
 }
