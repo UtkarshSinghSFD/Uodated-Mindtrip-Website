@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&display=swap');
 /* CSS Variables for Ruby Portfolio Theme */
 :root {
     /* Colors */
@@ -1383,7 +1384,7 @@ body.software-active .mobile-menu-btn {
     text-decoration: none;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&display=swap');
+
 
 #software {
   --ink:#171717;
