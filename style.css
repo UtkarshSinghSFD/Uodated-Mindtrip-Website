@@ -1581,11 +1581,11 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     100% { transform: rotate(-14deg) translateX(-150vw); opacity: 0; }
 }
 
-#software .ss-1 { top: 5%; animation-duration: 4.5s; animation-delay: 0s; }
-#software .ss-2 { top: 25%; animation-duration: 3.8s; animation-delay: 2s; }
-#software .ss-3 { top: 45%; animation-duration: 5.2s; animation-delay: 0.8s; }
-#software .ss-4 { top: 65%; animation-duration: 4.2s; animation-delay: 3.5s; }
-#software .ss-5 { top: 15%; animation-duration: 3.5s; animation-delay: 1.5s; }
-#software .ss-6 { top: 85%; animation-duration: 4.8s; animation-delay: 4.5s; }
-#software .ss-7 { top: 55%; animation-duration: 3.2s; animation-delay: 5.5s; }
-#software .ss-8 { top: 35%; animation-duration: 5.5s; animation-delay: 6.8s; }
+#software .ss-1 { top: -5%; right: -50px; animation-duration: 4.5s; animation-delay: 0s; }
+#software .ss-2 { top: 25%; right: -250px; animation-duration: 3.8s; animation-delay: 2s; }
+#software .ss-3 { top: -15%; right: -100px; animation-duration: 5.2s; animation-delay: 0.8s; }
+#software .ss-4 { top: 65%; right: -300px; animation-duration: 4.2s; animation-delay: 3.5s; }
+#software .ss-5 { top: 10%; right: -150px; animation-duration: 3.5s; animation-delay: 1.5s; }
+#software .ss-6 { top: 85%; right: -50px; animation-duration: 4.8s; animation-delay: 4.5s; }
+#software .ss-7 { top: 55%; right: -200px; animation-duration: 3.2s; animation-delay: 5.5s; }
+#software .ss-8 { top: -10%; right: 0px; animation-duration: 5.5s; animation-delay: 6.8s; }
