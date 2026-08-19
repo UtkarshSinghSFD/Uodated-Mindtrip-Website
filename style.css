@@ -416,7 +416,15 @@ body.software-active .nav-btn.active {
 
 /* Education Page specific */
 .page-header { padding: 10rem 5% 5rem; text-align: center; }
-.page-title { font-size: 4.5rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
+.page-title {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
 .page-subtitle { font-size: 1.15rem; color: var(--text-muted); max-width: 650px; margin: 0 auto 3rem; }
 
 .toggle-container {
