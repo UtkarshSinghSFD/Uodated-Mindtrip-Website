@@ -180,8 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         if(cursorGlow) {
             cursorGlow.style.opacity = '1';
-            cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
+            cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
         }
     });
     // Hide when leaving window
@@ -507,9 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const randomY = Math.max(0, Math.random() * (sectionHeight - 70));
                 const rotate = (Math.random() - 0.5) * 40;
                 const scale = Math.random() * 0.4 + 0.8;
-                spaceship.style.left = randomX + 'px';
-                spaceship.style.top = randomY + 'px';
-                spaceship.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+                spaceship.style.transform = `translate3d(${randomX}px, ${randomY}px, 0) rotate(${rotate}deg) scale(${scale})`;
             }
 
             if (shifter) {
@@ -517,9 +514,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const randomY = Math.max(0, Math.random() * (sectionHeight - 60));
                 const rotate = (Math.random() - 0.5) * 60;
                 const scale = Math.random() * 0.5 + 0.7;
-                shifter.style.left = randomX + 'px';
-                shifter.style.top = randomY + 'px';
-                shifter.style.transform = `rotate(${rotate}deg) scale(${scale})`;
+                shifter.style.transform = `translate3d(${randomX}px, ${randomY}px, 0) rotate(${rotate}deg) scale(${scale})`;
             }
         }
         

@@ -54,6 +54,8 @@
     box-sizing: border-box;
 }
 
+html { scroll-behavior: smooth; }
+
 body {
     background-color: var(--bg-dark);
     color: var(--text-main);
@@ -92,12 +94,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     z-index: -2;
     overflow: hidden;
     background: var(--bg-dark);
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .stars {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100%; height: 200%;
+    will-change: transform;
     background-image: 
         radial-gradient(1px 1px at 10% 20%, white, transparent),
         radial-gradient(1px 1px at 30% 40%, rgba(234, 179, 8, 0.8), transparent),
@@ -137,6 +142,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     z-index: -1;
     pointer-events: none;
     mix-blend-mode: screen;
+    will-change: transform, opacity;
 }
 .top-orb {
     top: -20%;
@@ -947,12 +953,13 @@ body.software-active .nav-btn.active {
 /* --- Spaceship Animation --- */
 .spaceship-container {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 0;
+    left: 0;
     width: 120px;
     height: 70px;
     z-index: -1;
     transition: top 4s ease-in-out, left 4s ease-in-out, transform 1s ease-in-out;
+    will-change: transform;
     pointer-events: none;
     display: flex;
     justify-content: center;
