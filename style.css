@@ -311,6 +311,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
 }
 
+body.software-active .nav-btn.active {
+    color: var(--accent-cyan);
+    background: rgba(34, 211, 238, 0.1);
+    border-color: rgba(34, 211, 238, 0.3);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
 .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
 
 
