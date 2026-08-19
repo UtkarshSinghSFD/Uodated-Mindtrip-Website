@@ -1,0 +1,703 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarNexusTech ΓÇö Software Solutions</title>
+    <!-- Use Inter for that clean, professional GoDaddy-esque look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/round%20logo.png">
+
+    <style>
+        :root {
+            /* GoDaddy-inspired Palette */
+            --gd-teal: #00838C;
+            --gd-teal-dark: #006066;
+            --gd-black: #111111;
+            --gd-white: #FFFFFF;
+            --gd-gray-light: #F5F5F5;
+            --gd-gray-med: #E8E8E8;
+            --gd-text-gray: #444444;
+            --gd-blue: #00A4A6; /* Accents */
+            
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--gd-black);
+            background-color: var(--gd-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: 1.5rem; }
+        p { margin-bottom: 16px; font-size: 1.125rem; color: var(--gd-text-gray); }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.125rem;
+            padding: 16px 32px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .btn-primary {
+            background-color: var(--gd-black);
+            color: var(--gd-white);
+        }
+        
+        .btn-primary:hover {
+            background-color: #333333;
+        }
+
+        .btn-teal {
+            background-color: var(--gd-teal);
+            color: var(--gd-white);
+        }
+        
+        .btn-teal:hover {
+            background-color: var(--gd-teal-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gd-black);
+            border-color: var(--gd-black);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--gd-black);
+            color: var(--gd-white);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--gd-white);
+            border-bottom: 1px solid var(--gd-gray-med);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo img { height: 32px; }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--gd-black);
+        }
+
+        .nav-links a:hover {
+            color: var(--gd-teal);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--gd-teal);
+            color: var(--gd-white);
+            padding: 100px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero p {
+            color: var(--gd-white);
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        
+        /* GoDaddy style decorative shape in Hero */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background-color: var(--gd-teal-dark);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 96px 0;
+        }
+
+        .bg-light {
+            background-color: var(--gd-gray-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+
+        /* Staggered Drop Grid Animation */
+        .staggered-drop-grid.reveal {
+            transform: none !important;
+            opacity: 1 !important;
+            transition: none !important;
+        }
+
+        .staggered-drop-grid > * {
+            opacity: 0;
+            transform: translateY(-60px);
+        }
+
+        .staggered-drop-grid.active > * {
+            animation: dropArrange 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        .staggered-drop-grid.active > *:nth-child(1) { animation-delay: 0.1s; }
+        .staggered-drop-grid.active > *:nth-child(2) { animation-delay: 0.2s; }
+        .staggered-drop-grid.active > *:nth-child(3) { animation-delay: 0.3s; }
+        .staggered-drop-grid.active > *:nth-child(4) { animation-delay: 0.4s; }
+        .staggered-drop-grid.active > *:nth-child(5) { animation-delay: 0.5s; }
+        .staggered-drop-grid.active > *:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes dropArrange {
+            0% { opacity: 0; transform: translateY(-60px) scale(0.98); }
+            60% { transform: translateY(5px) scale(1); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        /* Cards Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        /* Services Cards */
+        .card {
+            background: var(--gd-white);
+            border: 1px solid var(--gd-gray-med);
+            border-radius: 8px;
+            padding: 40px 32px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--gd-teal);
+        }
+        
+        /* Top accent line for GoDaddy style */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: transparent;
+            transition: background-color 0.3s;
+        }
+        
+        .card:hover::before {
+            background-color: var(--gd-teal);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--gd-gray-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            color: var(--gd-teal);
+        }
+
+        /* Integration Logos */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        
+        .logo-card {
+            background: var(--gd-white);
+            border: 1px solid var(--gd-gray-med);
+            padding: 32px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--gd-black);
+            transition: all 0.2s;
+        }
+        
+        .logo-card:hover {
+            border-color: var(--gd-teal);
+            color: var(--gd-teal);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Product Showcase */
+        .product-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            margin-bottom: 96px;
+        }
+        
+        .product-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .product-row.reverse {
+            direction: rtl;
+        }
+        .product-row.reverse > * {
+            direction: ltr;
+        }
+
+        .product-visual {
+            background-color: var(--gd-gray-light);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: var(--gd-teal);
+            border: 1px solid var(--gd-gray-med);
+        }
+        
+        .product-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+        
+        .product-content ul {
+            margin-top: 24px;
+        }
+        
+        .product-content li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .product-content li::before {
+            content: 'Γ£ô';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--gd-teal);
+            font-weight: bold;
+        }
+        
+        @media (max-width: 900px) {
+            .product-row { grid-template-columns: 1fr; gap: 40px; }
+            .product-visual { height: 300px; }
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            background: var(--gd-white);
+            border: 1px solid var(--gd-gray-med);
+            border-radius: 12px;
+            padding: 64px;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: grid;
+            gap: 8px;
+        }
+        
+        label {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--gd-teal);
+            box-shadow: 0 0 0 3px rgba(0, 131, 140, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid { grid-template-columns: 1fr; padding: 32px; }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--gd-black);
+            color: var(--gd-white);
+            padding: 80px 0 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+        
+        .footer-grid h5 {
+            color: var(--gd-white);
+            margin-bottom: 24px;
+        }
+        
+        .footer-grid li {
+            margin-bottom: 16px;
+            color: #AAAAAA;
+        }
+        
+        .footer-grid a:hover {
+            color: var(--gd-white);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #333333;
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                StarNexusTech
+            </a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#integrations">Integrations</a>
+                <a href="#products">Products</a>
+                <a href="#contact" class="btn btn-teal" style="padding: 10px 24px;">Start a Project</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Digital transformation, simplified.</h1>
+            <p>We turn complex business problems into practical, robust software ΓÇö connecting people, data, automation and technology into systems that move your business forward.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                <a href="#products" class="btn btn-outline" style="background: transparent; color: white; border-color: white;">See Our Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Solutions that work for you</h2>
+                <p>From core infrastructure to automated workflows, we build software that solves real problems.</p>
+            </div>
+            
+            <!-- Staggered Drop Grid Applied Here -->
+            <div class="grid-3 staggered-drop-grid">
+                <div class="card">
+                    <div class="card-icon">01</div>
+                    <h3>Core Development</h3>
+                    <p>Custom software applications built from the ground up, precisely tailored to your operational needs.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">02</div>
+                    <h3>Business Automation</h3>
+                    <p>Eliminate repetitive tasks and streamline processes with intelligent, scalable automation systems.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">03</div>
+                    <h3>System Integrations</h3>
+                    <p>Connect your disparate tools and databases into a unified, single source of truth.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">04</div>
+                    <h3>Cloud Infrastructure</h3>
+                    <p>Secure, scalable, and highly available cloud environments engineered for enterprise performance.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">05</div>
+                    <h3>Data Engineering</h3>
+                    <p>Pipelines and dashboards that transform raw data into actionable business intelligence.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">06</div>
+                    <h3>Digital Transformation</h3>
+                    <p>End-to-end consulting and execution to modernize your legacy systems safely and securely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="integrations" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Seamless Integrations</h2>
+                <p>We build connections to the tools you already use, creating a unified ecosystem.</p>
+            </div>
+            
+            <!-- Staggered Drop Grid Applied Here -->
+            <div class="logo-grid staggered-drop-grid">
+                <div class="logo-card">Salesforce</div>
+                <div class="logo-card">ServiceNow</div>
+                <div class="logo-card">SAP</div>
+                <div class="logo-card">Stripe</div>
+                <div class="logo-card">Twilio</div>
+                <div class="logo-card">AWS</div>
+                <div class="logo-card">Azure</div>
+                <div class="logo-card">Shopify</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Flagship Products</h2>
+                <p>Ready-to-deploy software engines built for scale and reliability.</p>
+            </div>
+
+            <div class="product-row">
+                <div class="product-visual">≡ƒôª</div>
+                <div class="product-content">
+                    <div style="color: var(--gd-teal); font-weight: 700; margin-bottom: 8px;">LOGISTICS</div>
+                    <h3>Warehouse Matrix System</h3>
+                    <p>A comprehensive inventory routing engine that handles high-throughput fulfillment across distributed networks.</p>
+                    
+                    <!-- Staggered Drop Grid on list items -->
+                    <ul class="staggered-drop-grid">
+                        <li>Real-time inventory synchronization</li>
+                        <li>Automated supplier routing</li>
+                        <li>Predictive stock depletion models</li>
+                        <li>Barcode and RFID scanner integration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-row reverse">
+                <div class="product-visual">≡ƒôè</div>
+                <div class="product-content">
+                    <div style="color: var(--gd-teal); font-weight: 700; margin-bottom: 8px;">ANALYTICS</div>
+                    <h3>Finance Command Center</h3>
+                    <p>A unified reporting dashboard that consolidates transaction data across payment gateways into single views.</p>
+                    
+                    <!-- Staggered Drop Grid on list items -->
+                    <ul class="staggered-drop-grid">
+                        <li>Multi-currency ledger mapping</li>
+                        <li>Automated anomaly detection</li>
+                        <li>One-click compliance reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div>
+                    <h2>Let's build something.</h2>
+                    <p style="margin-bottom: 32px;">Tell us about your technical challenges. Our engineering team is ready to design a solution that scales.</p>
+                    <div style="margin-bottom: 24px;">
+                        <strong>Email us</strong><br>
+                        solutions@starnexustech.com
+                    </div>
+                    <div>
+                        <strong>Call us</strong><br>
+                        1-800-NEXUS-01
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" placeholder="Acme Corp">
+                    </div>
+                    <div class="form-group">
+                        <label>Project Details</label>
+                        <textarea placeholder="Tell us what you're looking to build..." rows="4"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-teal" style="width: 100%; border: none;">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h2 style="color: white; margin-bottom: 16px;">StarNexusTech</h2>
+                    <p style="color: #AAAAAA; max-width: 300px;">Engineering practical, powerful software solutions for the modern enterprise.</p>
+                </div>
+                <div>
+                    <h5>Solutions</h5>
+                    <ul>
+                        <li><a href="#">Custom Software</a></li>
+                        <li><a href="#">Cloud Migration</a></li>
+                        <li><a href="#">Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Products</h5>
+                    <ul>
+                        <li><a href="#">Warehouse Matrix</a></li>
+                        <li><a href="#">Finance Command</a></li>
+                        <li><a href="#">DocuScan Pro</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>┬⌐ 2026 StarNexusTech. All rights reserved.</div>
+                <div style="display: flex; gap: 24px;">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for the Staggered Drop Grid Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const staggeredGrids = document.querySelectorAll('.staggered-drop-grid');
+            
+            const gridObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Unobserve after animating once
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Trigger when 10% of the element is visible
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+            
+            staggeredGrids.forEach(grid => {
+                gridObserver.observe(grid);
+            });
+        });
+    </script>
+</body>
+</html>
