@@ -313,39 +313,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .mobile-menu-btn { display: none; font-size: 1.5rem; cursor: pointer; }
 
-/* Software Page Active Navbar Overrides */
-body.software-active .navbar {
-    background: rgba(255, 250, 240, 0.98); /* matches --paper #fffaf0 */
-}
-
-body.software-active .logo-img {
-    mix-blend-mode: normal; 
-}
-
-body.software-active .nav-btn {
-    color: #555;
-}
-body.software-active .nav-btn:hover {
-    color: #111;
-}
-body.software-active .mobile-menu-btn {
-    color: #333;
-}
-@media (max-width: 768px) {
-    body.software-active .nav-links.active {
-        background: rgba(255, 250, 240, 0.98); /* light background for mobile menu */
-        border-bottom: 3px solid #1a1a1a;
-    }
-}
-body.software-active .nav-btn.active {
-    color: var(--accent-gold);
-    background: rgba(234, 179, 8, 0.1);
-    border-color: rgba(234, 179, 8, 0.3);
-    text-shadow: none;
-}
-body.software-active .mobile-menu-btn {
-    color: #333;
-}
 
 /* Layout */
 .app-container { display: flex; flex-direction: column; min-height: 100vh; }
