@@ -27,13 +27,7 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '<div class="hero-content">$1</div>\n' +
     '                  <div class="hero-image-wrapper">\n' +
     '                      <div class="hero-image-card">\n' +
-    '                          <img src="images/st-images/485474034854831901.jpg" alt="Digital Tree" style="width: 100%; height: 450px; object-fit: cover;">\n' +
-    '                          <div class="hero-image-caption">\n' +
-    '                             <h3>Empowering the Future: Architecting <span style="color: #00baba;">Scalable</span> Business <span style="color: #00baba;">Systems</span></h3>\n' +
-    '                             <div class="caption-bottom">\n' +
-    '                                 <p>Join forward-thinking enterprises automating their operations with cutting-edge technology.</p>\n' +
-    '                             </div>\n' +
-    '                          </div>\n' +
+    '                          <img src="images/st-images/Et si une IA laissait un message pour la prochaine..jpg" alt="AI Message" style="width: 100%; height: 450px; object-fit: cover;">\n' +
     '                      </div>\n' +
     '                  </div>\n' +
     '              </div>\n          </section>'
@@ -334,7 +328,7 @@ body.software-active .nav-links .nav-btn.active {
       height: 450px !important;
       object-fit: cover !important;
       display: block !important;
-      border-radius: 12px 12px 0 0 !important;
+      border-radius: 12px !important;
   }
   #software .hero-image-caption {
       padding: 18px 22px !important;
