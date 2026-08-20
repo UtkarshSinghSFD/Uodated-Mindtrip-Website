@@ -27,7 +27,10 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '<div class="hero-content">$1</div>\n' +
     '                  <div class="hero-image-wrapper">\n' +
     '                      <div class="hero-image-card">\n' +
-    '                          <img src="images/starnexus_hero.jpg" alt="Enterprise Automation Visual">\n' +
+    '                          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 250px; padding: 20px 20px 0 20px;">\n' +
+    '                              <img src="images/st-images/6825836930360502.jpg" alt="Automation Platform" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">\n' +
+    '                              <img src="images/st-images/21392166974708354.jpg" alt="Business Systems" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">\n' +
+    '                          </div>\n' +
     '                          <div class="hero-image-caption">\n' +
     '                             <h3>Empowering the Future: Architecting <span style="color: #00baba;">Scalable</span> Business <span style="color: #00baba;">Systems</span></h3>\n' +
     '                             <div class="caption-bottom">\n' +
@@ -47,11 +50,11 @@ snBody = snBody.replace(/<h3>Discovery<\/h3>/, '<i class="ph-bold ph-magnifying-
 snBody = snBody.replace(/<h3>Prototype<\/h3>/, '<i class="ph-bold ph-code" style="color: #8b5cf6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Prototype</h3>');
 snBody = snBody.replace(/<h3>Scale<\/h3>/, '<i class="ph-bold ph-rocket" style="color: #10b981; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Scale</h3>');
 
-// Add Icons to Our Services
-snBody = snBody.replace(/<h3>Enterprise Software<\/h3>/, '<i class="ph-fill ph-desktop" style="color: #f59e0b; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Enterprise Software</h3>');
-snBody = snBody.replace(/<h3>Industrial IoT<\/h3>/, '<i class="ph-fill ph-cpu" style="color: #ef4444; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Industrial IoT</h3>');
-snBody = snBody.replace(/<h3>Workflow Orchestration<\/h3>/, '<i class="ph-fill ph-git-merge" style="color: #06b6d4; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Workflow Orchestration</h3>');
-snBody = snBody.replace(/<h3>B2B Cloud Solutions<\/h3>/, '<i class="ph-fill ph-cloud-arrow-up" style="color: #ec4899; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>B2B Cloud Solutions</h3>');
+// Add Icons and Images to Our Services
+  snBody = snBody.replace(/<h3>Enterprise Software<\/h3>/, '<img src="images/st-images/Digital Efficiency.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;"><i class="ph-fill ph-desktop" style="color: #f59e0b; font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Enterprise Software</h3>');
+  snBody = snBody.replace(/<h3>Industrial IoT<\/h3>/, '<img src="images/st-images/New Technology.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;"><i class="ph-fill ph-cpu" style="color: #ef4444; font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Industrial IoT</h3>');
+  snBody = snBody.replace(/<h3>Workflow Orchestration<\/h3>/, '<img src="images/st-images/399413060726463435.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;"><i class="ph-fill ph-git-merge" style="color: #06b6d4; font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Workflow Orchestration</h3>');
+  snBody = snBody.replace(/<h3>B2B Cloud Solutions<\/h3>/, '<img src="images/st-images/11892386514169735.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;"><i class="ph-fill ph-cloud-arrow-up" style="color: #ec4899; font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>B2B Cloud Solutions</h3>');
 
 // Add Icons to Integrations
 snBody = snBody.replace(/<h3>ERP Systems<\/h3>/, '<i class="ph-fill ph-database" style="color: #3b82f6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>ERP Systems</h3>');
