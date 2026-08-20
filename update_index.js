@@ -47,9 +47,9 @@ snBody = snBody.replace(/<h3>Star Nexus Technologies HQ<\/h3>/, '<h3>StarNexusTe
                 <h2>How We Work</h2>
                 <p class="section-lead">A fixed sequence, from signal to system. Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
             </div>
-            <div style="display: flex; gap: 40px; align-items: center; justify-content: center;">
+            <div style="display: flex; gap: 40px; align-items: stretch; justify-content: center;">
                 <div style="flex: 1 1 50%; max-width: 50%;">
-                    <img src="images/st-images/6825836930360502.jpg" alt="Coding" style="width: 100%; height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+                    <img src="images/st-images/new_tree.jpg" alt="Digital Tree" style="width: 100%; height: 100%; min-height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
                 </div>
                 <div style="flex: 1 1 50%; max-width: 50%;">
                     <div style="display: flex; flex-direction: column; gap: 20px;">
