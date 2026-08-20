@@ -311,9 +311,9 @@ ${snJs}
 
 // Box dropping animation observer
 document.addEventListener('DOMContentLoaded', () => {
-    const dropObserver = new PoppinssectionObserver((entries) => {
+    const dropObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isPoppinssecting) {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('animate-drop');
                 dropObserver.unobserve(entry.target);
             }
