@@ -25,7 +25,18 @@ snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 styl
 // Add Hero Image and Flex Layout
 snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s*<\/section>/i, 
     '<div class="hero-content">$1</div>\n' +
-    '                  <div class="hero-image-wrapper"><img src="images/starnexus_hero.jpg" alt="Enterprise Automation Visual"></div>\n' +
+    '                  <div class="hero-image-wrapper">\n' +
+    '                      <div class="hero-image-card">\n' +
+    '                          <img src="images/starnexus_hero.jpg" alt="Enterprise Automation Visual">\n' +
+    '                          <div class="hero-image-caption">\n' +
+    '                             <h3>Empowering the Future: Architecting <span style="color: #ea580c;">Scalable</span> Business <span style="color: #16a34a;">Systems</span></h3>\n' +
+    '                             <div class="caption-bottom">\n' +
+    '                                 <p>Join forward-thinking enterprises automating their operations with cutting-edge technology.</p>\n' +
+    '                                 <a href="#about" class="btn-small">Learn More</a>\n' +
+    '                             </div>\n' +
+    '                          </div>\n' +
+    '                      </div>\n' +
+    '                  </div>\n' +
     '              </div>\n          </section>'
 );
 
@@ -295,8 +306,8 @@ body.software-active .nav-links .nav-btn.active {
   #software .hero-content {
       text-align: left !important;
       margin: 0 !important;
-      flex: 1 !important;
-      max-width: 50% !important;
+      flex: 0 0 40% !important;
+      max-width: 40% !important;
   }
   #software .hero-subtitle {
       margin-left: 0 !important;
@@ -305,15 +316,61 @@ body.software-active .nav-links .nav-btn.active {
       justify-content: flex-start !important;
   }
   #software .hero-image-wrapper {
-      flex: 1 !important;
+      flex: 0 0 55% !important;
+      max-width: 55% !important;
       display: flex !important;
       justify-content: center !important;
       align-items: center !important;
   }
-  #software .hero-image-wrapper img {
-      max-width: 100% !important;
-      border-radius: 20px !important;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15) !important;
+  #software .hero-image-card {
+      background: #f1f5f9 !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25) !important;
+      width: 100% !important;
+  }
+  #software .hero-image-card img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+  }
+  #software .hero-image-caption {
+      padding: 24px 28px !important;
+      text-align: left !important;
+  }
+  #software .hero-image-caption h3 {
+      font-size: 1.5rem !important;
+      color: #0f172a !important;
+      margin-bottom: 1rem !important;
+      font-weight: 600 !important;
+      font-family: 'Comfortaa', sans-serif !important;
+  }
+  #software .caption-bottom {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 15px !important;
+  }
+  #software .caption-bottom p {
+      font-size: 0.95rem !important;
+      color: #334155 !important;
+      margin: 0 !important;
+      max-width: 75% !important;
+      line-height: 1.5 !important;
+  }
+  #software .btn-small {
+      padding: 10px 18px !important;
+      border-radius: 6px !important;
+      font-size: 0.9rem !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      background: #ea580c !important;
+      color: white !important;
+      transition: opacity 0.2s !important;
+  }
+  #software .btn-small:hover {
+      opacity: 0.9 !important;
   }
   
   @media (max-width: 900px) {
