@@ -315,10 +315,10 @@ body.software-active .nav-links .nav-btn.active {
       justify-content: flex-start !important;
   }
   #software .hero-image-wrapper {
-      flex: 0 0 55% !important;
-      max-width: 55% !important;
+      flex: 0 0 50% !important;
+      max-width: 50% !important;
       display: flex !important;
-      justify-content: center !important;
+      justify-content: flex-end !important;
       align-items: center !important;
   }
   #software .hero-image-card {
@@ -326,7 +326,8 @@ body.software-active .nav-links .nav-btn.active {
       border-radius: 12px !important;
       overflow: hidden !important;
       box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25) !important;
-      width: 100% !important;
+      width: 90% !important;
+      margin-left: auto !important;
   }
   #software .hero-image-card img {
       width: 100% !important;
