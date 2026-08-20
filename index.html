@@ -359,909 +359,1824 @@
 
                         <!-- SOFTWARE SOLUTIONS PAGE (STAR NEXUS THEME) -->
                                     <!-- ADVANCED SOFTWARE PAGE -->
-            <section id="software" class="page-section advanced-theme">
-    <style>
-        #software {
-            --bg-color: #030712;
-            --text-main: #f9fafb;
-            --text-muted: #9ca3af;
-            --accent-blue: #3b82f6;
-            --accent-glow: #60a5fa;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            position: relative;
-            overflow: hidden;
-            padding-bottom: 80px;
-            text-align: left;
-        }
+<section id="software" class="page-section">
+<style>
 
-        #software * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+#software {
+    /* Colors */
+    --color-primary: #00aeb6; /* Teal accent like GoDaddy */
+    --color-primary-dark: #008f96;
+    --color-secondary: #111111;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-bg-light: #ffffff;
+    --color-bg-muted: #f5f7f9;
+    --color-bg-dark: #111111;
+    --color-bg-brand: #00aeb6;
+    
+    --color-border: #e0e0e0;
+    
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Other */
+    --radius: 4px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
 
-        
-        #neuron-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-        }
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
 
-        /* Animated Background Gradients */
-        #software .bg-glow {
-            position: absolute;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(3,7,18,0) 70%);
-            border-radius: 50%;
-            top: -100px;
-            left: -200px;
-            z-index: 0;
-            animation: floatGlow 15s infinite alternate ease-in-out;
-            pointer-events: none;
-        }
-        
-        #software .bg-glow-2 {
-            position: absolute;
-            width: 900px;
-            height: 900px;
-            background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, rgba(3,7,18,0) 60%);
-            border-radius: 50%;
-            bottom: -200px;
-            right: -300px;
-            z-index: 0;
-            animation: floatGlow2 20s infinite alternate ease-in-out;
-            pointer-events: none;
-        }
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
 
-        @keyframes floatGlow {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(150px, 100px); }
-        }
-        @keyframes floatGlow2 {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100px, -150px); }
-        }
+#software {
+  /* 
+  Star Nexus Technologies - GoDaddy Inspired Theme
+*/
 
-        #software .content-wrapper {
-            position: relative;
-            z-index: 10;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
 
-        /* Typography */
-        #software h1, #software h2, #software h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            line-height: 1.1;
-        }
 
-        #software a {
-            text-decoration: none;
-            color: inherit;
-        }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        #software .badge-adv {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(59,130,246,0.1);
-            border: 1px solid rgba(59,130,246,0.3);
-            border-radius: 20px;
-            color: var(--accent-glow);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 24px;
-            box-shadow: 0 0 15px rgba(59,130,246,0.2);
-        }
+#software {
+    scroll-behavior: smooth;
+}
 
-        /* Hero */
-        #software .hero-adv {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 120px 0;
-            border-bottom: 1px solid var(--glass-border);
-        }
+#software {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-bg-light);
+    -webkit-font-smoothing: antialiased;
+}
 
-        #software .hero-adv h1 {
-            font-size: clamp(3rem, 7vw, 6rem);
-            background: linear-gradient(to right, #ffffff, #9ca3af);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
-        
-        #software .hero-adv h1 span {
-            background: linear-gradient(to right, #3b82f6, #06b6d4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-secondary);
+}
 
-        #software .hero-adv p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 650px;
-            margin: 0 auto 48px;
-            line-height: 1.7;
-        }
+p {
+    margin-bottom: var(--spacing-sm);
+}
 
-        /* Futuristic Button */
-        #software .btn-adv {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.05);
-            color: #fff;
-            padding: 16px 36px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-            cursor: pointer;
-        }
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
 
-        #software .btn-adv::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.4), transparent);
-            transition: left 0.5s ease;
-        }
+a:hover {
+    color: var(--color-primary-dark);
+}
 
-        #software .btn-adv:hover {
-            background: rgba(59,130,246,0.15);
-            border-color: rgba(59,130,246,0.5);
-            box-shadow: 0 0 25px rgba(59,130,246,0.3);
-            transform: translateY(-2px);
-        }
+ul {
+    list-style: none;
+}
 
-        #software .btn-adv:hover::before {
-            left: 100%;
-        }
+/* Layout Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
 
-        #software .btn-adv.primary {
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            border: none;
-            box-shadow: 0 10px 30px rgba(37,99,235,0.4);
-        }
-        
-        #software .btn-adv.primary:hover {
-            box-shadow: 0 15px 40px rgba(37,99,235,0.6);
-            transform: translateY(-3px);
-        }
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
 
-        /* Advanced Grid Section */
-        #software .adv-section {
-            padding: 120px 0;
-            border-bottom: 1px solid var(--glass-border);
-        }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
 
-        #software .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
 
-        #software .section-header h2 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            margin-bottom: 16px;
-            color: #fff;
-        }
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+}
 
-        #software .section-header p {
-            color: var(--text-muted);
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.btn-primary:hover {
+    background-color: #000;
+    color: var(--color-bg-light);
+}
 
-        /* Glass Cards Grid */
-        #software .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
+.btn-secondary {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
 
-        #software .glass-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 40px;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        
-        #software .glass-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
+.btn-secondary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-bg-light);
+}
 
-        #software .glass-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(59,130,246,0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 30px rgba(59,130,246,0.15);
-        }
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
 
-        #software .glass-card:hover::after {
-            opacity: 1;
-        }
+.btn-outline:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+}
 
-        #software .card-icon-wrapper {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background: rgba(3,7,18,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-            color: var(--accent-glow);
-            font-size: 1.8rem;
-            transition: all 0.3s ease;
-        }
+.btn-block {
+    display: block;
+    width: 100%;
+}
 
-        #software .glass-card:hover .card-icon-wrapper {
-            background: rgba(59,130,246,0.2);
-            color: #fff;
-            border-color: rgba(59,130,246,0.5);
-            box-shadow: 0 0 20px rgba(59,130,246,0.4);
-        }
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    margin-top: var(--spacing-sm);
+}
 
-        #software .glass-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: #fff;
-            position: relative;
-            z-index: 2;
-        }
+.link-arrow span {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
 
-        #software .glass-card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            position: relative;
-            z-index: 2;
-        }
+.link-arrow:hover span {
+    transform: translateX(5px);
+}
 
-        /* Products Showcase */
-        #software .product-showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 100px;
-        }
-        
-        #software .product-showcase:nth-child(even) {
-            direction: rtl;
-        }
-        #software .product-showcase:nth-child(even) > * {
-            direction: ltr;
-        }
+/* Header */
+.site-header {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        #software .product-visual {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            background: #000;
-            border: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: inset 0 0 50px rgba(59,130,246,0.1);
-        }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
 
-        #software .product-visual::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: conic-gradient(from 0deg, transparent 0 340deg, rgba(59,130,246,0.6) 360deg);
-            animation: rotateBg 4s linear infinite;
-        }
-        
-        #software .product-visual::after {
-            content: '';
-            position: absolute;
-            inset: 2px;
-            background: #050505;
-            border-radius: 18px;
-        }
+.logo a {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+}
 
-        #software .product-visual-content {
-            position: relative;
-            z-index: 10;
-            color: var(--accent-glow);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 4rem;
-            font-weight: 700;
-            text-shadow: 0 0 30px rgba(59,130,246,0.6);
-            letter-spacing: 0.1em;
-        }
+.main-nav .nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
 
-        #software .product-specs {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+.main-nav a {
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
 
-        #software .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(255,255,255,0.02);
-            padding: 16px 20px;
-            border-radius: 8px;
-            border-left: 2px solid var(--accent-blue);
-            transition: all 0.3s ease;
-        }
+.main-nav a:hover {
+    color: var(--color-primary);
+}
 
-        #software .spec-item:hover {
-            background: rgba(59,130,246,0.08);
-            transform: translateX(10px);
-        }
-        
-        #software .spec-item i {
-            color: var(--accent-glow);
-            font-size: 1.4rem;
-        }
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
 
-        #software .spec-item span {
-            color: #d1d5db;
-            font-weight: 500;
-        }
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    transition: var(--transition);
+}
 
-        /* Contact Section Advanced */
-        #software .contact-adv-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
-        }
+/* Sections */
+.section {
+    padding: var(--spacing-xl) 0;
+}
 
-        #software .contact-info-block {
-            padding: 40px;
-            background: linear-gradient(180deg, rgba(59,130,246,0.1) 0%, transparent 100%);
-            border-radius: 24px;
-            border: 1px solid rgba(59,130,246,0.2);
-        }
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
 
-        #software .contact-info-block h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #fff;
-        }
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
 
-        #software .contact-methods {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+.section-lead {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+}
 
-        #software .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        #software .contact-method .cm-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--accent-glow);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
+.section-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-bg-light);
+}
 
-        #software .adv-form {
-            display: grid;
-            gap: 24px;
-        }
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 {
+    color: var(--color-bg-light);
+}
 
-        #software .input-group {
-            position: relative;
-        }
+.section-dark p {
+    color: #cccccc;
+}
 
-        #software .adv-input {
-            width: 100%;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 20px 24px;
-            border-radius: 12px;
-            color: #fff;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
+.section-dark .link-arrow {
+    color: var(--color-primary);
+}
 
-        #software .adv-input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
-            background: rgba(0,0,0,0.5);
-        }
+.section-light {
+    background-color: var(--color-bg-light);
+}
 
-        #software .adv-input::placeholder {
-            color: #6b7280;
-        }
+.section-brand {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
 
-        #software textarea.adv-input {
-            min-height: 150px;
-            resize: vertical;
-        }
+.section-brand h2 {
+    color: var(--color-secondary);
+}
 
-        @media (max-width: 992px) {
-            #software .contact-adv-container, #software .product-showcase {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
+.section-brand .section-lead {
+    color: rgba(17, 17, 17, 0.8);
+}
 
-        /* Sequential Reveal Animations */
-        #software .reveal-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
+/* Hero */
+.hero {
+    background-color: var(--color-bg-muted);
+    padding: 120px 0;
+    text-align: center;
+}
 
-        #software .reveal-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        #software .delay-1 { transition-delay: 0.1s; }
-        #software .delay-2 { transition-delay: 0.2s; }
-        #software .delay-3 { transition-delay: 0.3s; }
-        #software .delay-4 { transition-delay: 0.4s; }
-        #software .delay-5 { transition-delay: 0.5s; }
-    </style>
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    margin-bottom: var(--spacing-md);
+}
 
-    <!-- Background Orbs -->
-    <div class="bg-glow"></div>
-    <div class="bg-glow-2"></div>
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+/* How We Work */
+.step-card {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.step-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.step-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.step-card h4 {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    font-weight: 500;
+}
+
+/* Services */
+.services-grid {
+    gap: var(--spacing-lg);
+}
+
+.service-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.service-meta {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+}
+
+/* Integrations */
+.integration-card {
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-muted);
+}
+
+.integration-card .category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.integration-card h3 {
+    font-size: 1.4rem;
+}
+
+/* Products */
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.product-card {
+    background: var(--color-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    color: var(--color-text);
+}
+
+.product-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.product-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--color-secondary);
+    color: var(--color-bg-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
+}
+
+.feature-list {
+    margin-top: var(--spacing-md);
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact-grid {
+    align-items: flex-start;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+}
+
+.contact-block {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-block h3 {
+    font-size: 1.5rem;
+}
+
+.contact-block h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-secondary);
+}
+
+.note {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: var(--spacing-md);
+}
+
+.contact-form-container {
+    background: var(--color-bg-muted);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-heading);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0,174,182,0.1);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--color-bg-dark);
+    color: var(--color-bg-light);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.footer-top {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-brand h2 {
+    color: var(--color-bg-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact h3 {
+    color: var(--color-bg-light);
+}
+
+.footer-contact a {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    
+    .hero { padding: 80px 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-buttons { flex-direction: column; }
+    
+    .section-header h2 { font-size: 2rem; }
+    
+    .mobile-menu-btn { display: flex; }
+    
+    .main-nav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-light);
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-md);
+        display: none;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .header-actions { display: none; }
+}
+
+/* Marquee Animations */
+.product-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    position: relative;
+    padding: 10px 0;
+}
+.product-marquee-container::before,
+.product-marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.product-marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg-brand) 0%, transparent 100%);
+}
+.product-marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg-brand) 0%, transparent 100%);
+}
+
+.product-marquee-track {
+    display: flex;
+    gap: 30px;
+    padding-left: 30px;
+}
+
+.track-left {
+    animation: scrollLeft 70s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 40s linear infinite;
+}
+
+/* Pause on hover */
+.product-marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+/* Ensure cards in marquee don't shrink and wrap text normally */
+.marquee-card {
+    min-width: 450px;
+    max-width: 450px;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+}
+.marquee-card ul {
+    margin-top: auto; /* Push features to bottom */
+}
+
+@media (max-width: 768px) {
+    .marquee-card {
+        min-width: 320px;
+        max-width: 320px;
+    }
+    .product-marquee-container::before,
+    .product-marquee-container::after {
+        width: 50px;
+    }
+}
+
+  /* Resets to prevent bleed-through */
+  .product-card {
+      display: block !important;
+      border: none !important;
+  }
+  .product-badge {
+      border: none !important;
+  }
+  #contact {
+      background: var(--color-bg-light) !important;
+  }
+  #contact::before, #contact::after {
+      display: none !important;
+  }
+  form {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+  }
+  input, textarea {
+      background: var(--color-bg-light) !important;
+      border: 1px solid var(--color-border) !important;
+      border-radius: var(--radius) !important;
+      color: var(--color-text) !important;
+      font-family: var(--font-body) !important;
+  }
+  input:focus, textarea:focus {
+      outline: none !important;
+      border-color: var(--color-primary) !important;
+      box-shadow: 0 0 0 3px rgba(0,174,182,0.1) !important;
+  }
+  .site-footer {
+      background-color: var(--color-bg-dark) !important;
+  }
+  .footer-bottom {
+      display: block !important;
+      text-align: center !important;
+      border-top: none !important;
+      padding-top: 0 !important;
+      color: #888 !important;
+  }
+  .footer-brand p, .footer-contact p {
+      color: var(--color-bg-light) !important;
+      margin-top: 0 !important;
+      font-size: 0.95rem !important;
+  }
+  .footer-brand h2 {
+      font-size: 1.5rem !important;
+      color: var(--color-bg-light) !important;
+      margin-bottom: var(--spacing-xs) !important;
+  }
+  .footer-contact h3 {
+      font-size: 1.2rem !important;
+      color: var(--color-bg-light) !important;
+      margin-bottom: var(--spacing-xs) !important;
+  }
+  .footer-contact a {
+      color: var(--color-primary) !important;
+  }
+  h1, h2, h3, h4, h5, h6, .logo a {
+      font-family: var(--font-heading) !important;
+      color: var(--color-text) !important;
+  }
+  p, li, .val, .note {
+      font-family: var(--font-body) !important;
+  }
+  label {
+      font-family: var(--font-heading) !important;
+      color: var(--color-text) !important;
+      letter-spacing: normal !important;
+  }
+  .contact-info p, .info-row div.val {
+      color: var(--color-text-light) !important;
+  }
+  
+  /* Fix headings in dark sections (Our Services) */
+  .section-dark h2, .section-dark h3, .section-dark h4 {
+      color: #ffffff !important;
+  }
+  
+  /* Fix Marquee Track Width and Speed */
+  .product-marquee-track {
+      width: max-content !important;
+      flex-shrink: 0 !important;
+      display: flex !important;
+      flex-wrap: nowrap !important;
+  }
+  .track-left {
+      animation: scrollLeft 40s linear infinite !important;
+  }
+  .track-right {
+      animation: scrollRight 35s linear infinite !important;
+  }
+  .product-marquee-track:hover {
+      animation-play-state: paused !important;
+  }
+  
+  /* Star Nexus Original Style Cards */
+  .marquee-card {
+      min-width: 360px !important;
+      max-width: 360px !important;
+      height: 480px !important;
+      flex-shrink: 0 !important;
+      background: #ffffff !important;
+      border: none !important;
+      border-radius: 8px !important;
+      padding: 30px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      transition: transform 0.3s ease !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+  }
+  .marquee-card:hover {
+      transform: translateY(-8px) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+  }
+  .marquee-card h3 {
+      font-size: 1.8rem !important;
+      color: var(--color-text) !important;
+      margin-bottom: 0.2rem !important;
+  }
+  .marquee-card h4 {
+      font-size: 1rem !important;
+      color: var(--color-primary) !important;
+      margin-bottom: 1.5rem !important;
+      font-weight: 600 !important;
+  }
+  .marquee-card p {
+      font-size: 0.95rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 1.5rem !important;
+      color: var(--color-text-light) !important;
+  }
+  .marquee-card .feature-list {
+      margin-top: 0 !important;
+      padding-left: 0 !important;
+      list-style-type: none !important;
+      overflow-y: auto !important;
+      flex-grow: 1 !important;
+      scrollbar-width: thin !important;
+      scrollbar-color: rgba(0,0,0,0.2) transparent !important;
+  }
+  .marquee-card .feature-list li {
+      font-size: 0.9rem !important;
+      color: var(--color-text-light) !important;
+      margin-bottom: 0.6rem !important;
+      position: relative !important;
+      padding-left: 1.5rem !important;
+  }
+  .marquee-card .feature-list li::before {
+      content: "→" !important;
+      position: absolute !important;
+      left: 0 !important;
+      color: var(--color-primary) !important;
+  }
+  .marquee-card .product-badge {
+      font-size: 0.75rem !important;
+      margin-bottom: 1.5rem !important;
+      border-radius: 20px !important;
+      padding: 6px 14px !important;
+      background: var(--color-text) !important;
+      color: var(--color-bg-light) !important;
+      border: none !important;
+      font-weight: 600 !important;
+      align-self: flex-start !important;
+      display: inline-block !important;
+  }
+  
+  @media (max-width: 768px) {
+      .marquee-card {
+          min-width: 320px !important;
+          max-width: 320px !important;
+          height: 420px !important;
+      }
+  }
+
+}
+
+/* Hide global MideTripE footer when software page is active */
+body.software-active footer.footer {
+    display: none !important;
+}
+
+/* Make entire navbar solid black on software page so the tab blends in */
+body.software-active .navbar {
+    background: #000000 !important;
+    backdrop-filter: none !important;
+}
+
+/* Fix Navigation Tab for Software page to match Education (Yellow/Gold) */
+body.software-active .nav-links .nav-btn.active {
+    color: #eab308 !important; /* var(--accent-gold) */
+    background: rgba(234, 179, 8, 0.1) !important;
+    border: 1px solid rgba(234, 179, 8, 0.3) !important;
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.5) !important;
+}
+
+/* Remove old MideTripE black borders from sections */
+#software section {
+    border: none !important;
+}
+
+/* Dropping animation for boxes */
+@keyframes dropInAnim {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+.animate-drop {
+    animation: dropInAnim 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+</style>
 
     
-    <!-- Neuron Canvas -->
-    <canvas id="neuron-canvas"></canvas>
 
-    <div class="content-wrapper">
-        <!-- HERO -->
-        <div class="hero-adv">
-            <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 10;">
-                <div class="badge-adv reveal-up active delay-1">Enterprise Automation & Software</div>
-                <h1 class="reveal-up active delay-2">Star Nexus <br><span>Technologies</span></h1>
-                <p class="reveal-up active delay-3">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
-                <div class="reveal-up active delay-4" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                    <button class="btn-adv primary" onclick="document.getElementById('starnexus-process-adv').scrollIntoView({behavior: 'smooth'})">Start a Project <i class="ph-bold ph-arrow-right"></i></button>
-                    <button class="btn-adv" onclick="document.getElementById('starnexus-products-adv').scrollIntoView({behavior: 'smooth'})">View Our Products</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- HOW WE WORK -->
-        <div class="adv-section" id="starnexus-process-adv">
-            <div class="section-header reveal-up">
-                <h2>How We Work</h2>
-                <p>A fixed sequence, from signal to system. Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
-            </div>
-            
-            <div class="bento-grid">
-                <div class="glass-card reveal-up delay-1">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">SN-01 · Discovery</div>
-                    <h3>Chart the system</h3>
-                    <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
-                </div>
-                <div class="glass-card reveal-up delay-2">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">SN-02 · Prototype</div>
-                    <h3>Build the proof</h3>
-                    <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
-                </div>
-                <div class="glass-card reveal-up delay-3">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">SN-03 · Scale</div>
-                    <h3>Launch & support</h3>
-                    <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- OUR SERVICES -->
-        <div class="adv-section" id="starnexus-services-adv">
-            <div class="section-header reveal-up">
-                <h2>Our Services</h2>
-                <p>Systems built around how your business actually operates. We architect and deploy the infrastructure that connects your operations, hardware, and data into a single working network.</p>
-            </div>
-            
-            <div class="bento-grid">
-                <div class="glass-card reveal-up delay-1">
-                    <div class="card-icon-wrapper"><i class="ph-fill ph-browser"></i></div>
-                    <h3><span style="color: var(--accent-blue); font-size: 1rem; margin-right: 8px;">01</span>Enterprise Software</h3>
-                    <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
-                    <a href="#" style="margin-top: 16px; color: var(--accent-glow); font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Explore Service <i class="ph-bold ph-arrow-right"></i></a>
-                </div>
-                <div class="glass-card reveal-up delay-2">
-                    <div class="card-icon-wrapper"><i class="ph-fill ph-cpu"></i></div>
-                    <h3><span style="color: var(--accent-blue); font-size: 1rem; margin-right: 8px;">02</span>Industrial IoT</h3>
-                    <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
-                    <a href="#" style="margin-top: 16px; color: var(--accent-glow); font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Explore Service <i class="ph-bold ph-arrow-right"></i></a>
-                </div>
-                <div class="glass-card reveal-up delay-3">
-                    <div class="card-icon-wrapper"><i class="ph-fill ph-git-branch"></i></div>
-                    <h3><span style="color: var(--accent-blue); font-size: 1rem; margin-right: 8px;">03</span>Workflow Orchestration</h3>
-                    <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
-                    <a href="#" style="margin-top: 16px; color: var(--accent-glow); font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Explore Service <i class="ph-bold ph-arrow-right"></i></a>
-                </div>
-                <div class="glass-card reveal-up delay-4">
-                    <div class="card-icon-wrapper"><i class="ph-fill ph-cloud-check"></i></div>
-                    <h3><span style="color: var(--accent-blue); font-size: 1rem; margin-right: 8px;">04</span>B2B Cloud Solutions</h3>
-                    <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
-                    <a href="#" style="margin-top: 16px; color: var(--accent-glow); font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; gap: 4px;">Explore Service <i class="ph-bold ph-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- INTEGRATIONS -->
-        <div class="adv-section" id="starnexus-integrations-adv">
-            <div class="section-header reveal-up">
-                <h2>Integrations</h2>
-                <p>Connect the tools you already run. Star Nexus links your ERP, CRM, and cloud stack so data moves automatically instead of being re-entered by hand.</p>
-            </div>
-            
-            <div class="bento-grid">
-                <div class="glass-card reveal-up delay-1" style="padding: 30px;">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">Operations</div>
-                    <h3>ERP Systems</h3>
-                    <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
-                </div>
-                <div class="glass-card reveal-up delay-2" style="padding: 30px;">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">Customer Data</div>
-                    <h3>CRM Platforms</h3>
-                    <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
-                </div>
-                <div class="glass-card reveal-up delay-3" style="padding: 30px;">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">Alerts</div>
-                    <h3>Collaboration Hubs</h3>
-                    <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
-                </div>
-                <div class="glass-card reveal-up delay-4" style="padding: 30px;">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">Analytics</div>
-                    <h3>Cloud Data Warehouses</h3>
-                    <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
-                </div>
-                <div class="glass-card reveal-up delay-5" style="padding: 30px;">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">Financials</div>
-                    <h3>Payment Gateways</h3>
-                    <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
-                </div>
-                <div class="glass-card reveal-up delay-5" style="padding: 30px;">
-                    <div class="badge-adv" style="margin-bottom: 12px; font-size: 0.75rem;">Developer Tools</div>
-                    <h3>REST & GraphQL APIs</h3>
-                    <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PRODUCTS -->
-        <div class="adv-section" id="starnexus-products-adv">
-            <div class="section-header reveal-up">
-                <h2>Our Products</h2>
-                <p>Five fixed points, one product line. Custom-configured hardware and software built to connect physical operations to your business systems.</p>
-            </div>
-
-            <!-- Polaris -->
-            <div class="product-showcase">
-                <div class="product-visual reveal-up delay-1">
-                    <div class="product-visual-content">PLR</div>
-                </div>
-                <div class="product-info reveal-up delay-2">
-                    <div class="badge-adv">Fortified VDI</div>
-                    <h2 style="font-family: 'Space Grotesk'; font-size: 2.5rem; color: #fff;">Polaris</h2>
-                    <h4 style="color: var(--accent-blue); margin-top: 10px; font-weight: 500;">Fixed-Point Secure Desktop Infrastructure</h4>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 16px; line-height: 1.6;">A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
-                    
-                    <div class="product-specs">
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>On-premise secure server node deployment</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Low-latency remote desktop streaming (60 FPS)</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Hardware-level encryption and zero-trust client access</span></div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 style="font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">Star Nexus<br>Technologies</h1>
+                    <div style="color: var(--color-primary); font-family: var(--font-heading); font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>
+                    <p class="hero-subtitle">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Start a Project</a>
+                        <a href="#products" class="btn btn-secondary">View Our Products</a>
                     </div>
-
                 </div>
             </div>
+        </section>
 
-            <!-- Vega -->
-            <div class="product-showcase">
-                <div class="product-visual reveal-up delay-1">
-                    <div class="product-visual-content">VGA</div>
+        <!-- How We Work Section -->
+        <section id="how-we-work" class="section section-light section-how-we-work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We Work</h2>
+                    <p class="section-lead">A fixed sequence, from signal to system. Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
                 </div>
-                <div class="product-info reveal-up delay-2">
-                    <div class="badge-adv">Assistive AI</div>
-                    <h2 style="font-family: 'Space Grotesk'; font-size: 2.5rem; color: #fff;">Vega</h2>
-                    <h4 style="color: var(--accent-blue); margin-top: 10px; font-weight: 500;">AI Companion for the Visually Impaired</h4>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 16px; line-height: 1.6;">A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
-                    
-                    <div class="product-specs">
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Real-time object and currency identification</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Natural text-to-speech audio feedback via Bluetooth</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Ultrasonic obstacle detection and hazard guidance</span></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Lyra Scan -->
-            <div class="product-showcase">
-                <div class="product-visual reveal-up delay-1">
-                    <div class="product-visual-content">LYR</div>
-                </div>
-                <div class="product-info reveal-up delay-2">
-                    <div class="badge-adv">Batch OCR</div>
-                    <h2 style="font-family: 'Space Grotesk'; font-size: 2.5rem; color: #fff;">Lyra Scan</h2>
-                    <h4 style="color: var(--accent-blue); margin-top: 10px; font-weight: 500;">High-Speed Batch Digitization</h4>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 16px; line-height: 1.6;">An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
-                    
-                    <div class="product-specs">
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Ultra-fast batch document processing (120 ppm)</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>On-premise OCR with instant PDF/Excel export</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Automatic metadata classification and sorting</span></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Orion Suite -->
-            <div class="product-showcase">
-                <div class="product-visual reveal-up delay-1">
-                    <div class="product-visual-content">ORN</div>
-                </div>
-                <div class="product-info reveal-up delay-2">
-                    <div class="badge-adv">Local MSME SaaS</div>
-                    <h2 style="font-family: 'Space Grotesk'; font-size: 2.5rem; color: #fff;">Orion Suite</h2>
-                    <h4 style="color: var(--accent-blue); margin-top: 10px; font-weight: 500;">End-to-End MSME Automation</h4>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 16px; line-height: 1.6;">Real-time oversight of leads, inventory, and payroll on a secure local database — built for small and mid-sized operations that need control without complexity.</p>
-                    
-                    <div class="product-specs">
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Secure on-premise local database hosting</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Unified pipeline tracking across payroll, inventory, and leads</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Customizable role-based access logs for staff</span></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Nova Watch -->
-            <div class="product-showcase">
-                <div class="product-visual reveal-up delay-1">
-                    <div class="product-visual-content">NVA</div>
-                </div>
-                <div class="product-info reveal-up delay-2">
-                    <div class="badge-adv">Structural Telemetry</div>
-                    <h2 style="font-family: 'Space Grotesk'; font-size: 2.5rem; color: #fff;">Nova Watch</h2>
-                    <h4 style="color: var(--accent-blue); margin-top: 10px; font-weight: 500;">Road & Structural Intelligence System</h4>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 16px; line-height: 1.6;">Live monitoring for civil infrastructure — calculating traffic load and structural vibration to flag maintenance needs before they become hazards.</p>
-                    
-                    <div class="product-specs">
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Real-time vibration and traffic-load sensors</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Predictive AI analytics for early hazard detection</span></div>
-                        <div class="spec-item"><i class="ph-bold ph-check-circle"></i> <span>Rugged IP68, solar-powered outdoor edge hubs</span></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="adv-section" id="starnexus-contact-adv" style="border-bottom: none;">
-            <div class="contact-adv-container">
-                <div class="contact-info-block reveal-up delay-1">
-                    <h3>Get In Touch</h3>
-                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">Let's build something worth aligning around. Tell us about your project, your team, or your hardware requirements — our engineering team will follow up directly.</p>
-                    
-                    <div class="badge-adv" style="font-size: 0.75rem;">Star Nexus Technologies HQ</div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Our primary engineering hub coordinates delivery for clients across India and internationally.</p>
-
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="ph-fill ph-map-pin"></i></div>
-                            <div>
-                                <div style="font-size: 0.9rem; color: var(--text-muted);">Office</div>
-                                <div style="font-size: 1.1rem; font-weight: 500;">Nagpur, Maharashtra</div>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="ph-fill ph-envelope"></i></div>
-                            <div>
-                                <div style="font-size: 0.9rem; color: var(--text-muted);">Engineering & Sales</div>
-                                <div style="font-size: 1.1rem; font-weight: 500;">contact@mindtripe.in</div>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="cm-icon"><i class="ph-fill ph-phone-call"></i></div>
-                            <div>
-                                <div style="font-size: 0.9rem; color: var(--text-muted);">Business Line</div>
-                                <div style="font-size: 1.1rem; font-weight: 500;">+91 94049 97971</div>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.8rem; color: #666; margin-top: 20px;">* Placeholder contact details — swap in your real address, email, and number before this goes live.</p>
-                </div>
-
-                <div class="adv-form-wrapper reveal-up delay-2">
-                    <form class="adv-form" onsubmit="event.preventDefault();">
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
-                            <div class="input-group">
-                                <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.85rem;">Full Name</label>
-                                <input type="text" class="adv-input" placeholder="e.g. Rahul Sharma" required>
-                            </div>
-                            <div class="input-group">
-                                <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.85rem;">Email Address</label>
-                                <input type="email" class="adv-input" placeholder="e.g. rahul@company.com" required>
-                            </div>
-                            <div class="input-group">
-                                <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.85rem;">Subject</label>
-                                <input type="text" class="adv-input" placeholder="How can we help your business?" required>
-                            </div>
-                            <div class="input-group">
-                                <label style="display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.85rem;">Message</label>
-                                <textarea class="adv-input" placeholder="Outline your application specifications, automation ideas, or hardware quote inquiries..." required></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn-adv primary" style="width: 100%; justify-content: center; margin-top: 10px;">Send Message <i class="ph-bold ph-paper-plane-tilt"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-</div>
-    <script>
-
-        // Neuron Network Animation
-        (function() {
-            const canvas = document.getElementById('neuron-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let width, height;
-            let particles = [];
-            
-            function resize() {
-                const section = document.getElementById('software');
-                // Use scrollHeight if the element is visible but has scrolling content
-                width = canvas.width = section.scrollWidth || window.innerWidth;
-                height = canvas.height = section.scrollHeight || window.innerHeight;
                 
-                // If it's still tiny (like display: none), use window fallback temporarily
-                if (height < 200) {
-                    height = canvas.height = window.innerHeight * 2; 
-                    width = canvas.width = window.innerWidth;
-                }
+                <div class="grid grid-3 steps-grid">
+                    <div class="card step-card">
+                        <div class="step-number">SN-01</div>
+                        <h3>Discovery</h3>
+                        <h4>Chart the system</h4>
+                        <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
+                    </div>
+                    <div class="card step-card">
+                        <div class="step-number">SN-02</div>
+                        <h3>Prototype</h3>
+                        <h4>Build the proof</h4>
+                        <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
+                    </div>
+                    <div class="card step-card">
+                        <div class="step-number">SN-03</div>
+                        <h3>Scale</h3>
+                        <h4>Launch & support</h4>
+                        <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section section-dark section-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p class="section-lead">Systems built around how your business actually operates. We architect and deploy the infrastructure that connects your operations, hardware, and data into a single working network.</p>
+                </div>
+
+                <div class="grid grid-2 services-grid">
+                    <div class="service-item">
+                        <div class="service-meta">01</div>
+                        <div class="service-content">
+                            <h3>Enterprise Software</h3>
+                            <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-meta">02</div>
+                        <div class="service-content">
+                            <h3>Industrial IoT</h3>
+                            <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-meta">03</div>
+                        <div class="service-content">
+                            <h3>Workflow Orchestration</h3>
+                            <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-meta">04</div>
+                        <div class="service-content">
+                            <h3>B2B Cloud Solutions</h3>
+                            <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integrations Section -->
+        <section id="integrations" class="section section-light section-integrations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Integrations</h2>
+                    <p class="section-lead">Connect the tools you already run. Star Nexus links your ERP, CRM, and cloud stack so data moves automatically instead of being re-entered by hand.</p>
+                </div>
                 
-                initParticles();
-            }
-            
-            function initParticles() {
-                particles = [];
-                const numParticles = Math.min(Math.floor((width * height) / 8000), 250);
-                for (let i = 0; i < numParticles; i++) {
-                    particles.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.8,
-                        vy: (Math.random() - 0.5) * 0.8,
-                        radius: Math.random() * 1.5 + 0.5
-                    });
-                }
-            }
-            
-            function animate() {
-                requestAnimationFrame(animate);
-                ctx.clearRect(0, 0, width, height);
-                
-                // Update and draw particles
-                for (let i = 0; i < particles.length; i++) {
-                    let p = particles[i];
-                    p.x += p.vx;
-                    p.y += p.vy;
-                    
-                    if (p.x < 0 || p.x > width) p.vx *= -1;
-                    if (p.y < 0 || p.y > height) p.vy *= -1;
-                    
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(6, 182, 212, 0.9)';
-                    ctx.fill();
-                    
-                    // Draw connections
-                    for (let j = i + 1; j < particles.length; j++) {
-                        let p2 = particles[j];
-                        let dx = p.x - p2.x;
-                        let dy = p.y - p2.y;
-                        let dist = Math.sqrt(dx * dx + dy * dy);
+                <div class="grid grid-3 integrations-grid">
+                    <div class="integration-card">
+                        <div class="category">Operations</div>
+                        <h3>ERP Systems</h3>
+                        <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Customer Data</div>
+                        <h3>CRM Platforms</h3>
+                        <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Alerts</div>
+                        <h3>Collaboration Hubs</h3>
+                        <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Analytics</div>
+                        <h3>Cloud Data Warehouses</h3>
+                        <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Financials</div>
+                        <h3>Payment Gateways</h3>
+                        <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Developer Tools</div>
+                        <h3>REST & GraphQL APIs</h3>
+                        <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        
+        <section id="products" class="section section-brand section-products">
+            <div class="container" style="max-width: 100%;">
+                <div class="section-header" style="max-width: var(--container-width); margin: 0 auto 3rem auto; padding: 0 var(--spacing-lg);">
+                    <h2>Delivered Products</h2>
+                    <p class="section-lead">Proven products. Real-world engineering. A portfolio of solutions built to solve complex business and operational challenges.</p>
+                </div>
+
+                <div class="product-marquee-container" style="margin-bottom: 5rem;">
+                    <div class="product-marquee-track track-left">
                         
-                        if (dist < 150) {
-                            ctx.beginPath();
-                            ctx.moveTo(p.x, p.y);
-                            ctx.lineTo(p2.x, p2.y);
-                            ctx.strokeStyle = `rgba(59, 130, 246, ${0.2 * (1 - dist / 150)})`;
-                            ctx.lineWidth = 1;
-                            ctx.stroke();
-                        }
-                    }
-                }
-            }
-            
-            window.addEventListener('resize', resize);
-            
-            // Watch for when the software page becomes active to recalculate dimensions
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.target.classList.contains('active')) {
-                        setTimeout(() => {
-                            resize();
-                        }, 50);
-                    }
-                });
-            });
-            const section = document.getElementById('software');
-            if (section) observer.observe(section, { attributes: true, attributeFilter: ['class'] });
-            
-            setTimeout(() => {
-                resize();
-                animate();
-            }, 100);
-        })();
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Admin Panel</div>
+            <h3>01 &mdash; AutoFlow</h3>
+            <h4>Automotive Operations Platform</h4>
+            <p>A comprehensive automotive mobile and management platform designed to streamline customer engagement and operational workflows for automotive businesses.</p>
+            <ul class="feature-list">
+                <li>Customer-focused mobile application</li>
+                <li>Centralized web-based administration panel</li>
+                <li>Vehicle and service-related operational management</li>
+                <li>Customer information and activity management</li>
+                <li>Administrative controls and reporting</li>
+                <li>Production-ready Android application</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>02 &mdash; HappyNest</h3>
+            <h4>Personal Finance & Money Management Platform</h4>
+            <p>A consumer-focused mobile application designed to simplify personal financial activities through an intuitive mobile experience and structured money-management workflows.</p>
+            <ul class="feature-list">
+                <li>User-focused financial management experience</li>
+                <li>Secure account and profile management</li>
+                <li>Financial activity tracking</li>
+                <li>Personalized user workflows</li>
+                <li>Mobile-first interface</li>
+                <li>Production-ready Android application</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Admin Panel</div>
+            <h3>03 &mdash; VideoSphere</h3>
+            <h4>Video Content & Social Platform</h4>
+            <p>A mobile video platform designed around video discovery, content interaction, user engagement, and centralized administrative management.</p>
+            <ul class="feature-list">
+                <li>Video content publishing and management</li>
+                <li>User account and profile management</li>
+                <li>Video discovery and browsing</li>
+                <li>Content interaction and engagement</li>
+                <li>Centralized administration panel</li>
+                <li>Content moderation and management workflows</li>
+                <li>Production-ready Android application</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>04 &mdash; GigConnect</h3>
+            <h4>Local Gig & Workforce Marketplace</h4>
+            <p>A mobile marketplace connecting people looking for short-term work opportunities with available gigs, providing a structured workflow for discovering, applying for, and managing gig-based work.</p>
+            <ul class="feature-list">
+                <li>Gig discovery and browsing</li>
+                <li>User profiles</li>
+                <li>Gig applications</li>
+                <li>Work opportunity management</li>
+                <li>Communication between users</li>
+                <li>Activity and work tracking</li>
+                <li>Mobile-first marketplace experience</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Admin Dashboard</div>
+            <h3>05 &mdash; RidePulse</h3>
+            <h4>Rider & Mobility Management Platform</h4>
+            <p>A mobility-focused application designed to support rider operations through a dedicated mobile experience and centralized administrative dashboard.</p>
+            <ul class="feature-list">
+                <li>Rider-focused mobile application</li>
+                <li>Trip and ride management</li>
+                <li>User/account management</li>
+                <li>Operational monitoring</li>
+                <li>Centralized administration dashboard</li>
+                <li>Ride-related workflow management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Web Application + Admin Dashboard</div>
+            <h3>06 &mdash; ConnecPro AI</h3>
+            <h4>AI-Powered Business Communication Platform</h4>
+            <p>An AI-enabled business communication and management platform designed to help organizations manage customer interactions and operational workflows through a centralized web environment.</p>
+            <ul class="feature-list">
+                <li>AI-assisted business workflows</li>
+                <li>Customer and contact management</li>
+                <li>Centralized administrative dashboard</li>
+                <li>Communication management</li>
+                <li>User and account administration</li>
+                <li>Business activity monitoring</li>
+                <li>Web-based management interface</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Web App + Admin Dashboard</div>
+            <h3>07 &mdash; StyleServe</h3>
+            <h4>On-Demand Beauty & Home Service Platform</h4>
+            <p>A complete service marketplace connecting customers with professional service providers through mobile and web applications, supported by a centralized administrative ecosystem.</p>
+            <ul class="feature-list">
+                <li>Customer mobile application</li>
+                <li>Service-provider workflows</li>
+                <li>Service discovery and booking</li>
+                <li>Provider management</li>
+                <li>Customer management</li>
+                <li>Web application and marketing website</li>
+                <li>Centralized admin dashboard</li>
+                <li>Booking and operational management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>08 &mdash; FocusFlow</h3>
+            <h4>Personal Productivity & Self-Improvement Platform</h4>
+            <p>A mobile productivity and self-development application designed to help users organize their personal goals, plans, habits, journals, stories, and learning content in one place.</p>
+            <ul class="feature-list">
+                <li>Personal journal</li>
+                <li>Planner and task organization</li>
+                <li>Goal-oriented planning</li>
+                <li>Habit tracking</li>
+                <li>Storyboard functionality</li>
+                <li>Content library</li>
+                <li>User account management</li>
+                <li>Structured personal productivity workflows</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>09 &mdash; EduFund Manager</h3>
+            <h4>Education Fund Monitoring System</h4>
+            <p>A mobile-based financial monitoring system designed to help educational institutions manage and monitor fund-related activities, expenditure, and operational financial workflows.</p>
+            <ul class="feature-list">
+                <li>Fund monitoring</li>
+                <li>Expenditure management</li>
+                <li>Institution-level financial workflows</li>
+                <li>Transaction/activity tracking</li>
+                <li>User and institution management</li>
+                <li>Financial information monitoring</li>
+                <li>Mobile application for operational users</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Admin Panel</div>
+            <h3>01 &mdash; AutoFlow</h3>
+            <h4>Automotive Operations Platform</h4>
+            <p>A comprehensive automotive mobile and management platform designed to streamline customer engagement and operational workflows for automotive businesses.</p>
+            <ul class="feature-list">
+                <li>Customer-focused mobile application</li>
+                <li>Centralized web-based administration panel</li>
+                <li>Vehicle and service-related operational management</li>
+                <li>Customer information and activity management</li>
+                <li>Administrative controls and reporting</li>
+                <li>Production-ready Android application</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>02 &mdash; HappyNest</h3>
+            <h4>Personal Finance & Money Management Platform</h4>
+            <p>A consumer-focused mobile application designed to simplify personal financial activities through an intuitive mobile experience and structured money-management workflows.</p>
+            <ul class="feature-list">
+                <li>User-focused financial management experience</li>
+                <li>Secure account and profile management</li>
+                <li>Financial activity tracking</li>
+                <li>Personalized user workflows</li>
+                <li>Mobile-first interface</li>
+                <li>Production-ready Android application</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Admin Panel</div>
+            <h3>03 &mdash; VideoSphere</h3>
+            <h4>Video Content & Social Platform</h4>
+            <p>A mobile video platform designed around video discovery, content interaction, user engagement, and centralized administrative management.</p>
+            <ul class="feature-list">
+                <li>Video content publishing and management</li>
+                <li>User account and profile management</li>
+                <li>Video discovery and browsing</li>
+                <li>Content interaction and engagement</li>
+                <li>Centralized administration panel</li>
+                <li>Content moderation and management workflows</li>
+                <li>Production-ready Android application</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>04 &mdash; GigConnect</h3>
+            <h4>Local Gig & Workforce Marketplace</h4>
+            <p>A mobile marketplace connecting people looking for short-term work opportunities with available gigs, providing a structured workflow for discovering, applying for, and managing gig-based work.</p>
+            <ul class="feature-list">
+                <li>Gig discovery and browsing</li>
+                <li>User profiles</li>
+                <li>Gig applications</li>
+                <li>Work opportunity management</li>
+                <li>Communication between users</li>
+                <li>Activity and work tracking</li>
+                <li>Mobile-first marketplace experience</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Admin Dashboard</div>
+            <h3>05 &mdash; RidePulse</h3>
+            <h4>Rider & Mobility Management Platform</h4>
+            <p>A mobility-focused application designed to support rider operations through a dedicated mobile experience and centralized administrative dashboard.</p>
+            <ul class="feature-list">
+                <li>Rider-focused mobile application</li>
+                <li>Trip and ride management</li>
+                <li>User/account management</li>
+                <li>Operational monitoring</li>
+                <li>Centralized administration dashboard</li>
+                <li>Ride-related workflow management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Web Application + Admin Dashboard</div>
+            <h3>06 &mdash; ConnecPro AI</h3>
+            <h4>AI-Powered Business Communication Platform</h4>
+            <p>An AI-enabled business communication and management platform designed to help organizations manage customer interactions and operational workflows through a centralized web environment.</p>
+            <ul class="feature-list">
+                <li>AI-assisted business workflows</li>
+                <li>Customer and contact management</li>
+                <li>Centralized administrative dashboard</li>
+                <li>Communication management</li>
+                <li>User and account administration</li>
+                <li>Business activity monitoring</li>
+                <li>Web-based management interface</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile App + Web App + Admin Dashboard</div>
+            <h3>07 &mdash; StyleServe</h3>
+            <h4>On-Demand Beauty & Home Service Platform</h4>
+            <p>A complete service marketplace connecting customers with professional service providers through mobile and web applications, supported by a centralized administrative ecosystem.</p>
+            <ul class="feature-list">
+                <li>Customer mobile application</li>
+                <li>Service-provider workflows</li>
+                <li>Service discovery and booking</li>
+                <li>Provider management</li>
+                <li>Customer management</li>
+                <li>Web application and marketing website</li>
+                <li>Centralized admin dashboard</li>
+                <li>Booking and operational management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>08 &mdash; FocusFlow</h3>
+            <h4>Personal Productivity & Self-Improvement Platform</h4>
+            <p>A mobile productivity and self-development application designed to help users organize their personal goals, plans, habits, journals, stories, and learning content in one place.</p>
+            <ul class="feature-list">
+                <li>Personal journal</li>
+                <li>Planner and task organization</li>
+                <li>Goal-oriented planning</li>
+                <li>Habit tracking</li>
+                <li>Storyboard functionality</li>
+                <li>Content library</li>
+                <li>User account management</li>
+                <li>Structured personal productivity workflows</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Application</div>
+            <h3>09 &mdash; EduFund Manager</h3>
+            <h4>Education Fund Monitoring System</h4>
+            <p>A mobile-based financial monitoring system designed to help educational institutions manage and monitor fund-related activities, expenditure, and operational financial workflows.</p>
+            <ul class="feature-list">
+                <li>Fund monitoring</li>
+                <li>Expenditure management</li>
+                <li>Institution-level financial workflows</li>
+                <li>Transaction/activity tracking</li>
+                <li>User and institution management</li>
+                <li>Financial information monitoring</li>
+                <li>Mobile application for operational users</li>
+            </ul>
+        </div>
+    
+                    </div>
+                </div>
 
-        // Intersection Observer for scroll animations in Advanced Theme
-        setTimeout(() => {
-            const advObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, {
-                threshold: 0.15,
-                rootMargin: "0px 0px -50px 0px"
-            });
+                <div class="section-header" style="max-width: var(--container-width); margin: 0 auto 3rem auto; padding: 0 var(--spacing-lg);">
+                    <h2>Ongoing Products</h2>
+                    <p class="section-lead">Demonstrating our current engineering capabilities and active projects.</p>
+                </div>
+
+                <div class="product-marquee-container">
+                    <div class="product-marquee-track track-right">
+                        
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Web Application + ERP &middot; Status: Production / Cloud Migration</div>
+            <h3>10 &mdash; CarFleet ERP</h3>
+            <h4>Automotive Fleet & Enterprise Management System</h4>
+            <p>A production-grade web application and ERP system developed for automotive/fleet operations and actively used in production for approximately two years.</p>
+            <ul class="feature-list">
+                <li>Enterprise web application</li>
+                <li>ERP functionality</li>
+                <li>Operational management</li>
+                <li>Business workflow automation</li>
+                <li>Centralized administrative management</li>
+                <li>Production deployment and maintenance</li>
+                <li>Long-term production support</li>
+                <li>Infrastructure modernization</li>
+                <li>AWS/Azure cloud migration</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Rider App + Driver App + CRM &middot; Status: Ongoing</div>
+            <h3>11 &mdash; MoveMate</h3>
+            <h4>Rider & Driver Mobility Platform</h4>
+            <p>A complete mobility ecosystem connecting riders and drivers through dedicated mobile applications, supported by a centralized CRM for operational management.</p>
+            <ul class="feature-list">
+                <li>Rider mobile application</li>
+                <li>Driver mobile application</li>
+                <li>Rider account management</li>
+                <li>Driver management</li>
+                <li>Trip/ride workflows</li>
+                <li>CRM system</li>
+                <li>Operational monitoring</li>
+                <li>Centralized management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: AI Web Application &middot; Status: Ongoing</div>
+            <h3>12 &mdash; FlatForge AI</h3>
+            <h4>AI Sheet Metal Engineering Platform</h4>
+            <p>An AI-powered engineering platform designed for mechanical and sheet-metal industries to analyze technical drawings and automate the process of extracting manufacturing information and generating flat-pattern outputs.</p>
+            <ul class="feature-list">
+                <li>Technical drawing/image processing</li>
+                <li>PDF and image input</li>
+                <li>OCR-based information extraction</li>
+                <li>Engineering dimension detection</li>
+                <li>Material and thickness extraction</li>
+                <li>Bend and feature detection</li>
+                <li>Hole, slot, cutout and notch identification</li>
+                <li>Engineering-rule processing</li>
+                <li>Sheet-metal flattening workflow</li>
+                <li>DXF generation</li>
+                <li>Manufacturing-oriented output</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Apps + Web/Admin Ecosystem &middot; Status: Ongoing</div>
+            <h3>13 &mdash; AgroRush</h3>
+            <h4>Instant Agro Supply & Delivery Platform</h4>
+            <p>A multi-sided agro-commerce and delivery ecosystem designed to connect farmers, agro retailers, agricultural industries, and delivery partners through a fast, technology-driven supply chain.</p>
+            <ul class="feature-list">
+                <li>Farmer mobile application</li>
+                <li>Agro shop application</li>
+                <li>Industry/business ordering workflows</li>
+                <li>Delivery partner application</li>
+                <li>Product discovery</li>
+                <li>Agricultural product ordering</li>
+                <li>Instant/local delivery</li>
+                <li>Order management</li>
+                <li>Delivery tracking</li>
+                <li>Business-to-business agro supply</li>
+                <li>Farmer-to-customer/agro supply workflows</li>
+                <li>Centralized administration</li>
+                <li>Multi-role platform architecture</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Web Application + ERP &middot; Status: Production / Cloud Migration</div>
+            <h3>10 &mdash; CarFleet ERP</h3>
+            <h4>Automotive Fleet & Enterprise Management System</h4>
+            <p>A production-grade web application and ERP system developed for automotive/fleet operations and actively used in production for approximately two years.</p>
+            <ul class="feature-list">
+                <li>Enterprise web application</li>
+                <li>ERP functionality</li>
+                <li>Operational management</li>
+                <li>Business workflow automation</li>
+                <li>Centralized administrative management</li>
+                <li>Production deployment and maintenance</li>
+                <li>Long-term production support</li>
+                <li>Infrastructure modernization</li>
+                <li>AWS/Azure cloud migration</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Rider App + Driver App + CRM &middot; Status: Ongoing</div>
+            <h3>11 &mdash; MoveMate</h3>
+            <h4>Rider & Driver Mobility Platform</h4>
+            <p>A complete mobility ecosystem connecting riders and drivers through dedicated mobile applications, supported by a centralized CRM for operational management.</p>
+            <ul class="feature-list">
+                <li>Rider mobile application</li>
+                <li>Driver mobile application</li>
+                <li>Rider account management</li>
+                <li>Driver management</li>
+                <li>Trip/ride workflows</li>
+                <li>CRM system</li>
+                <li>Operational monitoring</li>
+                <li>Centralized management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: AI Web Application &middot; Status: Ongoing</div>
+            <h3>12 &mdash; FlatForge AI</h3>
+            <h4>AI Sheet Metal Engineering Platform</h4>
+            <p>An AI-powered engineering platform designed for mechanical and sheet-metal industries to analyze technical drawings and automate the process of extracting manufacturing information and generating flat-pattern outputs.</p>
+            <ul class="feature-list">
+                <li>Technical drawing/image processing</li>
+                <li>PDF and image input</li>
+                <li>OCR-based information extraction</li>
+                <li>Engineering dimension detection</li>
+                <li>Material and thickness extraction</li>
+                <li>Bend and feature detection</li>
+                <li>Hole, slot, cutout and notch identification</li>
+                <li>Engineering-rule processing</li>
+                <li>Sheet-metal flattening workflow</li>
+                <li>DXF generation</li>
+                <li>Manufacturing-oriented output</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Apps + Web/Admin Ecosystem &middot; Status: Ongoing</div>
+            <h3>13 &mdash; AgroRush</h3>
+            <h4>Instant Agro Supply & Delivery Platform</h4>
+            <p>A multi-sided agro-commerce and delivery ecosystem designed to connect farmers, agro retailers, agricultural industries, and delivery partners through a fast, technology-driven supply chain.</p>
+            <ul class="feature-list">
+                <li>Farmer mobile application</li>
+                <li>Agro shop application</li>
+                <li>Industry/business ordering workflows</li>
+                <li>Delivery partner application</li>
+                <li>Product discovery</li>
+                <li>Agricultural product ordering</li>
+                <li>Instant/local delivery</li>
+                <li>Order management</li>
+                <li>Delivery tracking</li>
+                <li>Business-to-business agro supply</li>
+                <li>Farmer-to-customer/agro supply workflows</li>
+                <li>Centralized administration</li>
+                <li>Multi-role platform architecture</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Web Application + ERP &middot; Status: Production / Cloud Migration</div>
+            <h3>10 &mdash; CarFleet ERP</h3>
+            <h4>Automotive Fleet & Enterprise Management System</h4>
+            <p>A production-grade web application and ERP system developed for automotive/fleet operations and actively used in production for approximately two years.</p>
+            <ul class="feature-list">
+                <li>Enterprise web application</li>
+                <li>ERP functionality</li>
+                <li>Operational management</li>
+                <li>Business workflow automation</li>
+                <li>Centralized administrative management</li>
+                <li>Production deployment and maintenance</li>
+                <li>Long-term production support</li>
+                <li>Infrastructure modernization</li>
+                <li>AWS/Azure cloud migration</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Rider App + Driver App + CRM &middot; Status: Ongoing</div>
+            <h3>11 &mdash; MoveMate</h3>
+            <h4>Rider & Driver Mobility Platform</h4>
+            <p>A complete mobility ecosystem connecting riders and drivers through dedicated mobile applications, supported by a centralized CRM for operational management.</p>
+            <ul class="feature-list">
+                <li>Rider mobile application</li>
+                <li>Driver mobile application</li>
+                <li>Rider account management</li>
+                <li>Driver management</li>
+                <li>Trip/ride workflows</li>
+                <li>CRM system</li>
+                <li>Operational monitoring</li>
+                <li>Centralized management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: AI Web Application &middot; Status: Ongoing</div>
+            <h3>12 &mdash; FlatForge AI</h3>
+            <h4>AI Sheet Metal Engineering Platform</h4>
+            <p>An AI-powered engineering platform designed for mechanical and sheet-metal industries to analyze technical drawings and automate the process of extracting manufacturing information and generating flat-pattern outputs.</p>
+            <ul class="feature-list">
+                <li>Technical drawing/image processing</li>
+                <li>PDF and image input</li>
+                <li>OCR-based information extraction</li>
+                <li>Engineering dimension detection</li>
+                <li>Material and thickness extraction</li>
+                <li>Bend and feature detection</li>
+                <li>Hole, slot, cutout and notch identification</li>
+                <li>Engineering-rule processing</li>
+                <li>Sheet-metal flattening workflow</li>
+                <li>DXF generation</li>
+                <li>Manufacturing-oriented output</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Apps + Web/Admin Ecosystem &middot; Status: Ongoing</div>
+            <h3>13 &mdash; AgroRush</h3>
+            <h4>Instant Agro Supply & Delivery Platform</h4>
+            <p>A multi-sided agro-commerce and delivery ecosystem designed to connect farmers, agro retailers, agricultural industries, and delivery partners through a fast, technology-driven supply chain.</p>
+            <ul class="feature-list">
+                <li>Farmer mobile application</li>
+                <li>Agro shop application</li>
+                <li>Industry/business ordering workflows</li>
+                <li>Delivery partner application</li>
+                <li>Product discovery</li>
+                <li>Agricultural product ordering</li>
+                <li>Instant/local delivery</li>
+                <li>Order management</li>
+                <li>Delivery tracking</li>
+                <li>Business-to-business agro supply</li>
+                <li>Farmer-to-customer/agro supply workflows</li>
+                <li>Centralized administration</li>
+                <li>Multi-role platform architecture</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Web Application + ERP &middot; Status: Production / Cloud Migration</div>
+            <h3>10 &mdash; CarFleet ERP</h3>
+            <h4>Automotive Fleet & Enterprise Management System</h4>
+            <p>A production-grade web application and ERP system developed for automotive/fleet operations and actively used in production for approximately two years.</p>
+            <ul class="feature-list">
+                <li>Enterprise web application</li>
+                <li>ERP functionality</li>
+                <li>Operational management</li>
+                <li>Business workflow automation</li>
+                <li>Centralized administrative management</li>
+                <li>Production deployment and maintenance</li>
+                <li>Long-term production support</li>
+                <li>Infrastructure modernization</li>
+                <li>AWS/Azure cloud migration</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Rider App + Driver App + CRM &middot; Status: Ongoing</div>
+            <h3>11 &mdash; MoveMate</h3>
+            <h4>Rider & Driver Mobility Platform</h4>
+            <p>A complete mobility ecosystem connecting riders and drivers through dedicated mobile applications, supported by a centralized CRM for operational management.</p>
+            <ul class="feature-list">
+                <li>Rider mobile application</li>
+                <li>Driver mobile application</li>
+                <li>Rider account management</li>
+                <li>Driver management</li>
+                <li>Trip/ride workflows</li>
+                <li>CRM system</li>
+                <li>Operational monitoring</li>
+                <li>Centralized management</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: AI Web Application &middot; Status: Ongoing</div>
+            <h3>12 &mdash; FlatForge AI</h3>
+            <h4>AI Sheet Metal Engineering Platform</h4>
+            <p>An AI-powered engineering platform designed for mechanical and sheet-metal industries to analyze technical drawings and automate the process of extracting manufacturing information and generating flat-pattern outputs.</p>
+            <ul class="feature-list">
+                <li>Technical drawing/image processing</li>
+                <li>PDF and image input</li>
+                <li>OCR-based information extraction</li>
+                <li>Engineering dimension detection</li>
+                <li>Material and thickness extraction</li>
+                <li>Bend and feature detection</li>
+                <li>Hole, slot, cutout and notch identification</li>
+                <li>Engineering-rule processing</li>
+                <li>Sheet-metal flattening workflow</li>
+                <li>DXF generation</li>
+                <li>Manufacturing-oriented output</li>
+            </ul>
+        </div>
+    
+        <div class="product-card marquee-card">
+            <div class="product-badge">Platform: Mobile Apps + Web/Admin Ecosystem &middot; Status: Ongoing</div>
+            <h3>13 &mdash; AgroRush</h3>
+            <h4>Instant Agro Supply & Delivery Platform</h4>
+            <p>A multi-sided agro-commerce and delivery ecosystem designed to connect farmers, agro retailers, agricultural industries, and delivery partners through a fast, technology-driven supply chain.</p>
+            <ul class="feature-list">
+                <li>Farmer mobile application</li>
+                <li>Agro shop application</li>
+                <li>Industry/business ordering workflows</li>
+                <li>Delivery partner application</li>
+                <li>Product discovery</li>
+                <li>Agricultural product ordering</li>
+                <li>Instant/local delivery</li>
+                <li>Order management</li>
+                <li>Delivery tracking</li>
+                <li>Business-to-business agro supply</li>
+                <li>Farmer-to-customer/agro supply workflows</li>
+                <li>Centralized administration</li>
+                <li>Multi-role platform architecture</li>
+            </ul>
+        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-light section-contact">
+            <div class="container">
+                <div class="grid grid-2 contact-grid">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p class="section-lead">Let's build something worth aligning around. Tell us about your project, your team, or your hardware requirements — our engineering team will follow up directly.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-block">
+                                <h3>Star Nexus Technologies HQ</h3>
+                                <p>Our primary engineering hub coordinates delivery for clients across India and internationally.</p>
+                            </div>
+                            
+                            <div class="contact-block">
+                                <h4>Office</h4>
+                                <p>Nagpur, Maharashtra</p>
+                            </div>
+                            
+                            <div class="contact-block">
+                                <h4>Engineering & Sales</h4>
+                                <p><a href="mailto:contact@mindtripe.in">contact@mindtripe.in</a></p>
+                            </div>
+                            
+                            <div class="contact-block">
+                                <h4>Business Line</h4>
+                                <p>+91 94049 97971</p>
+                            </div>
+                            
+                            <p class="note">* Placeholder contact details — swap in your real address, email, and number before this goes live.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top grid grid-2">
+                <div class="footer-brand">
+                    <h2>Star Nexus</h2>
+                    <p>Events ✦ Entertainment ✦ Education</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><a href="mailto:contact@mindtripe.in">contact@mindtripe.in</a></p>
+                    <p>Nagpur, Maharashtra</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MindTripE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
             
-            document.querySelectorAll('#software .reveal-up:not(.active)').forEach(el => {
-                advObserver.observe(el);
-            });
-        }, 100);
-    </script>
+            // Toggle hamburger animation (optional enhancement)
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            if (mainNav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    });
+
+    // Add shadow to header on scroll
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+    });
+
+    // Form submission mock
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            // Mock API call
+            setTimeout(() => {
+                alert('Thank you for getting in touch! We will contact you shortly.');
+                contactForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+    }
+});
+
+
+// Box dropping animation observer
+document.addEventListener('DOMContentLoaded', () => {
+    const dropObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-drop');
+                dropObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const boxes = document.querySelectorAll('#software .step-card, #software .service-item, #software .integration-card');
+    boxes.forEach((box, index) => {
+        box.style.opacity = '0';
+        box.style.animationDelay = (index % 3) * 0.15 + 's';
+        dropObserver.observe(box);
+    });
+});
+</script>
 </section>
 
             <!-- EVENTS PAGE -->
