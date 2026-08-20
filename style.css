@@ -958,7 +958,7 @@ body.software-active .nav-btn.active {
     width: 120px;
     height: 70px;
     z-index: -1;
-    transition: top 4s ease-in-out, left 4s ease-in-out, transform 1s ease-in-out;
+    transition: transform 4s ease-in-out;
     will-change: transform;
     pointer-events: none;
     display: flex;
@@ -972,7 +972,7 @@ body.software-active .nav-btn.active {
     width: 60px;
     height: 60px;
     z-index: -1;
-    transition: top 4s ease-in-out, left 4s ease-in-out, transform 1s ease-in-out;
+    transition: transform 4s ease-in-out;
     pointer-events: none;
     display: flex;
     justify-content: center;
