@@ -27,7 +27,7 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '<div class="hero-content">$1</div>\n' +
     '                  <div class="hero-image-wrapper">\n' +
     '                      <div class="hero-image-card">\n' +
-    '                          <img src="images/st-images/891290582523669974.jpg" alt="Hero Image" style="width: 100%; height: 750px; object-fit: cover;">\n' +
+    '                          <img src="images/st-images/891290582523669974.jpg" alt="Hero Image" style="width: 100%; height: 550px; object-fit: cover;">\n' +
     '                      </div>\n' +
     '                  </div>\n' +
     '              </div>\n          </section>'
@@ -371,7 +371,7 @@ body.software-active .nav-links .nav-btn.active {
       object-fit: cover !important;
       display: block !important;
       border-radius: 12px !important;
-      height: 750px !important;
+      height: 550px !important;
   }
   #software .hero-image-caption {
       padding: 18px 22px !important;
