@@ -20,7 +20,7 @@ snBody = snBody.replace(/<script src="script\.js"><\/script>/gi, '');
 snBody = snBody.replace(/<header class="site-header">[\s\S]*?<\/header>/gi, '');
 
 // Update Hero Heading: Star Nexus Technologies (Big/Black) and Enterprise Automation & Software (Smaller/Teal)
-snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Montserrat', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">Star Nexus<br>Technologies</h1>\n                    <div style="color: var(--color-primary); font-family: 'Montserrat', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
+snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">Star Nexus<br>Technologies</h1>\n                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
 
 
 let snCssScoped = snCss.replace(/body\s*\{/g, '#software {');
@@ -267,15 +267,15 @@ body.software-active .nav-links .nav-btn.active {
     animation: dropInAnim 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-/* Explicitly enforce Star Nexus fonts (Montserrat for headings, Inter for body) */
+/* Explicitly enforce Star Nexus fonts (Comfortaa for headings, Poppins for body) */
 #software {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 #software h1, #software h2, #software h3, #software h4, #software h5, #software h6, #software .logo a {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Comfortaa', sans-serif !important;
 }
 #software p, #software li, #software .val, #software .note {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 }
 `;
 
@@ -289,9 +289,9 @@ ${snJs}
 
 // Box dropping animation observer
 document.addEventListener('DOMContentLoaded', () => {
-    const dropObserver = new IntersectionObserver((entries) => {
+    const dropObserver = new PoppinssectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isPoppinssecting) {
                 entry.target.classList.add('animate-drop');
                 dropObserver.unobserve(entry.target);
             }
