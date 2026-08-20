@@ -27,7 +27,7 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '<div class="hero-content">$1</div>\n' +
     '                  <div class="hero-image-wrapper">\n' +
     '                      <div class="hero-image-card">\n' +
-    '                          <img src="images/st-images/891290582523669974.jpg" alt="Hero Image" style="width: 100%; height: 1000px; object-fit: cover;">\n' +
+    '                          <img src="images/st-images/891290582523669974.jpg" alt="Hero Image" style="width: 100%; height: 750px; object-fit: cover;">\n' +
     '                      </div>\n' +
     '                  </div>\n' +
     '              </div>\n          </section>'
@@ -352,8 +352,8 @@ body.software-active .nav-links .nav-btn.active {
       justify-content: flex-start !important;
   }
   #software .hero-image-wrapper {
-      flex: 0 0 50% !important;
-      max-width: 50% !important;
+      flex: 0 0 55% !important;
+      max-width: 55% !important;
       display: flex !important;
       justify-content: flex-end !important;
       align-items: center !important;
@@ -363,7 +363,7 @@ body.software-active .nav-links .nav-btn.active {
       border-radius: 12px !important;
       overflow: hidden !important;
       box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25) !important;
-      width: 90% !important;
+      width: 100% !important;
       margin-left: auto !important;
   }
   #software .hero-image-card img {
@@ -371,6 +371,7 @@ body.software-active .nav-links .nav-btn.active {
       object-fit: cover !important;
       display: block !important;
       border-radius: 12px !important;
+      height: 750px !important;
   }
   #software .hero-image-caption {
       padding: 18px 22px !important;
