@@ -22,6 +22,13 @@ snBody = snBody.replace(/<header class="site-header">[\s\S]*?<\/header>/gi, '');
 // Update Hero Heading: StarNexusTech (Big/Black with Glitch) and Enterprise Automation & Software (Smaller/Teal)
 snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h1>\n                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
 
+// Add Hero Image and Flex Layout
+snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s*<\/section>/i, 
+    '<div class="hero-content">$1</div>\n' +
+    '                  <div class="hero-image-wrapper"><img src="images/starnexus_hero.jpg" alt="Enterprise Automation Visual"></div>\n' +
+    '              </div>\n          </section>'
+);
+
 // Update Footer Brand
 snBody = snBody.replace(/<div class="footer-brand">[\s\S]*?<\/div>/i, `<div class="footer-brand">\n                      <h2 style="font-family: 'Comfortaa', sans-serif !important; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h2>\n                      <p>Enterprise Automation & Software</p>\n                  </div>`);
 
@@ -274,6 +281,60 @@ body.software-active .nav-links .nav-btn.active {
     border: 1px solid rgba(234, 179, 8, 0.3) !important;
     text-shadow: 0 0 10px rgba(234, 179, 8, 0.5) !important;
 }
+
+/* Prevent text selection on elements */
+  #software .no-select { user-select: none; }
+  
+  /* Hero 2-Column Layout Overrides */
+  #software .hero-container {
+      display: flex !important;
+      align-items: center !important;
+      gap: 50px !important;
+      justify-content: space-between !important;
+  }
+  #software .hero-content {
+      text-align: left !important;
+      margin: 0 !important;
+      flex: 1 !important;
+      max-width: 50% !important;
+  }
+  #software .hero-subtitle {
+      margin-left: 0 !important;
+  }
+  #software .hero-buttons {
+      justify-content: flex-start !important;
+  }
+  #software .hero-image-wrapper {
+      flex: 1 !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+  }
+  #software .hero-image-wrapper img {
+      max-width: 100% !important;
+      border-radius: 20px !important;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15) !important;
+  }
+  
+  @media (max-width: 900px) {
+      #software .hero-container {
+          flex-direction: column !important;
+          text-align: center !important;
+      }
+      #software .hero-content {
+          max-width: 100% !important;
+          text-align: center !important;
+      }
+      #software .hero-subtitle {
+          margin-left: auto !important;
+      }
+      #software .hero-buttons {
+          justify-content: center !important;
+      }
+      #software .hero-image-wrapper {
+          margin-top: 40px !important;
+      }
+  }
 
 /* Remove old MideTripE black borders from sections */
 #software section {
