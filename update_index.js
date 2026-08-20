@@ -334,7 +334,8 @@ body.software-active .nav-links .nav-btn.active {
   }
   #software .hero-image-card img {
       width: 100% !important;
-      height: auto !important;
+      height: 250px !important;
+      object-fit: cover !important;
       display: block !important;
   }
   #software .hero-image-caption {
