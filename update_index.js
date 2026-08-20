@@ -20,7 +20,7 @@ snBody = snBody.replace(/<script src="script\.js"><\/script>/gi, '');
 snBody = snBody.replace(/<header class="site-header">[\s\S]*?<\/header>/gi, '');
 
 // Update Hero Heading: StarNexusTech (Big/Black with Glitch) and Enterprise Automation & Software (Smaller/Teal)
-snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h1>\n                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
+snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">StarNexusTech</h1>\n                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
 
 // Add Hero Image and Flex Layout
 snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s*<\/section>/i, 
@@ -34,7 +34,7 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
 );
 
 // Update Footer Brand
-snBody = snBody.replace(/<div class="footer-brand">[\s\S]*?<\/div>/i, `<div class="footer-brand">\n                      <h2 style="font-family: 'Comfortaa', sans-serif !important; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h2>\n                      <p>Enterprise Automation & Software</p>\n                  </div>`);
+snBody = snBody.replace(/<div class="footer-brand">[\s\S]*?<\/div>/i, `<div class="footer-brand">\n                      <h2 style="font-family: 'Comfortaa', sans-serif !important;">StarNexusTech</h2>\n                      <p>Enterprise Automation & Software</p>\n                  </div>`);
 
 // Update HQ Name
 snBody = snBody.replace(/<h3>Star Nexus Technologies HQ<\/h3>/, '<h3>StarNexusTech</h3>');
