@@ -22,6 +22,25 @@ snBody = snBody.replace(/<header class="site-header">[\s\S]*?<\/header>/gi, '');
 // Update Hero Heading: Star Nexus Technologies (Big/Black) and Enterprise Automation & Software (Smaller/Teal)
 snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">Star Nexus<br>Technologies</h1>\n                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
 
+// Add Icons to How We Work
+snBody = snBody.replace(/<h3>Discovery<\/h3>/, '<i class="ph-bold ph-magnifying-glass" style="color: #3b82f6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Discovery</h3>');
+snBody = snBody.replace(/<h3>Prototype<\/h3>/, '<i class="ph-bold ph-code" style="color: #8b5cf6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Prototype</h3>');
+snBody = snBody.replace(/<h3>Scale<\/h3>/, '<i class="ph-bold ph-rocket" style="color: #10b981; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Scale</h3>');
+
+// Add Icons to Our Services
+snBody = snBody.replace(/<h3>Enterprise Software<\/h3>/, '<i class="ph-fill ph-desktop" style="color: #f59e0b; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Enterprise Software</h3>');
+snBody = snBody.replace(/<h3>Industrial IoT<\/h3>/, '<i class="ph-fill ph-cpu" style="color: #ef4444; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Industrial IoT</h3>');
+snBody = snBody.replace(/<h3>Workflow Orchestration<\/h3>/, '<i class="ph-fill ph-git-merge" style="color: #06b6d4; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Workflow Orchestration</h3>');
+snBody = snBody.replace(/<h3>B2B Cloud Solutions<\/h3>/, '<i class="ph-fill ph-cloud-arrow-up" style="color: #ec4899; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>B2B Cloud Solutions</h3>');
+
+// Add Icons to Integrations
+snBody = snBody.replace(/<h3>ERP Systems<\/h3>/, '<i class="ph-fill ph-database" style="color: #3b82f6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>ERP Systems</h3>');
+snBody = snBody.replace(/<h3>CRM Platforms<\/h3>/, '<i class="ph-fill ph-users" style="color: #f97316; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>CRM Platforms</h3>');
+snBody = snBody.replace(/<h3>Collaboration Hubs<\/h3>/, '<i class="ph-fill ph-chats" style="color: #14b8a6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Collaboration Hubs</h3>');
+snBody = snBody.replace(/<h3>Cloud Data Warehouses<\/h3>/, '<i class="ph-fill ph-cloud-fog" style="color: #6366f1; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Cloud Data Warehouses</h3>');
+snBody = snBody.replace(/<h3>Payment Gateways<\/h3>/, '<i class="ph-fill ph-credit-card" style="color: #22c55e; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Payment Gateways</h3>');
+snBody = snBody.replace(/<h3>REST & GraphQL APIs<\/h3>/, '<i class="ph-fill ph-brackets-curly" style="color: #d946ef; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>REST & GraphQL APIs</h3>');
+
 
 let snCssScoped = snCss.replace(/body\s*\{/g, '#software {');
 snCssScoped = snCssScoped.replace(/html\s*\{/g, '#software {');
