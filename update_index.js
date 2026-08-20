@@ -29,10 +29,9 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '                      <div class="hero-image-card">\n' +
     '                          <img src="images/starnexus_hero.jpg" alt="Enterprise Automation Visual">\n' +
     '                          <div class="hero-image-caption">\n' +
-    '                             <h3>Empowering the Future: Architecting <span style="color: #ea580c;">Scalable</span> Business <span style="color: #16a34a;">Systems</span></h3>\n' +
+    '                             <h3>Empowering the Future: Architecting <span style="color: #2563eb;">Scalable</span> Business <span style="color: #2563eb;">Systems</span></h3>\n' +
     '                             <div class="caption-bottom">\n' +
     '                                 <p>Join forward-thinking enterprises automating their operations with cutting-edge technology.</p>\n' +
-    '                                 <a href="#about" class="btn-small">Learn More</a>\n' +
     '                             </div>\n' +
     '                          </div>\n' +
     '                      </div>\n' +
