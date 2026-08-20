@@ -36,10 +36,48 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
 // Update Footer Brand
 snBody = snBody.replace(/<div class="footer-brand">[\s\S]*?<\/div>/i, `<div class="footer-brand">\n                      <h2 style="font-family: 'Comfortaa', sans-serif !important; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h2>\n                      <p>Enterprise Automation & Software</p>\n                  </div>`);
 
-// Add Icons to How We Work
-snBody = snBody.replace(/<h3>Discovery<\/h3>/, '<i class="ph-bold ph-magnifying-glass" style="color: #3b82f6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Discovery</h3>');
-snBody = snBody.replace(/<h3>Prototype<\/h3>/, '<i class="ph-bold ph-code" style="color: #8b5cf6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Prototype</h3>');
-snBody = snBody.replace(/<h3>Scale<\/h3>/, '<i class="ph-bold ph-rocket" style="color: #10b981; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Scale</h3>');
+// Rewrite How We Work section to two columns
+  snBody = snBody.replace(/<section id="how-we-work"[\s\S]*?<\/section>/, 
+    `<section id="how-we-work" class="section section-light section-how-we-work">
+        <div class="container" style="display: flex; gap: 50px; align-items: center;">
+            <div style="flex: 0 0 45%;">
+                <img src="images/st-images/6825836930360502.jpg" alt="Coding" style="width: 100%; height: 600px; object-fit: cover; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            </div>
+            <div style="flex: 0 0 50%;">
+                <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+                    <h2>How We Work</h2>
+                    <p class="section-lead">A fixed sequence, from signal to system. Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div class="card step-card" style="text-align: left; padding: 25px; display: flex; gap: 20px; align-items: flex-start;">
+                        <i class="ph-bold ph-magnifying-glass" style="color: #3b82f6; font-size: 2.5rem; flex-shrink: 0;"></i>
+                        <div>
+                            <h3 style="margin-top: 0; margin-bottom: 0.25rem;">Discovery</h3>
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; color: #64748b; font-size: 0.95rem;">Chart the system</h4>
+                            <p style="margin: 0; font-size: 0.9rem;">We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
+                        </div>
+                    </div>
+                    <div class="card step-card" style="text-align: left; padding: 25px; display: flex; gap: 20px; align-items: flex-start;">
+                        <i class="ph-bold ph-code" style="color: #8b5cf6; font-size: 2.5rem; flex-shrink: 0;"></i>
+                        <div>
+                            <h3 style="margin-top: 0; margin-bottom: 0.25rem;">Prototype</h3>
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; color: #64748b; font-size: 0.95rem;">Build the proof</h4>
+                            <p style="margin: 0; font-size: 0.9rem;">We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
+                        </div>
+                    </div>
+                    <div class="card step-card" style="text-align: left; padding: 25px; display: flex; gap: 20px; align-items: flex-start;">
+                        <i class="ph-bold ph-rocket" style="color: #10b981; font-size: 2.5rem; flex-shrink: 0;"></i>
+                        <div>
+                            <h3 style="margin-top: 0; margin-bottom: 0.25rem;">Scale</h3>
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; color: #64748b; font-size: 0.95rem;">Launch & support</h4>
+                            <p style="margin: 0; font-size: 0.9rem;">We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>`
+  );
 
 // Add Icons and Images to Our Services
   snBody = snBody.replace(/<h3>Enterprise Software<\/h3>/, '<img src="images/st-images/Digital Efficiency.jpg" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem;"><i class="ph-fill ph-desktop" style="color: #f59e0b; font-size: 2.5rem; margin-bottom: 1rem; display: block;"></i>\n                              <h3>Enterprise Software</h3>');
