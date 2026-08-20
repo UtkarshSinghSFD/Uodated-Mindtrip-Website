@@ -27,9 +27,11 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '<div class="hero-content">$1</div>\n' +
     '                  <div class="hero-image-wrapper">\n' +
     '                      <div class="hero-image-card">\n' +
-    '                          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 250px; padding: 20px 20px 0 20px;">\n' +
+    '                          <div style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px; gap: 15px; padding: 20px 20px 0 20px;">\n' +
     '                              <img src="images/st-images/6825836930360502.jpg" alt="Automation Platform" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">\n' +
     '                              <img src="images/st-images/21392166974708354.jpg" alt="Business Systems" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">\n' +
+    '                              <img src="images/st-images/485474034854831901.jpg" alt="Scalable Tech" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">\n' +
+    '                              <img src="images/st-images/trading_.jpg" alt="Trading Systems" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">\n' +
     '                          </div>\n' +
     '                          <div class="hero-image-caption">\n' +
     '                             <h3>Empowering the Future: Architecting <span style="color: #00baba;">Scalable</span> Business <span style="color: #00baba;">Systems</span></h3>\n' +
@@ -334,7 +336,7 @@ body.software-active .nav-links .nav-btn.active {
   }
   #software .hero-image-card img {
       width: 100% !important;
-      height: 250px !important;
+      height: 100% !important;
       object-fit: cover !important;
       display: block !important;
   }
