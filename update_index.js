@@ -27,7 +27,7 @@ snBody = snBody.replace(/<div class="hero-content">([\s\S]*?)<\/div>\s*<\/div>\s
     '<div class="hero-content">$1</div>\n' +
     '                  <div class="hero-image-wrapper">\n' +
     '                      <div class="hero-image-card">\n' +
-    '                          <img src="images/st-images/fabio-oyXis2kALVg-unsplash.jpg" alt="Hero Image" style="width: 100%; height: 550px; object-fit: cover;">\n' +
+    '                          <img src="images/st-images/alex-knight-2EJCSULRwC8-unsplash.jpg" alt="Hero Image" style="width: 100%; height: 550px; object-fit: cover;">\n' +
     '                      </div>\n' +
     '                  </div>\n' +
     '              </div>\n          </section>'
