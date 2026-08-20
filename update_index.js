@@ -22,6 +22,9 @@ snBody = snBody.replace(/<header class="site-header">[\s\S]*?<\/header>/gi, '');
 // Update Hero Heading: StarNexusTech (Big/Black with Glitch) and Enterprise Automation & Software (Smaller/Teal)
 snBody = snBody.replace(/<h1>Enterprise Automation & Software<\/h1>/i, `<h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h1>\n                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>`);
 
+// Update Footer Brand
+snBody = snBody.replace(/<div class="footer-brand">[\s\S]*?<\/div>/i, `<div class="footer-brand">\n                      <h2 style="font-family: 'Comfortaa', sans-serif !important; text-shadow: -2px 0 0 rgba(0,255,255,0.8), 2px 0 0 rgba(255,0,0,0.8);">StarNexusTech</h2>\n                      <p>Enterprise Automation & Software</p>\n                  </div>`);
+
 // Add Icons to How We Work
 snBody = snBody.replace(/<h3>Discovery<\/h3>/, '<i class="ph-bold ph-magnifying-glass" style="color: #3b82f6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Discovery</h3>');
 snBody = snBody.replace(/<h3>Prototype<\/h3>/, '<i class="ph-bold ph-code" style="color: #8b5cf6; font-size: 3rem; margin-bottom: 1rem; display: block;"></i>\n                          <h3>Prototype</h3>');
