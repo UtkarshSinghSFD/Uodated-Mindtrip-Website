@@ -357,6 +357,7 @@ body.software-active .nav-links .nav-btn.active {
       display: flex !important;
       justify-content: flex-end !important;
       align-items: center !important;
+      margin-right: -100px !important;
   }
   #software .hero-image-card {
       background: #f1f5f9 !important;
