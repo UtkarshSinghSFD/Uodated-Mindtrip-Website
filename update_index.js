@@ -148,6 +148,22 @@ const cssResets = `
   .site-footer {
       background-color: var(--color-bg-dark) !important;
   }
+  .site-footer .container {
+      max-width: 100% !important;
+      padding: 0 60px !important;
+  }
+  .site-footer .footer-top {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+  }
+  .site-footer .footer-brand {
+      text-align: left !important;
+  }
+  .site-footer .footer-contact {
+      text-align: right !important;
+  }
   .footer-bottom {
       display: block !important;
       text-align: center !important;
