@@ -162,7 +162,7 @@ const cssResets = `
       text-align: left !important;
   }
   .site-footer .footer-contact {
-      text-align: right !important;
+      text-align: center !important;
   }
   .footer-bottom {
       display: block !important;
