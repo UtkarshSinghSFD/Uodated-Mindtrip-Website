@@ -735,8 +735,8 @@ async function sendEmail(event) {
     });
 
     // --- Stat Counter Animation ---
-    const statsSection = document.querySelector('.skv-stats');
-    if (statsSection) {
+    const statsSections = document.querySelectorAll('.skv-stats');
+    statsSections.forEach(statsSection => {
         const statObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -744,7 +744,8 @@ async function sendEmail(event) {
                     // Animate numbers
                     statsSection.querySelectorAll('.skv-stat-number').forEach(el => {
                         const target = parseInt(el.getAttribute('data-count'));
-                        if (!target) return;
+                        if (!target && target !== 0) return;
+                        if (target === 0) { el.textContent = "0"; return; }
                         let current = 0;
                         const increment = target / 40;
                         const timer = setInterval(() => {
@@ -761,7 +762,7 @@ async function sendEmail(event) {
             });
         }, { threshold: 0.3 });
         statObserver.observe(statsSection);
-    }
+    });
 
     // --- Gallery Track Duplication for infinite scroll ---
     const galleryTrack = document.querySelector('.skv-gallery-track');
