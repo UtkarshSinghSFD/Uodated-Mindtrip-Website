@@ -3027,9 +3027,9 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 .mv-vinyl-record::after {
     content: '';
     position: absolute;
-    top: 52%; left: 50%;
+    top: 54%; left: 47%;
     transform: translate(-50%, -50%);
-    width: 44%; height: 44%;
+    width: 54%; height: 54%;
     background: #1e1b4b;
     border-radius: 50%;
     border: 3px solid #111;
