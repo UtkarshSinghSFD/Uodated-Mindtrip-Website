@@ -267,17 +267,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 7. Hero Parallax Icons ---
-    const parallaxIcons = document.querySelectorAll('.floating-icon');
-    document.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 2;
-        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    // --- 7. Generate Floating Star Icons Background ---
+    function createFloatingStars() {
+        const container = document.querySelector('.animated-background');
+        if (!container) return;
         
-        parallaxIcons.forEach((icon, index) => {
-            const speed = (index + 1) * 15;
-            icon.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-        });
-    });
+        const icons = [
+            'ph-music-note', 'ph-vinyl-record', 'ph-graduation-cap', 
+            'ph-microphone-stage', 'ph-globe', 'ph-browser', 
+            'ph-laptop', 'ph-code', 'ph-wifi-high', 'ph-cloud'
+        ];
+        const animations = ['randomMove1', 'randomMove2', 'randomMove3'];
+        
+        // Generate phosphor icons
+        for (let i = 0; i < 150; i++) {
+            const el = document.createElement('i');
+            const iconClass = icons[Math.floor(Math.random() * icons.length)];
+            el.className = `ph-fill ${iconClass} floating-icon`;
+            
+            el.style.top = `${Math.random() * 100}%`;
+            el.style.left = `${Math.random() * 100}%`;
+            
+            const size = Math.random() * 0.4 + 0.3; // 0.3rem to 0.7rem
+            el.style.fontSize = `${size}rem`;
+            
+            const anim = animations[Math.floor(Math.random() * animations.length)];
+            const duration = Math.random() * 10 + 8; // 8s to 18s
+            const delay = Math.random() * 5; // 0s to 5s
+            
+            el.style.animation = `${anim} ${duration}s ease-in-out infinite`;
+            el.style.animationDelay = `${delay}s`;
+            el.style.opacity = Math.random() * 0.5 + 0.2; // 0.2 to 0.7
+            
+            container.appendChild(el);
+        }
+        
+        // Generate sharp-stars
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'floating-icon sharp-star';
+            
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            
+            const size = Math.random() * 6 + 3; // 3px to 9px
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            const anim = animations[Math.floor(Math.random() * animations.length)];
+            const duration = Math.random() * 10 + 8;
+            const delay = Math.random() * 5;
+            
+            star.style.animation = `${anim} ${duration}s ease-in-out infinite`;
+            star.style.animationDelay = `${delay}s`;
+            star.style.opacity = Math.random() * 0.5 + 0.2;
+            
+            container.appendChild(star);
+        }
+    }
+    createFloatingStars();
 
     // --- 8. Matrix Coding Shower ---
     const canvas = document.getElementById('coding-shower');
