@@ -2343,7 +2343,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     backdrop-filter: blur(12px);
     border: 1px solid rgba(245,158,11,0.15);
     border-radius: 16px;
-    padding: 1.2rem;
+    padding: 1rem 0.5rem;
     text-align: center;
     transition: all 0.4s ease;
     position: relative;
@@ -2377,11 +2377,12 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 }
 .skv-stat-label {
     color: #94A3B8;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     font-weight: 500;
     margin-top: 0.5rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
+    word-break: break-word;
 }
 .skv-stat-bar {
     width: 100%;
