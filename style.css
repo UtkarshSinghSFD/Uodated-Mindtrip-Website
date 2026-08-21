@@ -3032,9 +3032,9 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     width: 8%; height: 8%;
     background: #1e1b4b;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid #000;
     z-index: 2;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.8), 0 0 4px rgba(255,255,255,0.1);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
 }
 
 .mv-vinyl-record img {
