@@ -609,3 +609,127 @@ async function sendEmail(event) {
         button.disabled = false;
     }
 }
+
+/* =========================================================
+   SKILLVERSE — Live Animations & Interactivity
+   ========================================================= */
+
+(function initSkillverse() {
+    // --- Particle Canvas ---
+    const canvases = document.querySelectorAll('.skv-particles');
+    canvases.forEach(canvas => {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animId;
+
+        function resizeCanvas() {
+            const parent = canvas.parentElement;
+            if (!parent) return;
+            canvas.width = parent.offsetWidth;
+            canvas.height = parent.offsetHeight;
+        }
+
+        function createParticles() {
+            particles = [];
+            const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 80);
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 2 + 0.5,
+                    dx: (Math.random() - 0.5) * 0.4,
+                    dy: (Math.random() - 0.5) * 0.4,
+                    o: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(245, 158, 11, ${p.o})`;
+                ctx.fill();
+                p.x += p.dx;
+                p.y += p.dy;
+                if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+            });
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(245, 158, 11, ${0.06 * (1 - dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            animId = requestAnimationFrame(drawParticles);
+        }
+
+        // Start / stop particles based on visibility
+        const sectionId = canvas.id === 'mv-particles' ? 'musicverse' : 'skillverse';
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const particleObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        resizeCanvas();
+                        createParticles();
+                        drawParticles();
+                    } else {
+                        cancelAnimationFrame(animId);
+                    }
+                });
+            }, { threshold: 0.1 });
+            particleObserver.observe(section);
+        }
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            createParticles();
+        });
+    });
+
+    // --- Stat Counter Animation ---
+    const statsSection = document.querySelector('.skv-stats');
+    if (statsSection) {
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statsSection.classList.add('active');
+                    // Animate numbers
+                    statsSection.querySelectorAll('.skv-stat-number').forEach(el => {
+                        const target = parseInt(el.getAttribute('data-count'));
+                        if (!target) return;
+                        let current = 0;
+                        const increment = target / 40;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            el.textContent = Math.floor(current);
+                        }, 30);
+                    });
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        statObserver.observe(statsSection);
+    }
+
+    // --- Gallery Track Duplication for infinite scroll ---
+    const galleryTrack = document.querySelector('.skv-gallery-track');
+    if (galleryTrack) {
+        const slides = galleryTrack.innerHTML;
+        galleryTrack.innerHTML = slides + slides; // Duplicate for seamless loop
+    }
+})();

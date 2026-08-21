@@ -1,595 +1,973 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Star Nexus Technologies — Enterprise Automation &amp; Software</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#0A0E27;
-    --indigo:#141A45;
-    --panel:#181F52;
-    --gold:#F2B84B;
-    --cyan:#5FD4D0;
-    --off-white:#F3F4FA;
-    --muted:#9BA1C7;
-    --line:rgba(243,244,250,0.10);
-    --maxw:1180px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--navy);
-    color:var(--off-white);
-    font-family:"Inter",sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:"Space Grotesk",sans-serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
-  }
-  .mono{
-    font-family:"JetBrains Mono",monospace;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    font-size:0.72rem;
-  }
-  a{color:inherit;text-decoration:none;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
-  img,svg{display:block;max-width:100%;}
-  ::selection{background:var(--gold);color:var(--navy);}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Nexus Technologies - Enterprise Automation & Software</title>
+    <meta name="description" content="Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+/* 
+  Star Nexus Technologies - GoDaddy Inspired Theme
+*/
 
-  /* ---------- Nav ---------- */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:rgba(10,14,39,0.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  nav.wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    height:76px;
-  }
-  .brand{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:700;font-size:1.15rem;}
-  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px 2px rgba(242,184,75,0.6);}
-  .navlinks{display:flex;gap:36px;font-size:0.92rem;color:var(--muted);}
-  .navlinks a:hover{color:var(--off-white);}
-  .nav-cta{
-    background:var(--gold);color:var(--navy);
-    padding:10px 20px;border-radius:6px;font-weight:600;font-size:0.9rem;
-  }
-  .nav-cta:hover{background:#ffd27a;}
-  @media (max-width:860px){.navlinks{display:none;}}
+:root {
+    /* Colors */
+    --color-primary: #00aeb6; /* Teal accent like GoDaddy */
+    --color-primary-dark: #008f96;
+    --color-secondary: #111111;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    --color-bg-light: #ffffff;
+    --color-bg-muted: #f5f7f9;
+    --color-bg-dark: #111111;
+    --color-bg-brand: #00aeb6;
+    
+    --color-border: #e0e0e0;
+    
+    /* Typography */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+    
+    /* Other */
+    --radius: 4px;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
 
-  /* ---------- Hero ---------- */
-  .hero {
-    position:relative;
-    padding:110px 0 90px;
-    overflow:hidden;
-    border-bottom:1px solid var(--line);
-  }
-  #constellation{
-    position:absolute;inset:0;width:100%;height:100%;
-    opacity:0.9;
-  }
-  .hero-inner{position:relative;z-index:2;}
-  .eyebrow{
-    color:var(--cyan);margin-bottom:22px;display:flex;align-items:center;gap:10px;
-  }
-  .eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);}
-  h1.headline{
-    font-size:clamp(2.4rem,5vw,4rem);
-    max-width:820px;
-    line-height:1.08;
-    margin-bottom:26px;
-  }
-  h1.headline em{
-    font-style:normal;color:var(--gold);
-  }
-  .hero p.lede{
-    max-width:600px;color:var(--muted);font-size:1.12rem;margin-bottom:40px;
-  }
-  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
-  .btn-primary{
-    background:var(--gold);color:var(--navy);padding:14px 26px;border-radius:6px;font-weight:600;
-  }
-  .btn-primary:hover{background:#ffd27a;}
-  .btn-secondary{
-    border:1px solid var(--line);padding:14px 26px;border-radius:6px;font-weight:600;color:var(--off-white);
-  }
-  .btn-secondary:hover{border-color:var(--cyan);color:var(--cyan);}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  /* ---------- Section shared ---------- */
-  .page-section-starnexus {padding:100px 0;border-bottom:1px solid var(--line);}
-  .section-head{max-width:640px;margin-bottom:64px;}
-  .section-head .mono{color:var(--gold);margin-bottom:14px;display:block;}
-  .section-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:16px;}
-  .section-head p{color:var(--muted);font-size:1.05rem;}
+html {
+    scroll-behavior: smooth;
+}
 
-  /* ---------- Process ---------- */
-  .process-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-    background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;
-  }
-  .process-card{background:var(--navy);padding:40px 34px;position:relative;transition:background 0.3s ease, border-color 0.3s ease;}
-  .process-card:hover{background:var(--indigo);}
-  .process-card .id{color:var(--cyan);margin-bottom:22px;display:block;}
-  .process-card h3{font-size:1.28rem;margin-bottom:12px;}
-  .process-card p{color:var(--muted);font-size:0.96rem;}
-  @media (max-width:860px){.process-grid{grid-template-columns:1fr;}}
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-bg-light);
+    -webkit-font-smoothing: antialiased;
+}
 
-  /* ---------- Services ---------- */
-  .services-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:24px;
-  }
-  .service-card{
-    background:var(--panel);border-radius:12px;padding:38px;
-    transition:transform .25s ease, box-shadow .25s ease, background 0.3s ease;
-  }
-  .service-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(0,0,0,0.6);background:var(--indigo);}
-  .service-card .num{color:var(--muted);font-size:0.8rem;margin-bottom:18px;display:block;}
-  .service-card h3{font-size:1.3rem;margin-bottom:12px;}
-  .service-card p{color:var(--muted);font-size:0.96rem;margin-bottom:20px;}
-  .service-card .link{color:var(--gold);font-size:0.88rem;font-weight:600;}
-  @media (max-width:760px){.services-grid{grid-template-columns:1fr;}}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-secondary);
+}
 
-  /* ---------- Integrations ---------- */
-  .integ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .integ-card{
-    border:1px solid var(--line);border-radius:10px;padding:28px;background:rgba(255,255,255,0.015);
-    transition:background 0.3s ease, border-color 0.3s ease;
-  }
-  .integ-card:hover{background:rgba(255,255,255,0.05); border-color:var(--cyan);}
-  .integ-card .tag{color:var(--cyan);margin-bottom:14px;display:block;}
-  .integ-card h4{font-size:1.06rem;margin-bottom:10px;}
-  .integ-card p{color:var(--muted);font-size:0.9rem;}
-  @media (max-width:860px){.integ-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:560px){.integ-grid{grid-template-columns:1fr;}}
+p {
+    margin-bottom: var(--spacing-sm);
+}
 
-  /* ---------- Products ---------- */
-  .product{
-    display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;
-    padding:52px 0;border-top:1px solid var(--line);
-    align-items:center;
-  }
-  .product:first-of-type{border-top:none;}
-  .product-visual{
-    aspect-ratio:4/3;border-radius:14px;
-    background:linear-gradient(155deg,var(--panel),var(--indigo));
-    display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
-    border:1px solid var(--line);
-  }
-  .product-visual .glyph{font-family:"Space Grotesk";font-weight:700;font-size:3.4rem;color:rgba(243,244,250,0.14);}
-  .product-visual .starpoint{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px 2px rgba(242,184,75,0.7);}
-  .product-kicker{color:var(--muted);margin-bottom:10px;display:block;}
-  .product h3{font-size:1.7rem;margin-bottom:6px;}
-  .product .role{color:var(--gold);font-size:0.92rem;margin-bottom:18px;display:block;}
-  .product p.desc{color:var(--muted);margin-bottom:22px;}
-  .feat-list{list-style:none;margin-bottom:26px;}
-  .feat-list li{
-    display:flex;gap:12px;color:var(--off-white);font-size:0.93rem;margin-bottom:10px;padding-left:0;
-  }
-  .feat-list li::before{content:"—";color:var(--cyan);flex-shrink:0;}
-  .product-ctas{display:flex;gap:14px;}
-  .product-ctas a{font-size:0.88rem;font-weight:600;padding:11px 18px;border-radius:6px;}
-  .product-ctas .primary{background:var(--gold);color:var(--navy);}
-  .product-ctas .secondary{border:1px solid var(--line);}
-  @media (max-width:860px){.product{grid-template-columns:1fr;gap:28px;}}
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
 
-  /* ---------- Contact ---------- */
-  .contact-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:60px;}
-  .contact-info h3{font-size:1.4rem;margin-bottom:16px;}
-  .contact-info p{color:var(--muted);margin-bottom:32px;}
-  .info-row{margin-bottom:24px;}
-  .info-row .mono{color:var(--gold);margin-bottom:6px;display:block;}
-  .info-row div.val{font-size:1rem;}
-  form{display:grid;gap:18px;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-  label{font-size:0.8rem;color:var(--muted);margin-bottom:8px;display:block;}
-  input,textarea{
-    width:100%;background:var(--panel);border:1px solid var(--line);border-radius:6px;
-    padding:13px 14px;color:var(--off-white);font-family:"Inter";font-size:0.94rem;
-  }
-  input:focus,textarea:focus{outline:none;border-color:var(--cyan);}
-  textarea{resize:vertical;min-height:110px;}
-  .submit-btn{
-    background:var(--gold);color:var(--navy);padding:14px 26px;border-radius:6px;font-weight:600;
-    border:none;cursor:pointer;font-family:"Inter";font-size:0.95rem;width:fit-content;
-  }
-  .submit-btn:hover{background:#ffd27a;}
-  @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+a:hover {
+    color: var(--color-primary-dark);
+}
 
-  /* Staggered Drop Grid Animation */
-  .staggered-drop-grid.reveal {
-      transform: none !important;
-      opacity: 1 !important;
-      transition: none !important;
-  }
-  .staggered-drop-grid > * {
-      opacity: 0;
-      transform: translateY(-60px);
-  }
-  .staggered-drop-grid.active > * {
-      animation: dropArrange 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  }
-  .staggered-drop-grid.active > *:nth-child(1) { animation-delay: 0.1s; }
-  .staggered-drop-grid.active > *:nth-child(2) { animation-delay: 0.2s; }
-  .staggered-drop-grid.active > *:nth-child(3) { animation-delay: 0.3s; }
-  .staggered-drop-grid.active > *:nth-child(4) { animation-delay: 0.4s; }
-  .staggered-drop-grid.active > *:nth-child(5) { animation-delay: 0.5s; }
-  .staggered-drop-grid.active > *:nth-child(6) { animation-delay: 0.6s; }
+ul {
+    list-style: none;
+}
 
-  @keyframes dropArrange {
-      0% { opacity: 0; transform: translateY(-60px) scale(0.98); }
-      60% { transform: translateY(5px) scale(1); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
-  }
+/* Layout Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
 
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-  }
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+}
+
+.btn-primary:hover {
+    background-color: #000;
+    color: var(--color-bg-light);
+}
+
+.btn-secondary {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: var(--color-bg-light);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    margin-top: var(--spacing-sm);
+}
+
+.link-arrow span {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.link-arrow:hover span {
+    transform: translateX(5px);
+}
+
+/* Header */
+.site-header {
+    background-color: var(--color-bg-light);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+}
+
+.main-nav .nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-nav a {
+    color: var(--color-text);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-secondary);
+    transition: var(--transition);
+}
+
+/* Sections */
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xl);
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-lead {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+}
+
+.section-dark {
+    background-color: var(--color-bg-dark);
+    color: var(--color-bg-light);
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 {
+    color: var(--color-bg-light);
+}
+
+.section-dark p {
+    color: #cccccc;
+}
+
+.section-dark .link-arrow {
+    color: var(--color-primary);
+}
+
+.section-light {
+    background-color: var(--color-bg-light);
+}
+
+.section-brand {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.section-brand h2 {
+    color: var(--color-secondary);
+}
+
+.section-brand .section-lead {
+    color: rgba(17, 17, 17, 0.8);
+}
+
+/* Hero */
+.hero {
+    background-color: var(--color-bg-muted);
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: -1px;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+}
+
+/* How We Work */
+.step-card {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.step-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.step-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.step-card h4 {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    font-weight: 500;
+}
+
+/* Services */
+.services-grid {
+    gap: var(--spacing-lg);
+}
+
+.service-item {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.service-meta {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    opacity: 0.5;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+}
+
+/* Integrations */
+.integration-card {
+    padding: var(--spacing-md);
+    border-left: 3px solid var(--color-primary);
+    background: var(--color-bg-muted);
+}
+
+.integration-card .category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.integration-card h3 {
+    font-size: 1.4rem;
+}
+
+/* Products */
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.product-card {
+    background: var(--color-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    color: var(--color-text);
+}
+
+.product-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.product-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: var(--color-secondary);
+    color: var(--color-bg-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-heading);
+}
+
+.feature-list {
+    margin-top: var(--spacing-md);
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact-grid {
+    align-items: flex-start;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+}
+
+.contact-block {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-block h3 {
+    font-size: 1.5rem;
+}
+
+.contact-block h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-secondary);
+}
+
+.note {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-top: var(--spacing-md);
+}
+
+.contact-form-container {
+    background: var(--color-bg-muted);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-heading);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0,174,182,0.1);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--color-bg-dark);
+    color: var(--color-bg-light);
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.footer-top {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-brand h2 {
+    color: var(--color-bg-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-contact h3 {
+    color: var(--color-bg-light);
+}
+
+.footer-contact a {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    
+    .hero { padding: 80px 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .hero-buttons { flex-direction: column; }
+    
+    .section-header h2 { font-size: 2rem; }
+    
+    .mobile-menu-btn { display: flex; }
+    
+    .main-nav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-light);
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-md);
+        display: none;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .header-actions { display: none; }
+}
+
 </style>
 </head>
 <body>
-
-<section class="hero">
-  <canvas id="constellation"></canvas>
-  <div class="wrap hero-inner">
-    <div class="eyebrow mono">Enterprise Automation &amp; Software</div>
-    <h1 class="headline">The nexus point for every system your business runs on, <em>aligned</em>.</h1>
-    <p class="lede">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
-    <div class="hero-ctas">
-      <a href="#software-contact" class="btn-primary">Start a Project</a>
-      <a href="#products" class="btn-secondary">View Our Products</a>
-    </div>
-  </div>
-</section>
-
-<section id="process" class="page-section-starnexus">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="mono">How We Work</span>
-      <h2>A fixed sequence, from signal to system</h2>
-      <p>Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
-    </div>
-    <div class="process-grid staggered-drop-grid">
-      <div class="process-card">
-        <span class="id mono">SN-01 · Discovery</span>
-        <h3>Chart the system</h3>
-        <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
-      </div>
-      <div class="process-card">
-        <span class="id mono">SN-02 · Prototype</span>
-        <h3>Build the proof</h3>
-        <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
-      </div>
-      <div class="process-card">
-        <span class="id mono">SN-03 · Scale</span>
-        <h3>Launch &amp; support</h3>
-        <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services" class="page-section-starnexus">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="mono">Our Services</span>
-      <h2>Systems built around how your business actually operates</h2>
-      <p>We architect and deploy the infrastructure that connects your operations, hardware, and data into a single working network.</p>
-    </div>
-    <div class="services-grid staggered-drop-grid">
-      <div class="service-card">
-        <span class="num mono">01</span>
-        <h3>Enterprise Software</h3>
-        <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
-        <a href="#software-contact" class="link">Explore Service →</a>
-      </div>
-      <div class="service-card">
-        <span class="num mono">02</span>
-        <h3>Industrial IoT</h3>
-        <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
-        <a href="#software-contact" class="link">Explore Service →</a>
-      </div>
-      <div class="service-card">
-        <span class="num mono">03</span>
-        <h3>Workflow Orchestration</h3>
-        <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
-        <a href="#software-contact" class="link">Explore Service →</a>
-      </div>
-      <div class="service-card">
-        <span class="num mono">04</span>
-        <h3>B2B Cloud Solutions</h3>
-        <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
-        <a href="#software-contact" class="link">Explore Service →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="integrations" class="page-section-starnexus">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="mono">Integrations</span>
-      <h2>Connect the tools you already run</h2>
-      <p>Star Nexus links your ERP, CRM, and cloud stack so data moves automatically instead of being re-entered by hand.</p>
-    </div>
-    <div class="integ-grid staggered-drop-grid">
-      <div class="integ-card">
-        <span class="tag mono">Operations</span>
-        <h4>ERP Systems</h4>
-        <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
-      </div>
-      <div class="integ-card">
-        <span class="tag mono">Customer Data</span>
-        <h4>CRM Platforms</h4>
-        <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
-      </div>
-      <div class="integ-card">
-        <span class="tag mono">Alerts</span>
-        <h4>Collaboration Hubs</h4>
-        <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
-      </div>
-      <div class="integ-card">
-        <span class="tag mono">Analytics</span>
-        <h4>Cloud Data Warehouses</h4>
-        <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
-      </div>
-      <div class="integ-card">
-        <span class="tag mono">Financials</span>
-        <h4>Payment Gateways</h4>
-        <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
-      </div>
-      <div class="integ-card">
-        <span class="tag mono">Developer Tools</span>
-        <h4>REST &amp; GraphQL APIs</h4>
-        <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="products" class="page-section-starnexus">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="mono">Our Products</span>
-      <h2>Five fixed points, one product line</h2>
-      <p>Custom-configured hardware and software built to connect physical operations to your business systems.</p>
-    </div>
-
-    <div class="product">
-      <div class="product-visual"><span class="glyph">PLR</span><span class="starpoint" style="top:22%;left:30%;"></span><span class="starpoint" style="top:60%;left:70%;"></span></div>
-      <div>
-        <span class="product-kicker mono">Fortified VDI</span>
-        <h3>Polaris</h3>
-        <span class="role">Fixed-Point Secure Desktop Infrastructure</span>
-        <p class="desc">A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
-        <ul class="feat-list staggered-drop-grid">
-          <li>On-premise secure server node deployment</li>
-          <li>Low-latency remote desktop streaming (60 FPS)</li>
-          <li>Hardware-level encryption and zero-trust client access</li>
-        </ul>
-        <div class="product-ctas">
-          <a href="#software-contact" class="primary">Request Quote</a>
-          <a href="#software-contact" class="secondary">Tech Specs</a>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#">Star Nexus</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#how-we-work">How We Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                    <li><a href="#products">Products</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
-    </div>
+    </header>
 
-    <div class="product">
-      <div class="product-visual"><span class="glyph">VGA</span><span class="starpoint" style="top:35%;left:55%;"></span><span class="starpoint" style="top:70%;left:25%;"></span></div>
-      <div>
-        <span class="product-kicker mono">Assistive AI</span>
-        <h3>Vega</h3>
-        <span class="role">AI Companion for the Visually Impaired</span>
-        <p class="desc">A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
-        <ul class="feat-list staggered-drop-grid">
-          <li>Real-time object and currency identification</li>
-          <li>Natural text-to-speech audio feedback via Bluetooth</li>
-          <li>Ultrasonic obstacle detection and hazard guidance</li>
-        </ul>
-        <div class="product-ctas">
-          <a href="#software-contact" class="primary">Request Quote</a>
-          <a href="#software-contact" class="secondary">Tech Specs</a>
-        </div>
-      </div>
-    </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Enterprise Automation & Software</h1>
+                    <p class="hero-subtitle">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Start a Project</a>
+                        <a href="#products" class="btn btn-secondary">View Our Products</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="product">
-      <div class="product-visual"><span class="glyph">LYR</span><span class="starpoint" style="top:25%;left:65%;"></span><span class="starpoint" style="top:65%;left:35%;"></span></div>
-      <div>
-        <span class="product-kicker mono">Batch OCR</span>
-        <h3>Lyra Scan</h3>
-        <span class="role">High-Speed Batch Digitization</span>
-        <p class="desc">An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
-        <ul class="feat-list staggered-drop-grid">
-          <li>Ultra-fast batch document processing (120 ppm)</li>
-          <li>On-premise OCR with instant PDF/Excel export</li>
-          <li>Automatic metadata classification and sorting</li>
-        </ul>
-        <div class="product-ctas">
-          <a href="#software-contact" class="primary">Request Quote</a>
-          <a href="#software-contact" class="secondary">Tech Specs</a>
-        </div>
-      </div>
-    </div>
+        <!-- How We Work Section -->
+        <section id="how-we-work" class="section section-light section-how-we-work">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How We Work</h2>
+                    <p class="section-lead">A fixed sequence, from signal to system. Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
+                </div>
+                
+                <div class="grid grid-3 steps-grid">
+                    <div class="card step-card">
+                        <div class="step-number">SN-01</div>
+                        <h3>Discovery</h3>
+                        <h4>Chart the system</h4>
+                        <p>We audit your manual workflows and map where automation removes the most friction — before any code is written.</p>
+                    </div>
+                    <div class="card step-card">
+                        <div class="step-number">SN-02</div>
+                        <h3>Prototype</h3>
+                        <h4>Build the proof</h4>
+                        <p>We deliver a working proof-of-concept against your real data, so you can validate the approach before committing to scale.</p>
+                    </div>
+                    <div class="card step-card">
+                        <div class="step-number">SN-03</div>
+                        <h3>Scale</h3>
+                        <h4>Launch & support</h4>
+                        <p>We deploy to production and stay in orbit with monitoring, support, and iteration as your business grows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="product">
-      <div class="product-visual"><span class="glyph">ORN</span><span class="starpoint" style="top:40%;left:40%;"></span><span class="starpoint" style="top:70%;left:75%;"></span></div>
-      <div>
-        <span class="product-kicker mono">Local MSME SaaS</span>
-        <h3>Orion Suite</h3>
-        <span class="role">End-to-End MSME Automation</span>
-        <p class="desc">Real-time oversight of leads, inventory, and payroll on a secure local database — built for small and mid-sized operations that need control without complexity.</p>
-        <ul class="feat-list staggered-drop-grid">
-          <li>Secure on-premise local database hosting</li>
-          <li>Unified pipeline tracking across payroll, inventory, and leads</li>
-          <li>Customizable role-based access logs for staff</li>
-        </ul>
-        <div class="product-ctas">
-          <a href="#software-contact" class="primary">Request Quote</a>
-          <a href="#software-contact" class="secondary">Tech Specs</a>
-        </div>
-      </div>
-    </div>
+        <!-- Services Section -->
+        <section id="services" class="section section-dark section-services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Services</h2>
+                    <p class="section-lead">Systems built around how your business actually operates. We architect and deploy the infrastructure that connects your operations, hardware, and data into a single working network.</p>
+                </div>
 
-    <div class="product">
-      <div class="product-visual"><span class="glyph">NVA</span><span class="starpoint" style="top:30%;left:30%;"></span><span class="starpoint" style="top:60%;left:60%;"></span></div>
-      <div>
-        <span class="product-kicker mono">Structural Telemetry</span>
-        <h3>Nova Watch</h3>
-        <span class="role">Road &amp; Structural Intelligence System</span>
-        <p class="desc">Live monitoring for civil infrastructure — calculating traffic load and structural vibration to flag maintenance needs before they become hazards.</p>
-        <ul class="feat-list staggered-drop-grid">
-          <li>Real-time vibration and traffic-load sensors</li>
-          <li>Predictive AI analytics for early hazard detection</li>
-          <li>Rugged IP68, solar-powered outdoor edge hubs</li>
-        </ul>
-        <div class="product-ctas">
-          <a href="#software-contact" class="primary">Request Quote</a>
-          <a href="#software-contact" class="secondary">Tech Specs</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                <div class="grid grid-2 services-grid">
+                    <div class="service-item">
+                        <div class="service-meta">01</div>
+                        <div class="service-content">
+                            <h3>Enterprise Software</h3>
+                            <p>Custom web platforms, secure database architecture, and analytics dashboards that pull scattered operational data into one control center.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-meta">02</div>
+                        <div class="service-content">
+                            <h3>Industrial IoT</h3>
+                            <p>Connecting hardware controllers and physical sensors to the cloud through low-latency telemetry pipelines and on-site edge logic.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-meta">03</div>
+                        <div class="service-content">
+                            <h3>Workflow Orchestration</h3>
+                            <p>Event-driven automation that replaces manual handoffs with synced triggers, notifications, and cross-platform handlers.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-meta">04</div>
+                        <div class="service-content">
+                            <h3>B2B Cloud Solutions</h3>
+                            <p>High-availability, compliance-ready cloud infrastructure with secure client portals and built-in redundancy.</p>
+                            <a href="#contact" class="link-arrow">Explore Service <span>&rarr;</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="software-contact" class="page-section-starnexus" style="border-bottom:none;">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="mono">Get In Touch</span>
-      <h2>Let's build something worth aligning around</h2>
-      <p>Tell us about your project, your team, or your hardware requirements — our engineering team will follow up directly.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Star Nexus Technologies HQ</h3>
-        <p>Our primary engineering hub coordinates delivery for clients across India and internationally.</p>
-        <div class="info-row">
-          <span class="mono">Office</span>
-          <div class="val">Delhi, India</div>
-        </div>
-        <div class="info-row">
-          <span class="mono">Engineering &amp; Sales</span>
-          <div class="val">hello@starnexustech.com</div>
-        </div>
-      </div>
-      <form onsubmit="return false;">
-        <div class="form-row">
-          <div>
-            <label>Full Name</label>
-            <input type="text" placeholder="e.g. Rahul Sharma">
-          </div>
-          <div>
-            <label>Email Address</label>
-            <input type="email" placeholder="e.g. rahul@company.com">
-          </div>
-        </div>
-        <div>
-          <label>Subject</label>
-          <input type="text" placeholder="How can we help your business?">
-        </div>
-        <div>
-          <label>Message</label>
-          <textarea placeholder="Outline your application specifications, automation ideas, or hardware quote inquiries..."></textarea>
-        </div>
-        <button class="submit-btn" type="submit">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
+        <!-- Integrations Section -->
+        <section id="integrations" class="section section-light section-integrations">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Integrations</h2>
+                    <p class="section-lead">Connect the tools you already run. Star Nexus links your ERP, CRM, and cloud stack so data moves automatically instead of being re-entered by hand.</p>
+                </div>
+                
+                <div class="grid grid-3 integrations-grid">
+                    <div class="integration-card">
+                        <div class="category">Operations</div>
+                        <h3>ERP Systems</h3>
+                        <p>Two-way sync with SAP and Oracle for logistics tracking, stock updates, and supply chain reporting.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Customer Data</div>
+                        <h3>CRM Platforms</h3>
+                        <p>Feed incoming leads and deal pipelines directly into Salesforce and HubSpot as they happen.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Alerts</div>
+                        <h3>Collaboration Hubs</h3>
+                        <p>Route custom alerts, event reports, and threshold warnings straight to Slack and Microsoft Teams.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Analytics</div>
+                        <h3>Cloud Data Warehouses</h3>
+                        <p>Aggregate high-throughput data and sensor logs in AWS, Google Cloud, and Snowflake, configured to your security policy.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Financials</div>
+                        <h3>Payment Gateways</h3>
+                        <p>Automate ledger syncs, invoice matching, and refund processing via Stripe and Razorpay.</p>
+                    </div>
+                    <div class="integration-card">
+                        <div class="category">Developer Tools</div>
+                        <h3>REST & GraphQL APIs</h3>
+                        <p>Connect proprietary databases and internal tools using custom-built connectors and webhook listeners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script>
-(function(){
-  const canvas = document.getElementById('constellation');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const hero = canvas.parentElement;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W, H, points = [];
+        <!-- Products Section -->
+        <section id="products" class="section section-brand section-products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Products</h2>
+                    <p class="section-lead">Five fixed points, one product line. Custom-configured hardware and software built to connect physical operations to your business systems.</p>
+                </div>
 
-  function resize(){
-    if(!hero) return;
-    W = canvas.width = hero.offsetWidth;
-    H = canvas.height = hero.offsetHeight;
-    const count = Math.max(18, Math.floor(W / 90));
-    points = Array.from({length: count}, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.15,
-      vy: (Math.random() - 0.5) * 0.15,
-      r: Math.random() * 1.4 + 0.6,
-      twinkle: Math.random() * Math.PI * 2
-    }));
-  }
+                <div class="products-list">
+                    <div class="product-card">
+                        <div class="product-badge">PLR &middot; Fortified VDI</div>
+                        <h3>Polaris</h3>
+                        <h4>Fixed-Point Secure Desktop Infrastructure</h4>
+                        <p>A high-performance virtual desktop infrastructure built for data sovereignty — deployed on dedicated on-premise hardware, so nothing sensitive leaves your building.</p>
+                        <ul class="feature-list">
+                            <li>On-premise secure server node deployment</li>
+                            <li>Low-latency remote desktop streaming (60 FPS)</li>
+                            <li>Hardware-level encryption and zero-trust client access</li>
+                        </ul>
+                    </div>
 
-  function draw(){
-    ctx.clearRect(0, 0, W, H);
-    // connections
-    for (let i = 0; i < points.length; i++){
-      for (let j = i + 1; j < points.length; j++){
-        const a = points[i], b = points[j];
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 170){
-          ctx.strokeStyle = \`rgba(95,212,208,\${0.14 * (1 - dist/170)})\`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
+                    <div class="product-card">
+                        <div class="product-badge">VGA &middot; Assistive AI</div>
+                        <h3>Vega</h3>
+                        <h4>AI Companion for the Visually Impaired</h4>
+                        <p>A wearable-ready assistive companion that gives real-time environmental awareness — built to support independence, not replace judgment.</p>
+                        <ul class="feature-list">
+                            <li>Real-time object and currency identification</li>
+                            <li>Natural text-to-speech audio feedback via Bluetooth</li>
+                            <li>Ultrasonic obstacle detection and hazard guidance</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-badge">LYR &middot; Batch OCR</div>
+                        <h3>Lyra Scan</h3>
+                        <h4>High-Speed Batch Digitization</h4>
+                        <p>An industrial-grade scanning appliance for volume and speed, turning paper archives into searchable, exportable records on-premise.</p>
+                        <ul class="feature-list">
+                            <li>Ultra-fast batch document processing (120 ppm)</li>
+                            <li>On-premise OCR with instant PDF/Excel export</li>
+                            <li>Automatic metadata classification and sorting</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-badge">ORN &middot; Local MSME SaaS</div>
+                        <h3>Orion Suite</h3>
+                        <h4>End-to-End MSME Automation</h4>
+                        <p>Real-time oversight of leads, inventory, and payroll on a secure local database — built for small and mid-sized operations that need control without complexity.</p>
+                        <ul class="feature-list">
+                            <li>Secure on-premise local database hosting</li>
+                            <li>Unified pipeline tracking across payroll, inventory, and leads</li>
+                            <li>Customizable role-based access logs for staff</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-badge">NVA &middot; Structural Telemetry</div>
+                        <h3>Nova Watch</h3>
+                        <h4>Road & Structural Intelligence System</h4>
+                        <p>Live monitoring for civil infrastructure — calculating traffic load and structural vibration to flag maintenance needs before they become hazards.</p>
+                        <ul class="feature-list">
+                            <li>Real-time vibration and traffic-load sensors</li>
+                            <li>Predictive AI analytics for early hazard detection</li>
+                            <li>Rugged IP68, solar-powered outdoor edge hubs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section section-light section-contact">
+            <div class="container">
+                <div class="grid grid-2 contact-grid">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p class="section-lead">Let's build something worth aligning around. Tell us about your project, your team, or your hardware requirements — our engineering team will follow up directly.</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-block">
+                                <h3>Star Nexus Technologies HQ</h3>
+                                <p>Our primary engineering hub coordinates delivery for clients across India and internationally.</p>
+                            </div>
+                            
+                            <div class="contact-block">
+                                <h4>Office</h4>
+                                <p>Nagpur, Maharashtra</p>
+                            </div>
+                            
+                            <div class="contact-block">
+                                <h4>Engineering & Sales</h4>
+                                <p><a href="mailto:contact@mindtripe.in">contact@mindtripe.in</a></p>
+                            </div>
+                            
+                            <div class="contact-block">
+                                <h4>Business Line</h4>
+                                <p>+91 94049 97971</p>
+                            </div>
+                            
+                            <p class="note">* Placeholder contact details — swap in your real address, email, and number before this goes live.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-top grid grid-2">
+                <div class="footer-brand">
+                    <h2>Star Nexus</h2>
+                    <p>Events ✦ Entertainment ✦ Education</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><a href="mailto:contact@mindtripe.in">contact@mindtripe.in</a></p>
+                    <p>Nagpur, Maharashtra</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MindTripE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (mobileMenuBtn && mainNav) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            
+            // Toggle hamburger animation (optional enhancement)
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            if (mainNav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+
+    // Close mobile menu when clicking a link
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    });
+
+    // Add shadow to header on scroll
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            header.style.boxShadow = 'none';
         }
-      }
-    }
-    // points
-    for (const p of points){
-      const glow = 0.55 + 0.45 * Math.sin(p.twinkle);
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = \`rgba(242,184,75,\${glow})\`;
-      ctx.fill();
-      if (!reduceMotion){
-        p.x += p.vx; p.y += p.vy;
-        p.twinkle += 0.02;
-        if (p.x < 0 || p.x > W) p.vx *= -1;
-        if (p.y < 0 || p.y > H) p.vy *= -1;
-      }
-    }
-    if (!reduceMotion) requestAnimationFrame(draw);
-  }
+    });
 
-  window.addEventListener('resize', resize);
-  resize();
-  draw();
-  
-  // Intersection Observer for the Staggered Drop Grid Animation
-  const staggeredGrids = document.querySelectorAll('#software.starnexus-theme .staggered-drop-grid');
-  
-  const gridObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-          if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-              // Unobserve after animating once
-              observer.unobserve(entry.target);
-          }
-      });
-  }, {
-      // Trigger when 10% of the element is visible
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-  });
-  
-  staggeredGrids.forEach(grid => {
-      gridObserver.observe(grid);
-  });
-})();
+    // Form submission mock
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            
+            // Mock API call
+            setTimeout(() => {
+                alert('Thank you for getting in touch! We will contact you shortly.');
+                contactForm.reset();
+                btn.textContent = originalText;
+                btn.disabled = false;
+            }, 1500);
+        });
+    }
+});
+
 </script>
-
 </body>
 </html>
+

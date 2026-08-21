@@ -256,105 +256,501 @@
                     </div>
                 </div>
 
-                <!-- SkillVerse Content -->
+                <!-- SkillVerse Content (Education Theme V2) -->
                 <div id="skillverse" class="sub-section active">
-                    <div class="content-split">
-                        <div class="split-text reveal">
-                            <h2>Skill Development Curriculum</h2>
-                            <p class="lead">A 2-year, 16-module program for diploma & degree students — building communication, confidence, financial literacy and true corporate readiness.</p>
-                            
-                            <h3 class="margin-top font-mono text-gold">>> How the program works</h3>
-                            <div class="process-steps">
-                                <div class="step">
-                                    <div class="step-num font-mono">01</div>
-                                    <div class="step-info">
-                                        <h4>Onboarding</h4>
-                                        <p>Your institution partners with us and students are enrolled into the 2-year, 16-module program alongside their regular academic calendar.</p>
+                    <div class="skv">
+                        <!-- Particle Canvas Background -->
+                        <canvas id="skv-particles" class="skv-particles"></canvas>
+
+                        <!-- Floating Chalk Doodles -->
+                        <div class="skv-doodles">
+                            <div class="doodle doodle-1">∑</div>
+                            <div class="doodle doodle-2">π</div>
+                            <div class="doodle doodle-3">∞</div>
+                            <div class="doodle doodle-4">Δ</div>
+                            <div class="doodle doodle-5">α</div>
+                            <div class="doodle doodle-6">β</div>
+                            <div class="doodle doodle-7">λ</div>
+                            <div class="doodle doodle-8">Ω</div>
+                        </div>
+
+                        <!-- ===== SPLIT HERO & SHOWCASE ===== -->
+                        <div class="skv-hero-split">
+                            <!-- Left: Info & Stats -->
+                            <div class="skv-hero-info reveal">
+                                <div class="skv-hero-badge">
+                                    <i class="ph-fill ph-graduation-cap"></i> SKILLVERSE PROGRAM
+                                </div>
+                                <h2 class="skv-hero-title">
+                                    <span class="skv-title-line">Unlock Your</span>
+                                    <span class="skv-title-accent">Full Potential</span>
+                                </h2>
+                                <p class="skv-hero-desc">A 2-year, 16-module transformative program for diploma & degree students — building communication, confidence, financial literacy, and true corporate readiness.</p>
+                                <div class="skv-hero-actions">
+                                    <button class="skv-btn-primary" onclick="switchPage('contact')">
+                                        <i class="ph-fill ph-rocket-launch"></i> Enroll Now
+                                    </button>
+                                    <button class="skv-btn-outline" onclick="document.querySelector('.skv-modules').scrollIntoView({behavior:'smooth'})">
+                                        <i class="ph-fill ph-book-open-text"></i> Modules
+                                    </button>
+                                </div>
+
+                                <!-- ===== ANIMATED STATS ===== -->
+                                <div class="skv-stats">
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="16">0</div>
+                                        <div class="skv-stat-label">Modules</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:100%"></div></div>
+                                    </div>
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="2">0</div>
+                                        <div class="skv-stat-label">Years</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:80%"></div></div>
+                                    </div>
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="4">0</div>
+                                        <div class="skv-stat-label">Hours</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:60%"></div></div>
+                                    </div>
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="100">0</div>
+                                        <div class="skv-stat-suffix">%</div>
+                                        <div class="skv-stat-label">Certified</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:100%"></div></div>
                                     </div>
                                 </div>
-                                <div class="step">
-                                    <div class="step-num font-mono">02</div>
-                                    <div class="step-info">
-                                        <h4>Structured Delivery</h4>
-                                        <p>16 core modules delivered in 4-hour sessions — covering communication, aptitude, financial literacy, entrepreneurship and leadership.</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-num font-mono">03</div>
-                                    <div class="step-info">
-                                        <h4>Practice & Certification</h4>
-                                        <p>Students go through mock GDs, interviews and tests, mental health & wellness sessions, and receive certification on completion.</p>
+                            </div>
+
+                            <!-- Right: Visual Collage -->
+                            <div class="skv-hero-visual reveal">
+                                <div class="skv-showcase-main">
+                                    <img src="skv images/Golden Tree of Knowledge Wallpaper - Magical Book Aesthetic Mobile Wallpaper Background.jpg" alt="Golden Tree of Knowledge">
+                                    <div class="skv-showcase-overlay">
+                                        <span>Knowledge Grows</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="split-visual reveal reveal-delay-1">
-                            <div class="glass-panel tilt-card interactive-border">
-                                <h3 class="font-mono text-gold">At a glance</h3>
-                                <ul class="check-list">
-                                    <li><i class="ph-bold ph-check"></i> 16 core modules, 4-hour sessions</li>
-                                    <li><i class="ph-bold ph-check"></i> Communication & public speaking</li>
-                                    <li><i class="ph-bold ph-check"></i> Aptitude & logical thinking</li>
-                                    <li><i class="ph-bold ph-check"></i> Financial literacy & investments</li>
-                                    <li><i class="ph-bold ph-check"></i> Entrepreneurship & leadership</li>
-                                    <li><i class="ph-bold ph-check"></i> Mock GDs, interviews & tests</li>
-                                    <li><i class="ph-bold ph-check"></i> Mental health & wellness</li>
-                                    <li><i class="ph-bold ph-check"></i> Certification on completion</li>
-                                </ul>
+
+                        <!-- ===== CORE PILLARS ===== -->
+                        <div class="skv-pillars reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-star"></i> The 4 Pillars of SkillVerse
+                            </h3>
+                            <div class="skv-pillars-grid">
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="skv images/7881368095781381.jpg" alt="Expressive Fluency">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-microphone-stage"></i></div>
+                                        <h4>Expressive Fluency</h4>
+                                        <p>Move beyond textbook grammar. We train students to articulate complex ideas clearly, speak with conviction, and command attention in any room.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="skv images/Premium Photo _ Knowledge vector style….jpg" alt="Cognitive Agility">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-brain"></i></div>
+                                        <h4>Cognitive Agility</h4>
+                                        <p>Through logical reasoning and aptitude modules, we wire the brain for quick problem-solving and critical thinking under pressure.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="skv images/d.jpg" alt="Financial Acumen">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-chart-line-up"></i></div>
+                                        <h4>Financial Acumen</h4>
+                                        <p>Real-world financial literacy. From understanding markets to managing personal wealth, we prepare students for the economic realities of adulthood.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="skv images/Study Hard Buddy!.jpg" alt="Emotional Intelligence">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-users-three"></i></div>
+                                        <h4>Emotional Intelligence</h4>
+                                        <p>Mental wellness, stress management, and collaborative leadership. We build resilient individuals who thrive in high-stakes environments.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== HOW IT WORKS — 3D TIMELINE ===== -->
+                        <div class="skv-journey reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-path"></i> Your Learning Journey
+                            </h3>
+                            <div class="skv-journey-track">
+                                <div class="skv-journey-line"></div>
+                                <div class="skv-journey-step" data-step="1">
+                                    <div class="skv-journey-icon"><i class="ph-fill ph-handshake"></i></div>
+                                    <div class="skv-journey-card">
+                                        <span class="skv-journey-num">01</span>
+                                        <h4>Onboarding</h4>
+                                        <p>Your institution partners with us. Students enroll into the 2-year program alongside their regular academics.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-journey-step" data-step="2">
+                                    <div class="skv-journey-icon"><i class="ph-fill ph-chalkboard-teacher"></i></div>
+                                    <div class="skv-journey-card">
+                                        <span class="skv-journey-num">02</span>
+                                        <h4>Structured Delivery</h4>
+                                        <p>16 core modules in 4-hour sessions — communication, aptitude, financial literacy, entrepreneurship & leadership.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-journey-step" data-step="3">
+                                    <div class="skv-journey-icon"><i class="ph-fill ph-certificate"></i></div>
+                                    <div class="skv-journey-card">
+                                        <span class="skv-journey-num">03</span>
+                                        <h4>Practice & Certification</h4>
+                                        <p>Mock GDs, interviews, tests, mental health sessions — and official certification on completion.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== MODULE CARDS ===== -->
+                        <div class="skv-modules reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-squares-four"></i> What You'll Master
+                            </h3>
+                            <div class="skv-modules-grid">
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-chats-circle"></i></div>
+                                    <h4>Communication</h4>
+                                    <p>Public speaking, group discussions, and professional articulation</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-brain"></i></div>
+                                    <h4>Aptitude & Logic</h4>
+                                    <p>Analytical reasoning and problem-solving for competitive readiness</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-currency-inr"></i></div>
+                                    <h4>Financial Literacy</h4>
+                                    <p>Budgeting, investments, and understanding the financial world</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-rocket-launch"></i></div>
+                                    <h4>Entrepreneurship</h4>
+                                    <p>Business ideation, startup thinking, and innovation mindset</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-users-three"></i></div>
+                                    <h4>Leadership</h4>
+                                    <p>Team management, conflict resolution, and decision making</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-heart-half"></i></div>
+                                    <h4>Mental Wellness</h4>
+                                    <p>Stress management, mindfulness, and emotional intelligence</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-user-focus"></i></div>
+                                    <h4>Mock Interviews</h4>
+                                    <p>Real-world interview simulations with expert panel feedback</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-medal"></i></div>
+                                    <h4>Certification</h4>
+                                    <p>Industry-recognized certificates on program completion</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== GALLERY CAROUSEL ===== -->
+                        <div class="skv-gallery reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-images"></i> Inspiring Environments
+                            </h3>
+                            <div class="skv-gallery-track">
+                                <div class="skv-gallery-slide">
+                                    <img src="skv images/Premium Photo _ Knowledge vector style….jpg" alt="Knowledge illustration">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="skv images/Study Hard Buddy!.jpg" alt="Study motivation">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="skv images/Ecole _ Vecteurs et Photos gratuites.jpg" alt="Education vector">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="skv images/325033298129537402.jpg" alt="Education concept">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="skv images/schöne guten morgen grüße kostenlos.jpg" alt="Morning motivation">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== CTA BANNER ===== -->
+                        <div class="skv-cta reveal">
+                            <div class="skv-cta-content">
+                                <h3>Ready to Transform Your Students?</h3>
+                                <p>Partner with SkillVerse and give your students the edge they need for the real world.</p>
+                                <button class="skv-btn-primary" onclick="switchPage('contact')">
+                                    <i class="ph-fill ph-envelope-simple"></i> Get In Touch
+                                </button>
+                            </div>
+                            <div class="skv-cta-image">
+                                <img src="skv images/Ecole _ Vecteurs et Photos gratuites.jpg" alt="Partner with SkillVerse">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- MusicVerse Content -->
+                <!-- ===== MUSICVERSE THEME ===== -->
                 <div id="musicverse" class="sub-section">
-                    <div class="content-split">
-                        <div class="split-text reveal">
-                            <h2 style="white-space: nowrap; font-size: clamp(2rem, 4.5vw, 3rem);">MindTripE MusicVerse</h2>
-                            <p class="lead">A complete music ecosystem inside your school — structured curriculum, instruments, performances and internationally recognized certification pathways.</p>
+                    <div class="skv">
+                        <!-- Particle Canvas Background (Using same class for identical styling) -->
+                        <canvas id="mv-particles" class="skv-particles"></canvas>
+
+                        <!-- Floating Doodles -->
+                        <div class="skv-doodles">
+                            <div class="doodle doodle-1">♫</div>
+                            <div class="doodle doodle-2">♪</div>
+                            <div class="doodle doodle-3">♬</div>
+                            <div class="doodle doodle-4">♭</div>
+                            <div class="doodle doodle-5">♮</div>
+                            <div class="doodle doodle-6">♯</div>
+                            <div class="doodle doodle-7">𝄆</div>
+                            <div class="doodle doodle-8">𝄇</div>
+                        </div>
+
+                        <!-- ===== SPLIT HERO ===== -->
+                        <div class="skv-hero-split">
+                            <!-- Left: Info & Stats -->
+                            <div class="skv-hero-info reveal">
+                                <div class="skv-hero-badge">
+                                    <i class="ph-fill ph-music-notes"></i> MUSICVERSE PROGRAM
+                                </div>
+                                <h2 class="skv-hero-title">
+                                    <span class="skv-title-line">Feel The</span>
+                                    <span class="skv-title-accent">Rhythm</span>
+                                </h2>
+                                <p class="skv-hero-desc">A complete music ecosystem inside your school — structured curriculum, instruments, performances and internationally recognized certification pathways.</p>
+                                <div class="skv-hero-actions">
+                                    <button class="skv-btn-primary" onclick="switchPage('contact')">
+                                        <i class="ph-fill ph-play-circle"></i> Start the Beat
+                                    </button>
+                                    <button class="skv-btn-outline" onclick="document.querySelector('#mv-modules').scrollIntoView({behavior:'smooth'})">
+                                        <i class="ph-fill ph-music-notes-simple"></i> Modules
+                                    </button>
+                                </div>
+
+                                <!-- ===== ANIMATED STATS ===== -->
+                                <div class="skv-stats active">
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="10">0</div>
+                                        <div class="skv-stat-label">Levels</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:100%"></div></div>
+                                    </div>
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="8">0</div>
+                                        <div class="skv-stat-label">Instruments</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:100%"></div></div>
+                                    </div>
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number" data-count="100">0</div>
+                                        <div class="skv-stat-label">Stage Ready %</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:100%"></div></div>
+                                    </div>
+                                    <div class="skv-stat-item">
+                                        <div class="skv-stat-number font-mono" data-count="0">0</div>
+                                        <div class="skv-stat-label">Cost to School</div>
+                                        <div class="skv-stat-bar"><div class="skv-stat-fill" style="--fill-width:10%"></div></div>
+                                    </div>
+                                </div>
+                            </div>
                             
-                            <h3 class="margin-top font-mono text-gold">>> How the program works</h3>
-                            <div class="process-steps">
-                                <div class="step">
-                                    <div class="step-num font-mono">01</div>
-                                    <div class="step-info">
-                                        <h4>Setup at Your School</h4>
-                                        <p>We set up the music lab and acoustics, and provide instruments & books — at zero cost to the school.</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-num font-mono">02</div>
-                                    <div class="step-info">
-                                        <h4>10-Level Curriculum</h4>
-                                        <p>Students progress through a 10-level curriculum starting from the nursery & primary program, preparing for Trinity, Yamaha and other grade exams.</p>
-                                    </div>
-                                </div>
-                                <div class="step">
-                                    <div class="step-num font-mono">03</div>
-                                    <div class="step-info">
-                                        <h4>Performance & Exposure</h4>
-                                        <p>Students get recording studio exposure and take part in band competitions and live shows.</p>
+                            <!-- Right: Visual -->
+                            <div class="skv-hero-visual reveal" style="display: flex; align-items: center; justify-content: center;">
+                                <div class="mv-vinyl-player" style="margin: 0 auto; max-width: 600px; width: 100%;">
+                                    <div class="mv-vinyl-record" style="position: relative; width: 100%; aspect-ratio: 1/1; right: 0; top: 0; bottom: 0; margin: 0 auto;">
+                                        <img src="ms images/Download premium image of Note music watercolor wallpaper abstract text creativity_ by Boom about iphone wallpaper music, music, music notes background, music notes, and music wallpaper 1.jpg" alt="Vinyl Art">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="split-visual reveal reveal-delay-1">
-                            <div class="glass-panel tilt-card interactive-border">
-                                <h3 class="font-mono text-gold">At a glance</h3>
-                                <ul class="check-list">
-                                    <li><i class="ph-bold ph-check"></i> 10-level progressive curriculum</li>
-                                    <li><i class="ph-bold ph-check"></i> Instruments & books provided</li>
-                                    <li><i class="ph-bold ph-check"></i> Music lab setup & acoustics</li>
-                                    <li><i class="ph-bold ph-check"></i> Trinity, Yamaha & other grade prep</li>
-                                    <li><i class="ph-bold ph-check"></i> Recording studio exposure</li>
-                                    <li><i class="ph-bold ph-check"></i> Band competitions & live shows</li>
-                                    <li><i class="ph-bold ph-check"></i> Nursery & primary program</li>
-                                    <li><i class="ph-bold ph-check"></i> Zero cost to school</li>
-                                </ul>
+
+                        <!-- ===== CORE PILLARS ===== -->
+                        <div class="skv-pillars reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-speaker-hifi"></i> Core Pillars
+                            </h3>
+                            <div class="skv-pillars-grid">
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="ms images/Post by @0ld5chool · 1 image.jpg" alt="Curriculum">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-book-open-text"></i></div>
+                                        <h4>Structured Curriculum</h4>
+                                        <p>10 progressive levels preparing students for Trinity and Yamaha international grade exams.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="ms images/Where the wires hum softly and the air feels….jpg" alt="Setup">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-guitar"></i></div>
+                                        <h4>Studio & Instruments</h4>
+                                        <p>We provide all instruments, acoustic treatments, and lab setup at zero cost to the school.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="ms images/Feel the music___.jpg" alt="Live Performance">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-microphone-stage"></i></div>
+                                        <h4>Live Performance</h4>
+                                        <p>Band competitions, open-mics, and annual shows that build true stage presence and confidence.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-pillar-card">
+                                    <div class="skv-pillar-image">
+                                        <img src="ms images/Lost in the little moments 🎧✨, Music, memories….jpg" alt="Recording">
+                                    </div>
+                                    <div class="skv-pillar-content">
+                                        <div class="skv-pillar-icon"><i class="ph-fill ph-headphones"></i></div>
+                                        <h4>Recording & Production</h4>
+                                        <p>Real studio exposure. Students learn the basics of sound engineering and track production.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- ===== HOW IT WORKS — 3D TIMELINE ===== -->
+                        <div class="skv-journey reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-path"></i> Your Musical Journey
+                            </h3>
+                            <div class="skv-journey-track">
+                                <div class="skv-journey-line"></div>
+                                <div class="skv-journey-step" data-step="1">
+                                    <div class="skv-journey-icon"><i class="ph-fill ph-handshake"></i></div>
+                                    <div class="skv-journey-card">
+                                        <span class="skv-journey-num">01</span>
+                                        <h4>Onboarding & Setup</h4>
+                                        <p>We partner with the school and set up the acoustic lab and instruments before classes begin.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-journey-step" data-step="2">
+                                    <div class="skv-journey-icon"><i class="ph-fill ph-chalkboard-teacher"></i></div>
+                                    <div class="skv-journey-card">
+                                        <span class="skv-journey-num">02</span>
+                                        <h4>Structured Learning</h4>
+                                        <p>Students attend dedicated music periods, progressing through theory and practical instrumental skills.</p>
+                                    </div>
+                                </div>
+                                <div class="skv-journey-step" data-step="3">
+                                    <div class="skv-journey-icon"><i class="ph-fill ph-certificate"></i></div>
+                                    <div class="skv-journey-card">
+                                        <span class="skv-journey-num">03</span>
+                                        <h4>Exams & Shows</h4>
+                                        <p>Students appear for international grade exams and perform in school-wide live concerts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== MODULE CARDS ===== -->
+                        <div id="mv-modules" class="skv-modules reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-squares-four"></i> What You'll Master
+                            </h3>
+                            <div class="skv-modules-grid">
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-microphone-stage"></i></div>
+                                    <h4>Vocals & Pitch</h4>
+                                    <p>Voice training, breath control, and pitch perfect harmonization</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-guitar"></i></div>
+                                    <h4>String Instruments</h4>
+                                    <p>Acoustic guitar, bass, and violin techniques and chords</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-music-notes"></i></div>
+                                    <h4>Keys & Synths</h4>
+                                    <p>Piano fundamentals, synthesizer sound design, and chord progressions</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-drum"></i></div>
+                                    <h4>Rhythm & Percussion</h4>
+                                    <p>Drum kits, cajons, and complex time signature mastery</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-music-note"></i></div>
+                                    <h4>Music Theory</h4>
+                                    <p>Sight-reading, notation, scales, and classical foundations</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-sliders"></i></div>
+                                    <h4>Sound Engineering</h4>
+                                    <p>Mixing, mastering, and basic DAWs (Digital Audio Workstations)</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-users-three"></i></div>
+                                    <h4>Band Dynamics</h4>
+                                    <p>Playing in sync, listening to bandmates, and live improvisation</p>
+                                </div>
+                                <div class="skv-module-card">
+                                    <div class="skv-module-icon"><i class="ph-fill ph-star"></i></div>
+                                    <h4>Stage Presence</h4>
+                                    <p>Engaging the audience, overcoming stage fright, and performing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== GALLERY CAROUSEL ===== -->
+                        <div class="skv-gallery reveal">
+                            <h3 class="skv-section-title">
+                                <i class="ph-fill ph-images"></i> Inspiring Environments
+                            </h3>
+                            <div class="skv-gallery-track">
+                                <div class="skv-gallery-slide">
+                                    <img src="ms images/Where the wires hum softly and the air feels….jpg" alt="Studio Setup">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="ms images/Post by @0ld5chool · 1 image.jpg" alt="Music Curriculum">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="ms images/Feel the music___.jpg" alt="Performance">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="ms images/Lost in the little moments 🎧✨, Music, memories….jpg" alt="Music vibe">
+                                </div>
+                                <div class="skv-gallery-slide">
+                                    <img src="ms images/87257311539958430.jpg" alt="Guitar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ===== CTA BANNER ===== -->
+                        <div class="skv-cta reveal">
+                            <div class="skv-cta-content">
+                                <h3>Ready to Start the Beat?</h3>
+                                <p>Partner with MusicVerse and bring a complete music ecosystem to your school.</p>
+                                <button class="skv-btn-primary" onclick="switchPage('contact')">
+                                    <i class="ph-fill ph-envelope-simple"></i> Get In Touch
+                                </button>
+                            </div>
+                            <div class="skv-cta-image">
+                                <img src="ms images/Corazón de Roca.jpg" alt="Partner with MusicVerse">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </section>
 
                         <!-- SOFTWARE SOLUTIONS PAGE (STAR NEXUS THEME) -->
