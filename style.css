@@ -3024,6 +3024,18 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     align-items: center;
     justify-content: center;
 }
+.mv-vinyl-record::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4%; height: 4%;
+    background: #111;
+    border-radius: 50%;
+    border: 1px solid #333;
+    z-index: 2;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.8);
+}
 
 .mv-vinyl-record img {
     width: 100%; height: 100%;
