@@ -175,18 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. Custom Cursor Glow ---
-    const cursorGlow = document.querySelector('.cursor-glow');
-    document.addEventListener('mousemove', (e) => {
-        if(cursorGlow) {
-            cursorGlow.style.opacity = '1';
-            cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
-        }
-    });
-    // Hide when leaving window
-    document.addEventListener('mouseleave', () => {
-        if(cursorGlow) cursorGlow.style.opacity = '0';
-    });
+    // --- 3. Custom Cursor Glow Removed ---
 
     // --- 4. Scroll Reveal Animations (Intersection Observer) ---
     window.revealObserver = new IntersectionObserver((entries, observer) => {

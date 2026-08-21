@@ -58,8 +58,7 @@
         <div class="glow-orb bottom-orb"></div>
     </div>
     
-    <!-- Custom Cursor Glow -->
-    <div class="cursor-glow"></div>
+    <!-- Custom Cursor Glow Removed -->
 
     <div class="app-container">
         
@@ -87,7 +86,10 @@
             <section id="home" class="page-section active">
                 <div class="hero hero-centered" id="home-hero">
                     <div class="hero-content text-center reveal">
-                        <p class="hero-top-tag font-mono text-gold"><span class="line-bar"></span> EVENTS ✦ ENTERTAINMENT ✦ EDUCATION <span class="line-bar"></span></p>
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-bottom: 2rem;">
+                            <p class="hero-top-tag font-mono text-gold" style="margin-bottom: 0; font-size: 0.6rem;"><span class="line-bar"></span> EDUCATION ✦ ENGINEERING ✦ EVENTS & ENTERTAINMENT <span class="line-bar"></span></p>
+                            <p class="hero-top-tag font-mono text-gold" style="margin-bottom: 0; font-size: 0.6rem;"><span class="line-bar"></span> ENCODEX <span class="line-bar"></span></p>
+                        </div>
                         <h1 class="hero-title new-hero-title">
                             <span class="solid-text glow-pulse-text">Explore Elevate</span><br>
                             <span class="solid-text glow-pulse-text">Empower</span>
@@ -1690,7 +1692,7 @@ body.software-active .nav-links .nav-btn.active {
       color: #0f172a !important;
       margin-bottom: 0.75rem !important;
       font-weight: 600 !important;
-      font-family: 'Comfortaa', sans-serif !important;
+      font-family: var(--font-heading) !important;
   }
   #software .caption-bottom {
       display: flex !important;
@@ -1756,13 +1758,13 @@ body.software-active .nav-links .nav-btn.active {
 
 /* Explicitly enforce Star Nexus fonts (Comfortaa for headings, Poppins for body) */
 #software {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: var(--font-body) !important;
 }
 #software h1, #software h2, #software h3, #software h4, #software h5, #software h6, #software .logo a {
-    font-family: 'Comfortaa', sans-serif !important;
+    font-family: var(--font-heading) !important;
 }
 #software p, #software li, #software .val, #software .note {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: var(--font-body) !important;
 }
 
 </style>
@@ -1774,8 +1776,8 @@ body.software-active .nav-links .nav-btn.active {
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 style="font-family: 'Comfortaa', sans-serif !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">StarNexusTech</h1>
-                    <div style="color: var(--color-primary); font-family: 'Comfortaa', sans-serif !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>
+                    <h1 style="font-family: var(--font-heading) !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">StarNexusTech</h1>
+                    <div style="color: var(--color-primary); font-family: var(--font-heading) !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>
                     <p class="hero-subtitle">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">Start a Project</a>
@@ -2617,7 +2619,7 @@ body.software-active .nav-links .nav-btn.active {
         <div class="container footer-container">
             <div class="footer-top grid grid-2">
                 <div class="footer-brand">
-                      <h2 style="font-family: 'Comfortaa', sans-serif !important;">StarNexusTech</h2>
+                      <h2 style="font-family: var(--font-heading) !important;">StarNexusTech</h2>
                       <p>Enterprise Automation & Software</p>
                   </div>
                 <div class="footer-contact">
@@ -2842,7 +2844,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="logo">
                         <img src="images/logo.jpeg" alt="MindTripE Logo" class="logo-img">
                     </div>
-                    <p class="font-mono text-gold mt-2">Events ✦ Entertainment ✦ Education</p>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; margin-top: 0.5rem; text-align: center;">
+                        <p class="font-mono text-gold" style="font-size: 0.6rem; white-space: nowrap; margin-bottom: 0;">Education ✦ Engineering ✦ Events & Entertainment</p>
+                        <p class="font-mono text-gold" style="font-size: 0.6rem; white-space: nowrap; margin-bottom: 0;">EncodeX</p>
+                    </div>
                 </div>
                 
                 <div class="footer-contact">

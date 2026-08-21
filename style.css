@@ -20,8 +20,8 @@
     --glass-highlight: rgba(234, 179, 8, 0.4);
 
     /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Playfair Display', serif;
+    --font-heading: 'Comfortaa', sans-serif;
+    --font-body: 'Comfortaa', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 }
 
@@ -655,12 +655,13 @@ body.software-active .nav-btn.active {
 }
 
 .hero-top-tag {
-    font-size: 0.85rem;
+    font-size: 0.425rem;
     letter-spacing: 0.1em;
     margin-bottom: 2rem;
     display: inline-flex;
     align-items: center;
     gap: 1rem;
+    white-space: nowrap;
 }
 .line-bar {
     width: 40px;
@@ -669,7 +670,7 @@ body.software-active .nav-btn.active {
 }
 
 .new-hero-title {
-    font-size: 9rem;
+    font-size: 7rem;
     line-height: 1;
     margin-bottom: 1.5rem;
     letter-spacing: -0.03em;
@@ -2129,7 +2130,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 }
 .doodle {
     position: absolute;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     color: rgba(245, 158, 11, 0.08);
     animation: doodleFloat 12s ease-in-out infinite;
@@ -2153,7 +2154,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 
 /* ---------- Section Title ---------- */
 .skv-section-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.8rem;
     font-weight: 700;
     color: #F8FAFC;
@@ -2238,14 +2239,14 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     margin-bottom: 1.5rem;
 }
 .skv-title-line {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 300;
     color: #E2E8F0;
     letter-spacing: -1px;
 }
 .skv-title-accent {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     background: linear-gradient(135deg, #F59E0B, #FBBF24, #F97316);
@@ -2285,7 +2286,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     border: none;
     padding: 0.85rem 2rem;
     border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-weight: 700;
     font-size: 0.95rem;
     cursor: pointer;
@@ -2316,7 +2317,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     border: 2px solid rgba(245,158,11,0.4);
     padding: 0.85rem 2rem;
     border-radius: 10px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.95rem;
     cursor: pointer;
@@ -2433,7 +2434,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     pointer-events: none;
 }
 .skv-showcase-overlay span {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-weight: 700;
     color: #FBBF24;
     font-size: 1.1rem;
@@ -2515,7 +2516,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     background: rgba(245,158,11,0.2);
 }
 .skv-pillar-card h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.25rem;
     color: #F8FAFC;
     margin: 0;
@@ -2632,7 +2633,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     margin-bottom: 0.3rem;
 }
 .skv-journey-card h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.15rem;
     color: #F8FAFC;
     margin-bottom: 0.5rem;
@@ -2705,7 +2706,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     background: linear-gradient(135deg, rgba(245,158,11,0.3), rgba(16,185,129,0.2));
 }
 .skv-module-card h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
     color: #F8FAFC;
@@ -2786,7 +2787,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     pointer-events: none;
 }
 .skv-cta-content h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.8rem;
     color: #F8FAFC;
     margin-bottom: 0.8rem;
@@ -2875,7 +2876,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 
 /* ---------- Title & Text ---------- */
 .mv-section-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 2.2rem;
     color: #e0e7ff;
     margin-bottom: 2rem;
@@ -2917,7 +2918,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 .mv-stats .skv-stat-bar { background: linear-gradient(90deg, #c084fc, #3b82f6); }
 .mv-stats .skv-stat-fill { background: linear-gradient(90deg, #c084fc, #3b82f6); }
 .mv-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     font-weight: 800;
     line-height: 1.1;
@@ -2942,7 +2943,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     border: none;
     padding: 1rem 2.5rem;
     border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-weight: 700;
     font-size: 1.1rem;
     display: inline-flex;
@@ -3096,7 +3097,7 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
 }
 .mv-album-card:hover .mv-album-overlay i { transform: scale(1); }
 .mv-album-info h4 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-body);
     font-size: 1.3rem;
     color: #e0e7ff;
     margin-bottom: 0.8rem;
