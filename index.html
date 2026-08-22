@@ -1617,6 +1617,18 @@ ul {
           height: 400px !important;
           padding: 20px !important;
       }
+      .site-footer .footer-top {
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+          gap: 30px !important;
+      }
+      .site-footer .footer-brand {
+          text-align: center !important;
+      }
+      .site-footer .footer-contact {
+          text-align: center !important;
+      }
   }
 
 }
@@ -1820,11 +1832,11 @@ body.software-active .nav-links .nav-btn.active {
                 <h2>How We Work</h2>
                 <p class="section-lead">A fixed sequence, from signal to system. Every engagement moves through the same three coordinates — no scope surprises, no guesswork on timeline.</p>
             </div>
-            <div style="display: flex; gap: 40px; align-items: stretch; justify-content: center;">
-                <div style="flex: 1 1 50%; max-width: 50%;">
-                    <img src="images/st-images/new_tree.jpg" alt="Digital Tree" style="width: 100%; height: 100%; min-height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
+            <div class="grid grid-2" style="align-items: stretch;">
+                <div>
+                    <img src="images/st-images/new_tree.jpg" alt="Digital Tree" style="width: 100%; height: 100%; min-height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);">
                 </div>
-                <div style="flex: 1 1 50%; max-width: 50%;">
+                <div>
                     <div style="display: flex; flex-direction: column; gap: 20px;">
                         <div class="card step-card" style="text-align: left; padding: 25px; display: flex; gap: 20px; align-items: flex-start;">
                             <i class="ph-bold ph-magnifying-glass" style="color: #3b82f6; font-size: 2.5rem; flex-shrink: 0;"></i>
