@@ -6,7 +6,7 @@
 <title>StarNexusTech — Software Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&family=Gochi+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -28,7 +28,7 @@ html{scroll-behavior:smooth; cursor: url('data:image/svg+xml;utf8,<svg xmlns="ht
 body{
   background-color: var(--paper);
   color: var(--ink);
-  font-family: "Patrick Hand", cursive;
+  font-family: var(--font-body);
   font-size: 1.15rem;
   line-height: 1.6;
   overflow-x: hidden;
@@ -49,7 +49,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
-h1,h2,h3,h4{font-family:"Bangers", cursive; letter-spacing: 0.05em; line-height: 1.1; text-transform: uppercase;}
+h1,h2,h3,h4{font-family: var(--font-heading); letter-spacing: 0.05em; line-height: 1.1; text-transform: uppercase;}
 a{color:inherit;text-decoration:none; cursor: inherit;}
 .wrap{max-width:var(--maxw);margin:auto;padding:0 30px}
 
@@ -88,7 +88,7 @@ header{
 }
 nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-between}
 .brand{
-  font-family:"Bangers",cursive;font-size:2.2rem;
+  font-family: var(--font-heading);font-size:2.2rem;
   color: var(--red);
   text-shadow: 2px 2px 0 var(--ink);
   transform: rotate(-2deg);
@@ -106,7 +106,7 @@ nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-betwe
   display:inline-block;background:var(--red);color:white;
   border:4px solid var(--ink);
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  padding:12px 25px;font-family:"Bangers";font-size:1.2rem;
+  padding:12px 25px;font-family: var(--font-heading);font-size:1.2rem;
   box-shadow:5px 5px 0 var(--ink);transition:all 0.1s;
 }
 .btn-primary:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(4px, 4px); }
@@ -136,7 +136,7 @@ nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-betwe
 .eyebrow{
   display:inline-block;color:white;background:var(--blue);
   border:3px solid var(--ink);padding:8px 20px;
-  transform:rotate(-4deg);margin-bottom:30px;font-family:"Bangers";font-size:1.5rem;
+  transform:rotate(-4deg);margin-bottom:30px;font-family: var(--font-heading);font-size:1.5rem;
   box-shadow: 3px 3px 0 var(--ink);
 }
 h1.headline{
@@ -156,7 +156,7 @@ h1.headline em{font-style:normal;color:white; display:block; transform:rotate(-2
 .marquee-tape {
   background: var(--yellow); border-top: 4px solid var(--ink); border-bottom: 4px solid var(--ink);
   padding: 15px 0; overflow: hidden; display: flex; white-space: nowrap;
-  font-family: "Bangers"; font-size: 2rem; transform: rotate(-2deg) scale(1.05);
+  font-family: var(--font-heading); font-size: 2rem; transform: rotate(-2deg) scale(1.05);
   box-shadow: 0 10px 0 rgba(0,0,0,0.1); margin: 40px 0;
 }
 .marquee-content { animation: slide 15s linear infinite; display: flex; gap: 40px; }
@@ -182,7 +182,7 @@ section{padding:100px 0; position:relative;}
 .process-card:nth-child(1) { transform: rotate(-2deg); }
 .process-card:nth-child(2) { transform: rotate(1deg); background: var(--paper2); }
 .process-card:nth-child(3) { transform: rotate(-1deg); }
-.process-card .step { font-family: "Bangers"; font-size: 4rem; color: var(--cyan); -webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink); display: block; margin-bottom: 10px;}
+.process-card .step { font-family: var(--font-heading); font-size: 4rem; color: var(--cyan); -webkit-text-stroke: 2px var(--ink); text-shadow: 3px 3px 0 var(--ink); display: block; margin-bottom: 10px;}
 .process-card h3 { font-size: 2.2rem; margin-bottom: 15px; }
 
 .service-card { padding: 40px; display: flex; flex-direction: column; justify-content: space-between; }
@@ -191,7 +191,7 @@ section{padding:100px 0; position:relative;}
   position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; 
   background: var(--yellow); border: 4px solid var(--ink); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: "Bangers"; font-size: 2rem; box-shadow: 4px 4px 0 var(--ink);
+  font-family: var(--font-heading); font-size: 2rem; box-shadow: 4px 4px 0 var(--ink);
 }
 
 .product-showcase {
@@ -205,7 +205,7 @@ section{padding:100px 0; position:relative;}
 .product-art {
   height: 350px; border: 4px solid var(--ink); border-radius: 15px;
   display: flex; align-items: center; justify-content: center;
-  font-family: "Bangers"; font-size: 8rem; color: white; -webkit-text-stroke: 3px var(--ink);
+  font-family: var(--font-heading); font-size: 8rem; color: white; -webkit-text-stroke: 3px var(--ink);
   text-shadow: 6px 6px 0 var(--ink); position: relative; overflow: hidden;
 }
 .product-art::before {
@@ -215,7 +215,7 @@ section{padding:100px 0; position:relative;}
 footer{
   background: var(--ink); color: white; padding: 80px 0 40px;
   border-top: 10px solid var(--red);
-  font-family: "Patrick Hand";
+  font-family: var(--font-body);
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
 .footer-grid h2 { color: var(--yellow); font-size: 3rem; margin-bottom: 20px; -webkit-text-stroke: 0; }
@@ -227,7 +227,7 @@ footer{
 .sticky-note {
   position: absolute; width: 200px; height: 200px; background: #feff9c;
   border: 1px solid #e8e988; box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
-  padding: 20px; font-family: "Patrick Hand"; font-size: 1.4rem; color: #111;
+  padding: 20px; font-family: var(--font-body); font-size: 1.4rem; color: #111;
   transform: rotate(5deg); display: flex; align-items: center; justify-content: center; text-align: center;
   z-index: 10;
 }

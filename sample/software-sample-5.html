@@ -6,7 +6,7 @@
 <title>StarNexusTech — Software Solutions (The Ultimate Cut)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
 <style>
@@ -29,7 +29,7 @@ html{scroll-behavior:smooth; cursor: url('data:image/svg+xml;utf8,<svg xmlns="ht
 body{
   background-color: var(--paper);
   color: var(--ink);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   line-height: 1.6;
   overflow-x: hidden;
@@ -45,7 +45,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
-h1,h2,h3,h4{font-family:"Bangers", cursive; letter-spacing: 0.05em; line-height: 1.1;}
+h1,h2,h3,h4{font-family: var(--font-heading); letter-spacing: 0.05em; line-height: 1.1;}
 a{color:inherit;text-decoration:none; cursor: inherit;}
 .wrap{max-width:var(--maxw);margin:auto;padding:0 30px}
 
@@ -88,21 +88,21 @@ header{
 }
 nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-between}
 .brand{
-  font-family:"Bangers",cursive;font-size:2rem;
+  font-family: var(--font-heading);font-size:2rem;
   display:flex; align-items:center; gap: 8px;
 }
 .brand .dot {
   width:18px;height:18px;background:var(--red);border:3px solid var(--ink);
   border-radius:50%;box-shadow:2px 2px 0 var(--ink);
 }
-.navlinks{display:flex;gap:35px;font-family:"Patrick Hand";font-size:1.2rem;font-weight:bold;}
+.navlinks{display:flex;gap:35px;font-family: var(--font-body);font-size:1.2rem;font-weight:bold;}
 .navlinks a:hover{color:var(--blue); transform: rotate(2deg) scale(1.1); display: inline-block;}
 
 .btn-primary {
   display:inline-block;background:var(--red);color:white;
   border:3px solid var(--ink);
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  padding:12px 25px;font-family:"Bangers";font-size:1.2rem;
+  padding:12px 25px;font-family: var(--font-heading);font-size:1.2rem;
   box-shadow:4px 4px 0 var(--ink);transition:all 0.1s;
 }
 .btn-primary:active { box-shadow: 1px 1px 0 var(--ink); transform: translate(4px, 4px); }
@@ -142,7 +142,7 @@ nav.wrap{height:85px;display:flex;align-items:center;justify-content:space-betwe
 .eyebrow{
   display:inline-block;color:var(--ink);background:var(--cyan);
   border:3px solid var(--ink);padding:6px 14px;border-radius:50%;
-  transform:rotate(-3deg);margin-bottom:25px;font-family:"Patrick Hand";font-size:1.15rem;
+  transform:rotate(-3deg);margin-bottom:25px;font-family: var(--font-body);font-size:1.15rem;
 }
 h1.headline{
   font-size:clamp(4rem, 8vw, 7.5rem);
@@ -152,7 +152,7 @@ h1.headline{
 }
 h1.headline em{font-style:normal;color:var(--red); display:inline-block; transform:rotate(-2deg);}
 .lede{
-  max-width: 620px; font-size: 1.25rem; font-family:"Patrick Hand"; color:var(--muted);
+  max-width: 620px; font-size: 1.25rem; font-family: var(--font-body); color:var(--muted);
   margin-bottom: 35px;
 }
 
@@ -160,7 +160,7 @@ h1.headline em{font-style:normal;color:var(--red); display:inline-block; transfo
 .marquee-tape {
   background: var(--yellow); border-bottom: 3px solid var(--ink);
   padding: 10px 0; overflow: hidden; display: flex; white-space: nowrap;
-  font-family: "Bangers"; font-size: 1.5rem; letter-spacing: 0.05em;
+  font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 0.05em;
   box-shadow: 0 5px 0 rgba(0,0,0,0.05);
 }
 .marquee-content { animation: slide 20s linear infinite; display: flex; gap: 40px; }
@@ -172,7 +172,7 @@ section{padding:90px 0; position:relative;}
   font-size: clamp(2.8rem, 5vw, 4.5rem); color: var(--ink);
   text-shadow: 3px 3px 0 var(--cyan); display: inline-block; position: relative;
 }
-.section-head p{font-family:"Patrick Hand"; font-size: 1.2rem; color:var(--muted);}
+.section-head p{font-family: var(--font-body); font-size: 1.2rem; color:var(--muted);}
 
 /* Sample 3 Floating Faces */
 .floating-face {
@@ -195,13 +195,13 @@ section{padding:90px 0; position:relative;}
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
 
 .process-card { padding: 35px 30px; }
-.process-card .id { font-family: "Patrick Hand"; color: var(--red); font-weight: bold; margin-bottom: 10px; display: block; }
+.process-card .id { font-family: var(--font-body); color: var(--red); font-weight: bold; margin-bottom: 10px; display: block; }
 .process-card h3 { font-size: 2rem; margin-bottom: 10px; }
 
 .service-card { padding: 35px; }
 .service-card .num { 
   display:inline-block;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);
-  padding:2px 10px;border-radius:50%;margin-bottom:15px; font-family:"Bangers"; font-size:1.5rem;
+  padding:2px 10px;border-radius:50%;margin-bottom:15px; font-family: var(--font-heading); font-size:1.5rem;
 }
 
 /* Sample 4 Product Showcase */
@@ -216,21 +216,21 @@ section{padding:90px 0; position:relative;}
 .product-art {
   height: 280px; border: 3px solid var(--ink); border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-family: "Bangers"; font-size: 6rem; color: white; -webkit-text-stroke: 2px var(--ink);
+  font-family: var(--font-heading); font-size: 6rem; color: white; -webkit-text-stroke: 2px var(--ink);
   text-shadow: 4px 4px 0 var(--ink); position: relative; overflow: hidden;
 }
 .product-art::before {
   content: "BOOM!"; position: absolute; top: 10px; left: 10px; font-size: 1.5rem; color: var(--ink); -webkit-text-stroke: 0; text-shadow: none; transform: rotate(-15deg);
 }
 .product-showcase h3 { font-size: 3rem; margin-bottom: 5px; }
-.product-showcase .role { display:block;color:var(--blue);font-family:"Patrick Hand";font-size:1.2rem;margin-bottom:15px; }
+.product-showcase .role { display:block;color:var(--blue);font-family: var(--font-body);font-size:1.2rem;margin-bottom:15px; }
 
 footer{
   background: var(--ink); color: white; padding: 60px 0 30px;
-  font-family: "Patrick Hand"; border-top: 5px solid var(--red);
+  font-family: var(--font-body); border-top: 5px solid var(--red);
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-.footer-grid h2 { font-family: "Bangers"; color: var(--yellow); font-size: 2.5rem; margin-bottom: 15px; }
+.footer-grid h2 { font-family: var(--font-heading); color: var(--yellow); font-size: 2.5rem; margin-bottom: 15px; }
 .footer-grid ul { list-style: none; }
 .footer-grid a { color: #ccc; font-size: 1.1rem; display: block; margin-bottom: 8px; }
 

@@ -268,48 +268,74 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
         const animations = ['randomMove1', 'randomMove2', 'randomMove3'];
         
+        // Create a grid to prevent overlapping
+        const cols = 10;
+        const rows = 10;
+        let gridCells = [];
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                gridCells.push({r, c});
+            }
+        }
+        // Shuffle the cells so icons are placed randomly but never in the same cell
+        gridCells.sort(() => Math.random() - 0.5);
+        
         // Generate phosphor icons
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 65; i++) { // Slightly increased quantity
             const el = document.createElement('i');
             const iconClass = icons[Math.floor(Math.random() * icons.length)];
             el.className = `ph-fill ${iconClass} floating-icon`;
             
-            el.style.top = `${Math.random() * 100}%`;
-            el.style.left = `${Math.random() * 100}%`;
+            const cell = gridCells.pop();
+            if (!cell) break; // If we run out of cells, stop placing
             
-            const size = Math.random() * 0.4 + 0.3; // 0.3rem to 0.7rem
+            // Calculate position within the cell with a safe margin to avoid edge overlap during animation
+            // cell is 10%x10%. We place it somewhere between 2% and 8% within that cell's 10% bounds.
+            const leftPct = (cell.c * 10) + (Math.random() * 6 + 2);
+            const topPct = (cell.r * 10) + (Math.random() * 6 + 2);
+            
+            el.style.top = `${topPct}%`;
+            el.style.left = `${leftPct}%`;
+            
+            const size = Math.random() * 1.5 + 1.2; // 1.2rem to 2.7rem (More bigger)
             el.style.fontSize = `${size}rem`;
             
             const anim = animations[Math.floor(Math.random() * animations.length)];
-            const duration = Math.random() * 10 + 8; // 8s to 18s
+            const duration = Math.random() * 3 + 2; // 2s to 5s (Even faster speed)
             const delay = Math.random() * 5; // 0s to 5s
             
             el.style.animation = `${anim} ${duration}s ease-in-out infinite`;
             el.style.animationDelay = `${delay}s`;
-            el.style.opacity = Math.random() * 0.5 + 0.2; // 0.2 to 0.7
+            el.style.opacity = Math.random() * 0.3 + 0.15; // 0.15 to 0.45 (More transparent)
             
             container.appendChild(el);
         }
         
         // Generate sharp-stars
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 25; i++) { // Slightly increased quantity
             const star = document.createElement('div');
             star.className = 'floating-icon sharp-star';
             
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.left = `${Math.random() * 100}%`;
+            const cell = gridCells.pop();
+            if (!cell) break;
             
-            const size = Math.random() * 6 + 3; // 3px to 9px
+            const leftPct = (cell.c * 10) + (Math.random() * 6 + 2);
+            const topPct = (cell.r * 10) + (Math.random() * 6 + 2);
+            
+            star.style.top = `${topPct}%`;
+            star.style.left = `${leftPct}%`;
+            
+            const size = Math.random() * 20 + 10; // 10px to 30px (More bigger)
             star.style.width = `${size}px`;
             star.style.height = `${size}px`;
             
             const anim = animations[Math.floor(Math.random() * animations.length)];
-            const duration = Math.random() * 10 + 8;
+            const duration = Math.random() * 3 + 2; // 2s to 5s (Even faster speed)
             const delay = Math.random() * 5;
             
             star.style.animation = `${anim} ${duration}s ease-in-out infinite`;
             star.style.animationDelay = `${delay}s`;
-            star.style.opacity = Math.random() * 0.5 + 0.2;
+            star.style.opacity = Math.random() * 0.3 + 0.15; // 0.15 to 0.45 (More transparent)
             
             container.appendChild(star);
         }
