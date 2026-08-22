@@ -1309,11 +1309,12 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .container { padding: 0 1rem; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
     
-    .hero { padding: 80px 0; }
+    .hero { padding: 60px 0; }
     .hero h1 { font-size: 2.5rem; }
-    .hero-buttons { flex-direction: column; }
+    .hero-buttons { flex-direction: column; width: 100%; }
     
     .section-header h2 { font-size: 2rem; }
     
@@ -1611,9 +1612,10 @@ ul {
   
   @media (max-width: 768px) {
       .marquee-card {
-          min-width: 320px !important;
-          max-width: 320px !important;
-          height: 420px !important;
+          min-width: 280px !important;
+          max-width: 280px !important;
+          height: 400px !important;
+          padding: 20px !important;
       }
   }
 
@@ -1722,10 +1724,14 @@ body.software-active .nav-links .nav-btn.active {
       opacity: 0.9 !important;
   }
   
+  #software .hero-title { font-size: clamp(2.5rem, 8vw, 4rem) !important; }
+  #software .hero-subtitle-heading { font-size: clamp(1.4rem, 5vw, 1.8rem) !important; }
+  
   @media (max-width: 900px) {
       #software .hero-container {
           flex-direction: column !important;
           text-align: center !important;
+          gap: 30px !important;
       }
       #software .hero-content {
           max-width: 100% !important;
@@ -1733,12 +1739,27 @@ body.software-active .nav-links .nav-btn.active {
       }
       #software .hero-subtitle {
           margin-left: auto !important;
+          margin-right: auto !important;
       }
       #software .hero-buttons {
           justify-content: center !important;
+          flex-direction: column !important;
+          width: 100% !important;
+      }
+      #software .hero-buttons .btn {
+          width: 100% !important;
+          margin: 0 !important;
       }
       #software .hero-image-wrapper {
-          margin-top: 40px !important;
+          margin-top: 20px !important;
+          margin-right: 0 !important;
+          max-width: 100% !important;
+          flex: 0 0 100% !important;
+          justify-content: center !important;
+      }
+      #software .hero-image-card img {
+          height: auto !important;
+          max-height: 400px !important;
       }
   }
 
@@ -1776,8 +1797,8 @@ body.software-active .nav-links .nav-btn.active {
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 style="font-family: var(--font-heading) !important; font-size: 4rem; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;">StarNexusTech</h1>
-                    <div style="color: var(--color-primary); font-family: var(--font-heading) !important; font-weight: 700; font-size: 1.8rem; margin-bottom: 1rem;">Enterprise Automation & Software</div>
+                    <h1 style="font-family: var(--font-heading) !important; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;" class="hero-title">StarNexusTech</h1>
+                    <div class="hero-subtitle-heading" style="color: var(--color-primary); font-family: var(--font-heading) !important; font-weight: 700; margin-bottom: 1rem;">Enterprise Automation & Software</div>
                     <p class="hero-subtitle">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary">Start a Project</a>
@@ -1786,7 +1807,7 @@ body.software-active .nav-links .nav-btn.active {
                 </div>
                   <div class="hero-image-wrapper">
                       <div class="hero-image-card">
-                          <img src="images/st-images/alex-knight-2EJCSULRwC8-unsplash.jpg" alt="Hero Image" style="width: 100%; height: 550px; object-fit: cover;">
+                          <img src="images/st-images/alex-knight-2EJCSULRwC8-unsplash.jpg" alt="Hero Image">
                       </div>
                   </div>
               </div>
