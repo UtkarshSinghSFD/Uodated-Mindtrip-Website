@@ -644,8 +644,9 @@ body.software-active .nav-btn.active {
     .hero-visual { margin-top: 4rem; }
     .timeline-grid, .services-grid, .integrations-grid, .contact-cards, .pillars-grid, .features-grid, .skv-pillars-grid { grid-template-columns: 1fr; }
     .form-row { flex-direction: column; gap: 0; }
-    .footer-content { display: flex; flex-direction: column; align-items: flex-start; gap: 2rem; }
-    .footer-contact, .footer-info { text-align: left; }
+    .footer-content { display: flex; flex-direction: column; align-items: center; gap: 2rem; text-align: center; }
+    .footer-contact, .footer-info { text-align: center; }
+    .footer-brand { display: flex; flex-direction: column; align-items: center; }
     .stats-banner { grid-template-columns: 1fr; }
     .stat-item { border-right: none; padding: 2rem; }
     
