@@ -373,10 +373,19 @@ document.addEventListener('DOMContentLoaded', () => {
             'ph-disc', 'ph-waveform', 'ph-playlist', 'ph-play-circle'
         ];
 
+        const eventsIcons = [
+            'ph-ticket', 'ph-confetti', 'ph-sparkle', 'ph-star', 
+            'ph-camera', 'ph-video-camera', 'ph-film-strip', 'ph-magic-wand', 
+            'ph-crown', 'ph-calendar-star', 'ph-calendar-check', 'ph-users-three', 
+            'ph-speaker-hifi', 'ph-microphone-stage', 'ph-play-circle', 'ph-images',
+            'ph-monitor-play', 'ph-speaker-high', 'ph-vinyl-record', 'ph-music-note'
+        ];
+
         bgIcons.forEach((el, idx) => {
             let iconList = defaultIcons;
             if (activeBg === 'skillverse') iconList = skillverseIcons;
             else if (activeBg === 'musicverse') iconList = musicverseIcons;
+            else if (activeBg === 'events') iconList = eventsIcons;
 
             const iconClass = iconList[idx % iconList.length];
             el.className = `ph-fill ${iconClass} floating-icon`;
@@ -389,11 +398,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const eduActive = document.querySelector('#education.active');
         const skillverseActive = document.querySelector('#skillverse.active');
         const musicverseActive = document.querySelector('#musicverse.active');
+        const eventsActive = document.querySelector('#events.active');
         
         let activeBg = 'default';
         if (eduActive) {
             if (skillverseActive) activeBg = 'skillverse';
             else if (musicverseActive) activeBg = 'musicverse';
+        } else if (eventsActive) {
+            activeBg = 'events';
         }
         
         if (window.updateBackgroundIcons) {
