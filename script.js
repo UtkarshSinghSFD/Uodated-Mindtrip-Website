@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
         
         updateFooterEmail();
+        if (window.checkAndUpdateBackground) window.checkAndUpdateBackground();
     }
 
     navButtons.forEach(btn => {
@@ -164,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             
             updateFooterEmail();
+            if (window.checkAndUpdateBackground) window.checkAndUpdateBackground();
 
             // Re-trigger the rocket animations
             const rockets = document.querySelectorAll('.rocket-left, .rocket-right');
@@ -340,6 +342,38 @@ document.addEventListener('DOMContentLoaded', () => {
             container.appendChild(star);
         }
     }
+    
+    window.updateBackgroundIcons = function(isSkillverse) {
+        const bgIcons = document.querySelectorAll('.animated-background .floating-icon:not(.sharp-star)');
+        const defaultIcons = [
+            'ph-music-note', 'ph-vinyl-record', 'ph-graduation-cap', 
+            'ph-microphone-stage', 'ph-globe', 'ph-browser', 
+            'ph-laptop', 'ph-code', 'ph-wifi-high', 'ph-cloud'
+        ];
+        const emojis = ['📚', '🎓', '🏫', '✏️', '📝', '📖', '🧠', '💡', '👨‍🏫', '👩‍🏫', '🔬', '🧪', '📐', '📏', '🖊️', '🖍️', '📒', '📓', '🎒', '💻'];
+
+        bgIcons.forEach((el, idx) => {
+            if (isSkillverse) {
+                el.className = 'floating-icon'; 
+                el.style.fontStyle = 'normal';
+                el.innerText = emojis[idx % emojis.length];
+            } else {
+                const iconClass = defaultIcons[idx % defaultIcons.length];
+                el.className = `ph-fill ${iconClass} floating-icon`;
+                el.style.fontStyle = '';
+                el.innerText = '';
+            }
+        });
+    };
+    
+    window.checkAndUpdateBackground = function() {
+        const eduActive = document.querySelector('#education.active');
+        const skillverseActive = document.querySelector('#skillverse.active');
+        if (window.updateBackgroundIcons) {
+            window.updateBackgroundIcons(!!(eduActive && skillverseActive));
+        }
+    };
+    
     createFloatingStars();
 
     // --- 8. Matrix Coding Shower ---
