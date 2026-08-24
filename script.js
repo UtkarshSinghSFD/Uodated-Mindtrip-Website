@@ -356,13 +356,21 @@ document.addEventListener('DOMContentLoaded', () => {
             'ph-microphone-stage', 'ph-globe', 'ph-browser', 
             'ph-laptop', 'ph-code', 'ph-wifi-high', 'ph-cloud'
         ];
-        const emojis = ['📚', '🎓', '🏫', '✏️', '📝', '📖', '🧠', '💡', '👨‍🏫', '👩‍🏫', '🔬', '🧪', '📐', '📏', '🖊️', '🖍️', '📒', '📓', '🎒', '💻'];
+        
+        const skillverseIcons = [
+            'ph-book', 'ph-book-open', 'ph-books', 'ph-graduation-cap', 
+            'ph-pencil', 'ph-pen', 'ph-pen-nib', 'ph-chalkboard', 
+            'ph-chalkboard-teacher', 'ph-brain', 'ph-lightbulb', 'ph-medal', 
+            'ph-certificate', 'ph-calculator', 'ph-ruler', 'ph-folder', 
+            'ph-users-three', 'ph-bookmark', 'ph-notebook', 'ph-laptop'
+        ];
 
         bgIcons.forEach((el, idx) => {
             if (isSkillverse) {
-                el.className = 'floating-icon skillverse-emoji'; 
-                el.style.fontStyle = 'normal';
-                el.innerText = emojis[idx % emojis.length];
+                const iconClass = skillverseIcons[idx % skillverseIcons.length];
+                el.className = `ph-fill ${iconClass} floating-icon`;
+                el.style.fontStyle = '';
+                el.innerText = '';
             } else {
                 const iconClass = defaultIcons[idx % defaultIcons.length];
                 el.className = `ph-fill ${iconClass} floating-icon`;
