@@ -748,22 +748,22 @@ body.software-active .nav-btn.active {
     text-rendering: optimizeLegibility;
 }
 @keyframes randomMove1 {
-    0% { transform: translate(0px, 0px) rotate(0deg); }
-    33% { transform: translate(20px, -30px) rotate(15deg); }
-    66% { transform: translate(-25px, 15px) rotate(-10deg); }
-    100% { transform: translate(0px, 0px) rotate(0deg); }
+    0% { transform: translate(0vw, 0vh) rotate(0deg); }
+    33% { transform: translate(35vw, -45vh) rotate(120deg); }
+    66% { transform: translate(-25vw, 35vh) rotate(240deg); }
+    100% { transform: translate(0vw, 0vh) rotate(360deg); }
 }
 @keyframes randomMove2 {
-    0% { transform: translate(0px, 0px) rotate(0deg); }
-    33% { transform: translate(-20px, 25px) rotate(-15deg); }
-    66% { transform: translate(30px, -15px) rotate(20deg); }
-    100% { transform: translate(0px, 0px) rotate(0deg); }
+    0% { transform: translate(0vw, 0vh) rotate(0deg); }
+    33% { transform: translate(-45vw, 35vh) rotate(-120deg); }
+    66% { transform: translate(35vw, -25vh) rotate(-240deg); }
+    100% { transform: translate(0vw, 0vh) rotate(-360deg); }
 }
 @keyframes randomMove3 {
-    0% { transform: translate(0px, 0px) rotate(0deg); }
-    33% { transform: translate(-35px, -10px) rotate(-5deg); }
-    66% { transform: translate(15px, 25px) rotate(10deg); }
-    100% { transform: translate(0px, 0px) rotate(0deg); }
+    0% { transform: translate(0vw, 0vh) rotate(0deg); }
+    33% { transform: translate(-35vw, -35vh) rotate(90deg); }
+    66% { transform: translate(45vw, 45vh) rotate(-90deg); }
+    100% { transform: translate(0vw, 0vh) rotate(0deg); }
 }
 
 .icon-1 { top: 20%; left: 15%; animation: randomMove1 8s ease-in-out infinite; animation-delay: 0s; font-size: 1.2rem; }

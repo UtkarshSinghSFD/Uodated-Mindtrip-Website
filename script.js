@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.fontSize = `${size}rem`;
             
             const anim = animations[Math.floor(Math.random() * animations.length)];
-            const duration = Math.random() * 3 + 2; // 2s to 5s (Even faster speed)
+            const duration = Math.random() * 25 + 20; // 20s to 45s (Slow sweeping float)
             const delay = Math.random() * 5; // 0s to 5s
             
             el.style.animation = `${anim} ${duration}s ease-in-out infinite`;
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
             star.style.height = `${size}px`;
             
             const anim = animations[Math.floor(Math.random() * animations.length)];
-            const duration = Math.random() * 3 + 2; // 2s to 5s (Even faster speed)
+            const duration = Math.random() * 25 + 20; // 20s to 45s (Slow sweeping float)
             const delay = Math.random() * 5;
             
             star.style.animation = `${anim} ${duration}s ease-in-out infinite`;
