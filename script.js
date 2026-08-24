@@ -345,6 +345,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.updateBackgroundIcons = function(isSkillverse) {
         const bgIcons = document.querySelectorAll('.animated-background .floating-icon:not(.sharp-star)');
+        const stars = document.querySelectorAll('.animated-background .sharp-star');
+        
+        stars.forEach(star => {
+            star.style.display = isSkillverse ? 'none' : 'block';
+        });
+
         const defaultIcons = [
             'ph-music-note', 'ph-vinyl-record', 'ph-graduation-cap', 
             'ph-microphone-stage', 'ph-globe', 'ph-browser', 
@@ -354,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         bgIcons.forEach((el, idx) => {
             if (isSkillverse) {
-                el.className = 'floating-icon'; 
+                el.className = 'floating-icon skillverse-emoji'; 
                 el.style.fontStyle = 'normal';
                 el.innerText = emojis[idx % emojis.length];
             } else {
