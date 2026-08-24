@@ -303,8 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.fontSize = `${size}rem`;
             
             const anim = animations[Math.floor(Math.random() * animations.length)];
-            const duration = Math.random() * 25 + 20; // 20s to 45s (Slow sweeping float)
-            const delay = Math.random() * 5; // 0s to 5s
+            const duration = Math.random() * 40 + 35; // 35s to 75s (Very slow sweeping float)
+            const delay = Math.random() * -20; // Random negative delay so they don't all start at 0
             
             el.style.animation = `${anim} ${duration}s ease-in-out infinite`;
             el.style.animationDelay = `${delay}s`;
@@ -332,8 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
             star.style.height = `${size}px`;
             
             const anim = animations[Math.floor(Math.random() * animations.length)];
-            const duration = Math.random() * 25 + 20; // 20s to 45s (Slow sweeping float)
-            const delay = Math.random() * 5;
+            const duration = Math.random() * 40 + 35; // 35s to 75s (Very slow sweeping float)
+            const delay = Math.random() * -20;
             
             star.style.animation = `${anim} ${duration}s ease-in-out infinite`;
             star.style.animationDelay = `${delay}s`;
