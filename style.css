@@ -3165,4 +3165,8 @@ footer{padding:60px 0 35px;background:#171717;color:white} #software .footer-gri
     .mv-vinyl-record { right: -20%; }
 }
 
-.skillverse-emoji { filter: contrast(0) sepia(100%) hue-rotate(10deg) brightness(1.8) saturate(3) drop-shadow(0 0 8px rgba(255, 255, 224, 0.3)); }
+.skillverse-emoji {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 0 0 #ffffe0;
+}
