@@ -343,12 +343,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    window.updateBackgroundIcons = function(isSkillverse) {
+    window.updateBackgroundIcons = function(activeBg) {
         const bgIcons = document.querySelectorAll('.animated-background .floating-icon:not(.sharp-star)');
         const stars = document.querySelectorAll('.animated-background .sharp-star');
         
         stars.forEach(star => {
-            star.style.display = isSkillverse ? 'none' : 'block';
+            star.style.display = (activeBg !== 'default') ? 'none' : 'block';
         });
 
         const defaultIcons = [
@@ -365,26 +365,39 @@ document.addEventListener('DOMContentLoaded', () => {
             'ph-users-three', 'ph-bookmark', 'ph-notebook', 'ph-laptop'
         ];
 
+        const musicverseIcons = [
+            'ph-music-note', 'ph-music-notes', 'ph-music-notes-simple', 'ph-microphone-stage',
+            'ph-microphone', 'ph-headphones', 'ph-vinyl-record', 'ph-guitar',
+            'ph-piano-keys', 'ph-radio', 'ph-cassette-tape', 'ph-speaker-high',
+            'ph-speaker-low', 'ph-metronome', 'ph-sliders', 'ph-faders',
+            'ph-disc', 'ph-waveform', 'ph-playlist', 'ph-play-circle'
+        ];
+
         bgIcons.forEach((el, idx) => {
-            if (isSkillverse) {
-                const iconClass = skillverseIcons[idx % skillverseIcons.length];
-                el.className = `ph-fill ${iconClass} floating-icon`;
-                el.style.fontStyle = '';
-                el.innerText = '';
-            } else {
-                const iconClass = defaultIcons[idx % defaultIcons.length];
-                el.className = `ph-fill ${iconClass} floating-icon`;
-                el.style.fontStyle = '';
-                el.innerText = '';
-            }
+            let iconList = defaultIcons;
+            if (activeBg === 'skillverse') iconList = skillverseIcons;
+            else if (activeBg === 'musicverse') iconList = musicverseIcons;
+
+            const iconClass = iconList[idx % iconList.length];
+            el.className = `ph-fill ${iconClass} floating-icon`;
+            el.style.fontStyle = '';
+            el.innerText = '';
         });
     };
     
     window.checkAndUpdateBackground = function() {
         const eduActive = document.querySelector('#education.active');
         const skillverseActive = document.querySelector('#skillverse.active');
+        const musicverseActive = document.querySelector('#musicverse.active');
+        
+        let activeBg = 'default';
+        if (eduActive) {
+            if (skillverseActive) activeBg = 'skillverse';
+            else if (musicverseActive) activeBg = 'musicverse';
+        }
+        
         if (window.updateBackgroundIcons) {
-            window.updateBackgroundIcons(!!(eduActive && skillverseActive));
+            window.updateBackgroundIcons(activeBg);
         }
     };
     
