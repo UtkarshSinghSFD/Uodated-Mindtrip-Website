@@ -719,15 +719,15 @@
     /* Colors */
     --color-primary: #00aeb6; /* Teal accent like GoDaddy */
     --color-primary-dark: #008f96;
-    --color-secondary: #111111;
-    --color-text: #333333;
-    --color-text-light: #666666;
-    --color-bg-light: #ffffff;
-    --color-bg-muted: #f5f7f9;
-    --color-bg-dark: #111111;
-    --color-bg-brand: #00aeb6;
+    --color-secondary: #ffffff;
+    --color-text: #e0e0e0;
+    --color-text-light: #a0a0a0;
+    --color-bg-light: rgba(255, 255, 255, 0.05);
+    --color-bg-muted: rgba(255, 255, 255, 0.02);
+    --color-bg-dark: transparent;
+    --color-bg-brand: transparent;
     
-    --color-border: #e0e0e0;
+    --color-border: rgba(255, 255, 255, 0.1);
     
     /* Typography */
     --font-heading: 'Comfortaa', sans-serif;
@@ -779,7 +779,7 @@
     font-family: var(--font-body);
     color: var(--color-text);
     line-height: 1.6;
-    background-color: var(--color-bg-light);
+    background-color: transparent;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -838,26 +838,32 @@ ul {
 }
 
 .btn-primary {
-    background-color: var(--color-secondary);
-    color: var(--color-bg-light);
-}
-
-.btn-primary:hover {
-    background-color: #000;
-    color: var(--color-bg-light);
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--color-primary) !important;
+    box-shadow: none !important;
 }
 
 .btn-secondary {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
-    border-color: var(--color-primary);
+    background-color: var(--color-primary) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--color-primary) !important;
+    box-shadow: none !important;
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-    color: var(--color-bg-light);
+    background-color: transparent !important;
+    color: var(--color-primary) !important;
 }
+
+
+
+#software .btn-small {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+#software 
 
 .btn-outline {
     background-color: transparent;
@@ -894,7 +900,8 @@ ul {
 
 /* Header */
 .site-header {
-    background-color: var(--color-bg-light);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
     position: sticky;
     top: 0;
@@ -970,11 +977,11 @@ ul {
 
 .section-dark {
     background-color: var(--color-bg-dark);
-    color: var(--color-bg-light);
+    color: #ffffff;
 }
 
 .section-dark h1, .section-dark h2, .section-dark h3, .section-dark h4 {
-    color: var(--color-bg-light);
+    color: #ffffff;
 }
 
 .section-dark p {
@@ -999,7 +1006,7 @@ ul {
 }
 
 .section-brand .section-lead {
-    color: rgba(17, 17, 17, 0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Hero */
@@ -1390,13 +1397,12 @@ ul {
   /* Resets to prevent bleed-through */
   .product-card {
       display: block !important;
-      border: none !important;
   }
   .product-badge {
       border: none !important;
   }
   #contact {
-      background: var(--color-bg-light) !important;
+      background: transparent !important;
   }
   #contact::before, #contact::after {
       display: none !important;
@@ -1508,18 +1514,21 @@ ul {
       max-width: 360px !important;
       height: 480px !important;
       flex-shrink: 0 !important;
-      background: #ffffff !important;
-      border: none !important;
-      border-radius: 8px !important;
+      background: rgba(15, 23, 42, 0.7) !important;
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px !important;
       padding: 30px !important;
       display: flex !important;
       flex-direction: column !important;
-      transition: transform 0.3s ease !important;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+      transition: all 0.4s !important;
+      box-shadow: none !important;
   }
   .marquee-card:hover {
-      transform: translateY(-8px) !important;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+      border-color: rgba(245, 158, 11, 0.3) !important;
+      transform: translateY(-5px) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
   }
   .marquee-card h3 {
       font-size: 1.8rem !important;
@@ -1565,8 +1574,8 @@ ul {
       margin-bottom: 1.5rem !important;
       border-radius: 20px !important;
       padding: 6px 14px !important;
-      background: var(--color-text) !important;
-      color: var(--color-bg-light) !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #ffffff !important;
       border: none !important;
       font-weight: 600 !important;
       align-self: flex-start !important;
@@ -1596,10 +1605,6 @@ ul {
 
 }
 
-/* Hide global MideTripE footer when software page is active */
-body.software-active footer.footer {
-    display: none !important;
-}
 
 /* Make entire navbar solid black on software page so the tab blends in */
 body.software-active .navbar {
@@ -1646,7 +1651,7 @@ body.software-active .nav-links .nav-btn.active {
       margin-right: -100px !important;
   }
   #software .hero-image-card {
-      background: #f1f5f9 !important;
+      background: rgba(255, 255, 255, 0.05) !important;
       border-radius: 12px !important;
       overflow: hidden !important;
       box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25) !important;
@@ -1666,7 +1671,7 @@ body.software-active .nav-links .nav-btn.active {
   }
   #software .hero-image-caption h3 {
       font-size: 1.15rem !important;
-      color: #0f172a !important;
+      color: #e2e8f0 !important;
       margin-bottom: 0.75rem !important;
       font-weight: 600 !important;
       font-family: var(--font-heading) !important;
@@ -1679,7 +1684,7 @@ body.software-active .nav-links .nav-btn.active {
   }
   #software .caption-bottom p {
       font-size: 0.85rem !important;
-      color: #334155 !important;
+      color: #94a3b8 !important;
       margin: 0 !important;
       max-width: 75% !important;
       line-height: 1.5 !important;
@@ -1741,6 +1746,7 @@ body.software-active .nav-links .nav-btn.active {
 /* Remove old MideTripE black borders from sections */
 #software section {
     border: none !important;
+    background: transparent !important;
 }
 
 /* Dropping animation for boxes */
@@ -1772,7 +1778,7 @@ body.software-active .nav-links .nav-btn.active {
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 style="font-family: var(--font-heading) !important; color: #000000; margin-bottom: 0.5rem; line-height: 1.1;" class="hero-title">StarNexusTech</h1>
+                    <h1 style="font-family: var(--font-heading) !important; color: #ffffff; margin-bottom: 0.5rem; line-height: 1.1;" class="hero-title">StarNexusTech</h1>
                     <div class="hero-subtitle-heading" style="color: var(--color-primary); font-family: var(--font-heading) !important; font-weight: 700; margin-bottom: 1rem;">Enterprise Automation & Software</div>
                     <p class="hero-subtitle">Star Nexus Technologies designs automation systems, enterprise software, and custom B2B platforms that connect scattered tools, teams, and data into one coordinated network.</p>
                     <div class="hero-buttons">
@@ -2611,24 +2617,7 @@ body.software-active .nav-links .nav-btn.active {
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-container">
-            <div class="footer-top grid grid-2">
-                <div class="footer-brand">
-                      <h2 style="font-family: var(--font-heading) !important;">StarNexusTech</h2>
-                      <p>Enterprise Automation & Software</p>
-                  </div>
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><a href="mailto:contact@mindtripe.in">contact@mindtripe.in</a></p>
-                    <p>Nagpur, Maharashtra</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MindTripE. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+
 
     
 

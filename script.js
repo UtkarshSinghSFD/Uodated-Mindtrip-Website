@@ -380,12 +380,21 @@ document.addEventListener('DOMContentLoaded', () => {
             'ph-speaker-hifi', 'ph-microphone-stage', 'ph-play-circle', 'ph-images',
             'ph-monitor-play', 'ph-speaker-high', 'ph-vinyl-record', 'ph-music-note'
         ];
+        
+        const softwareIcons = [
+            'ph-code', 'ph-brackets-curly', 'ph-terminal-window', 'ph-cpu', 'ph-hard-drives',
+            'ph-database', 'ph-cloud', 'ph-server', 'ph-device-mobile', 'ph-laptop',
+            'ph-monitor', 'ph-browser', 'ph-gear', 'ph-wrench', 'ph-plug',
+            'ph-wifi-high', 'ph-git-branch', 'ph-file-code', 'ph-bug', 'ph-shield-check',
+            'ph-lock-key', 'ph-circuitry', 'ph-tree-structure', 'ph-robot', 'ph-app-window'
+        ];
 
         bgIcons.forEach((el, idx) => {
             let iconList = defaultIcons;
             if (activeBg === 'skillverse') iconList = skillverseIcons;
             else if (activeBg === 'musicverse') iconList = musicverseIcons;
             else if (activeBg === 'events') iconList = eventsIcons;
+            else if (activeBg === 'software') iconList = softwareIcons;
 
             const iconClass = iconList[idx % iconList.length];
             el.className = `ph-fill ${iconClass} floating-icon`;
@@ -399,6 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const skillverseActive = document.querySelector('#skillverse.active');
         const musicverseActive = document.querySelector('#musicverse.active');
         const eventsActive = document.querySelector('#events.active');
+        const softwareActive = document.querySelector('#software.active');
         
         let activeBg = 'default';
         if (eduActive) {
@@ -406,6 +416,8 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (musicverseActive) activeBg = 'musicverse';
         } else if (eventsActive) {
             activeBg = 'events';
+        } else if (softwareActive) {
+            activeBg = 'software';
         }
         
         if (window.updateBackgroundIcons) {
